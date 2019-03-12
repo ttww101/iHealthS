@@ -1,10 +1,10 @@
-#import "LeftMenuViewController.h"
+#import "SideMenuViewController.h"
 #import "HomeViewController.h"
 #import "DataListViewController.h"
 #import "MoreViewController.h"
 #import "BookmarkViewController.h"
 
-@interface LeftMenuViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SideMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *resultArray;
 
@@ -12,7 +12,7 @@
 
 @end
 
-@implementation LeftMenuViewController
+@implementation SideMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

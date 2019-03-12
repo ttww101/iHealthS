@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
-#import "LeftMenuViewController.h"
+#import "SideMenuViewController.h"
 #import "TalkingData.h"
 #import <AdSupport/AdSupport.h>
 
@@ -56,7 +56,7 @@
     UIViewController *navigationController = [[MLNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
     
     // 左视图
-    UIViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
+    UIViewController *leftMenuViewController = [[SideMenuViewController alloc] init];
     self.sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                              leftMenuViewController:leftMenuViewController
                                                             rightMenuViewController:nil];

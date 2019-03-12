@@ -28,7 +28,7 @@
 		FA2F275819D5495F00873763 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2F275719D5495F00873763 /* Images.xcassets */; };
 		FA95A25419F4F70700A94E19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A19519F4F70700A94E19 /* AppDelegate.m */; };
 		FA95A25519F4F70700A94E19 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A19919F4F70700A94E19 /* BookmarkViewController.m */; };
-		FA95A25619F4F70700A94E19 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A19C19F4F70700A94E19 /* LeftMenuViewController.m */; };
+		FA95A25619F4F70700A94E19 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A19C19F4F70700A94E19 /* SideMenuViewController.m */; };
 		FA95A25719F4F70700A94E19 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A19F19F4F70700A94E19 /* MoreViewController.m */; };
 		FA95A25819F4F70700A94E19 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A219F4F70700A94E19 /* DetailViewController.m */; };
 		FA95A25919F4F70700A94E19 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A419F4F70700A94E19 /* HomeViewController.m */; };
@@ -152,8 +152,8 @@
 		FA95A19519F4F70700A94E19 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA95A19819F4F70700A94E19 /* BookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkViewController.h; sourceTree = "<group>"; };
 		FA95A19919F4F70700A94E19 /* BookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkViewController.m; sourceTree = "<group>"; };
-		FA95A19B19F4F70700A94E19 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
-		FA95A19C19F4F70700A94E19 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		FA95A19B19F4F70700A94E19 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		FA95A19C19F4F70700A94E19 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		FA95A19E19F4F70700A94E19 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		FA95A19F19F4F70700A94E19 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		FA95A1A119F4F70700A94E19 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 			children = (
 				FA95A19419F4F70700A94E19 /* AppDelegate.h */,
 				FA95A19519F4F70700A94E19 /* AppDelegate.m */,
-				FA95A19A19F4F70700A94E19 /* Menu */,
+				FA95A19A19F4F70700A94E19 /* Side Menu */,
 				FA95A19619F4F70700A94E19 /* Menu Feature */,
 				94C9B1EA2237E5D400BB283D /* Component */,
 				FA95A1AC19F4F70700A94E19 /* Manual Framework */,
@@ -452,13 +452,13 @@
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
-		FA95A19A19F4F70700A94E19 /* Menu */ = {
+		FA95A19A19F4F70700A94E19 /* Side Menu */ = {
 			isa = PBXGroup;
 			children = (
-				FA95A19B19F4F70700A94E19 /* LeftMenuViewController.h */,
-				FA95A19C19F4F70700A94E19 /* LeftMenuViewController.m */,
+				FA95A19B19F4F70700A94E19 /* SideMenuViewController.h */,
+				FA95A19C19F4F70700A94E19 /* SideMenuViewController.m */,
 			);
-			path = Menu;
+			path = "Side Menu";
 			sourceTree = "<group>";
 		};
 		FA95A19D19F4F70700A94E19 /* More */ = {
@@ -873,7 +873,7 @@
 				FA95A27F19F4F70700A94E19 /* MKAnnotationView+WebCache.m in Sources */,
 				FA95A26B19F4F70700A94E19 /* FileSize.m in Sources */,
 				FA95A25819F4F70700A94E19 /* DetailViewController.m in Sources */,
-				FA95A25619F4F70700A94E19 /* LeftMenuViewController.m in Sources */,
+				FA95A25619F4F70700A94E19 /* SideMenuViewController.m in Sources */,
 				FA95A26219F4F70700A94E19 /* ASIHTTPRequest.m in Sources */,
 				FA95A28A19F4F70700A94E19 /* UIImage+MultiFormat.m in Sources */,
 				FA95A27E19F4F70700A94E19 /* UIViewController+RESideMenu.m in Sources */,

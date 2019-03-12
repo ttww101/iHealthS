@@ -1,5 +1,5 @@
 //
-//  LeftMenuViewController.h
+//  SideMenuViewController.h
 //  iYeHua
 //
 //  Created by Apple on 13-5-21.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LeftMenuViewController : UIViewController
+@interface SideMenuViewController : UIViewController
 
 
 @end
