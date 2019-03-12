@@ -330,6 +330,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		94C9B1EA2237E5D400BB283D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				FA95A23819F4F70700A94E19 /* TOWebViewController */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		CC7B14218BA553EC6A2AC93A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +425,7 @@
 				FA95A19519F4F70700A94E19 /* AppDelegate.m */,
 				FA95A19A19F4F70700A94E19 /* Menu */,
 				FA95A19619F4F70700A94E19 /* Menu Feature */,
+				94C9B1EA2237E5D400BB283D /* Component */,
 				FA95A1AC19F4F70700A94E19 /* Manual Framework */,
 			);
 			path = iHealthKitS;
@@ -490,7 +499,6 @@
 				FA95A20919F4F70700A94E19 /* RESideMenu */,
 				FA95A21019F4F70700A94E19 /* SDWebImage */,
 				FA95A23219F4F70700A94E19 /* SVPullToRefresh */,
-				FA95A23819F4F70700A94E19 /* TOWebViewController */,
 			);
 			path = "Manual Framework";
 			sourceTree = "<group>";
