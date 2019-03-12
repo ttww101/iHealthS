@@ -1,5 +1,5 @@
-#import "IndexViewController.h"
-#import "IndexCell.h"
+#import "HomeViewController.h"
+#import "HomeTableViewCell.h"
 
 #import "ListViewController.h"
 #import "DetailViewController.h"
@@ -7,7 +7,7 @@
 #import "TalkingData.h"
 
 
-@interface IndexViewController ()<UIScrollViewDelegate,UISearchBarDelegate> {
+@interface HomeViewController ()<UIScrollViewDelegate,UISearchBarDelegate> {
 	NSMutableArray *resultArray;
     NSMutableArray *adsArray;
     UIScrollView *adScrollView;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation IndexViewController
+@implementation HomeViewController
 @synthesize httpRequests;
 
 
@@ -318,9 +318,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    if ([[[resultArray objectAtIndex:indexPath.section] objectForKey:@"type"] isEqualToString:@"NEWSLIST"]){
         static NSString *MyIdentifier = @"IndexCell";
-       IndexCell *cell = (IndexCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier]; // changed this
+       HomeTableViewCell *cell = (HomeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier]; // changed this
        if (cell == nil) {
-            cell = [[IndexCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier]; // changed this
+            cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier]; // changed this
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }

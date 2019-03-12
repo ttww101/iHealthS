@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AppCell : UITableViewCell
+@interface MoreAppCell : UITableViewCell
 
 
 -(void)setAppData:(NSDictionary *)app AtIndex:(NSInteger)index;

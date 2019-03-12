@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface IndexCell : UITableViewCell
+@interface HomeTableViewCell : UITableViewCell
 
 -(void)setData:(NSDictionary *)info AtIndex:(NSInteger)index;
 

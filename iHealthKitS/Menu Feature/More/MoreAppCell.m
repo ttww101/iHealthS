@@ -1,7 +1,7 @@
-#import "AppCell.h"
+#import "MoreAppCell.h"
 #import "UIImageView+WebCache.h"
 
-@implementation AppCell
+@implementation MoreAppCell
 
 @synthesize iconView,nameLabel,descLabel,commendView,commendLabel,priceButton;
 

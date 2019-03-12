@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import "IndexViewController.h"
+#import "HomeViewController.h"
 #import "LeftMenuViewController.h"
 #import "TalkingData.h"
 #import <AdSupport/AdSupport.h>
@@ -53,7 +53,7 @@
                                                            [UIFont systemFontOfSize:16.0f], NSFontAttributeName, nil]];
     
     // 主视图
-    UIViewController *navigationController = [[MLNavigationController alloc] initWithRootViewController:[[IndexViewController alloc] init]];
+    UIViewController *navigationController = [[MLNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
     
     // 左视图
     UIViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];

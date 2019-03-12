@@ -1,5 +1,5 @@
 #import "LeftMenuViewController.h"
-#import "IndexViewController.h"
+#import "HomeViewController.h"
 #import "ListViewController.h"
 #import "MoreViewController.h"
 #import "BookmarkViewController.h"
@@ -172,7 +172,7 @@
     
     if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"index"]) {
         //首頁
-        selectViewController = [[IndexViewController alloc] init];
+        selectViewController = [[HomeViewController alloc] init];
     } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"list"]) {
         //資料頁
         selectViewController = [[ListViewController alloc] initWithURL:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]];

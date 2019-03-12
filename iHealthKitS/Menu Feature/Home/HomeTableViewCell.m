@@ -1,6 +1,6 @@
-#import "IndexCell.h"
+#import "HomeTableViewCell.h"
 
-@implementation IndexCell
+@implementation HomeTableViewCell
 
 @synthesize iconView,nameLabel,cateLabel;
 

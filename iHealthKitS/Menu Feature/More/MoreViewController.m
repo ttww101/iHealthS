@@ -9,7 +9,7 @@
 #import "MoreViewController.h"
 #import "UIImageView+WebCache.h"
 #import "FileSize.h"
-#import "AppCell.h"
+#import "MoreAppCell.h"
 
 #import "BookmarkViewController.h"
 #import "MBProgressHUD.h"
@@ -136,9 +136,9 @@
         
     }else if (indexPath.section == 3){
         static NSString *MyIdentifier = @"AppCell";
-        AppCell *cell = (AppCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier]; // changed this
+        MoreAppCell *cell = (MoreAppCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier]; // changed this
         if (cell == nil) {
-            cell = [[AppCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier]; // changed this
+            cell = [[MoreAppCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier]; // changed this
             cell.accessoryType = UITableViewCellAccessoryNone;
             //cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
