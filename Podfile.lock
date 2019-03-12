@@ -1,0 +1,40 @@
+PODS:
+  - AVOSCloud (11.5.1)
+  - AVOSCloudIM (11.5.1):
+    - AVOSCloud (= 11.5.1)
+    - AVOSCloudIM/_ARC (= 11.5.1)
+    - AVOSCloudIM/_NOARC (= 11.5.1)
+  - AVOSCloudIM/_ARC (11.5.1):
+    - AVOSCloud (= 11.5.1)
+    - AVOSCloudIM/_NOARC (= 11.5.1)
+  - AVOSCloudIM/_NOARC (11.5.1):
+    - AVOSCloud (= 11.5.1)
+  - wax (1.2.1)
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudIM
+  - wax (from `https://github.com/alibaba/wax.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AVOSCloud
+    - AVOSCloudIM
+
+EXTERNAL SOURCES:
+  wax:
+    :git: https://github.com/alibaba/wax.git
+
+CHECKOUT OPTIONS:
+  wax:
+    :commit: 0267d9f895fb605e91a7086b7eb746087b682103
+    :git: https://github.com/alibaba/wax.git
+
+SPEC CHECKSUMS:
+  AVOSCloud: 3a337ec2290fe3b4411cd4098895323bc5a1133c
+  AVOSCloudIM: dd3ce21e697dd8af78645cee27c31d0e29121f14
+  wax: 85f4b93dbbfa123ee592c458a0ce289d561e4704
+
+PODFILE CHECKSUM: de1cb71560a8b589671afd5b81b724741fc57b9b
+
+COCOAPODS: 1.5.3

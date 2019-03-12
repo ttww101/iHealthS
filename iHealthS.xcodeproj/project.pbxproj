@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6598AB44370954B949D786 /* libPods-iHealthS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB4AA2D48F98F795795A25D /* libPods-iHealthS.a */; };
 		66BA81B91D28D80400D13914 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
 		DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A41DE1CE99991002C0F49 /* close_icon.png */; };
@@ -123,6 +124,8 @@
 
 /* Begin PBXFileReference section */
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		7CB4AA2D48F98F795795A25D /* libPods-iHealthS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHealthS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.release.xcconfig"; sourceTree = "<group>"; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
 		DA1A41DE1CE99991002C0F49 /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_icon.png; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		DAFF7E671CE48D39000AB508 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DAFF7E691CE48E21000AB508 /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
 		DAFF7E6A1CE48E21000AB508 /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		E87A895EDB2AEBFDF5E0CD88 /* Pods-iHealthS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA26E77319DA423400A4EDED /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FA26E77519DA423900A4EDED /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FA26E77719DA424700A4EDED /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -308,12 +312,22 @@
 				FA2F273C19D5495F00873763 /* CoreGraphics.framework in Frameworks */,
 				FA2F273E19D5495F00873763 /* UIKit.framework in Frameworks */,
 				FA2F273A19D5495F00873763 /* Foundation.framework in Frameworks */,
+				2B6598AB44370954B949D786 /* libPods-iHealthS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC7B14218BA553EC6A2AC93A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E87A895EDB2AEBFDF5E0CD88 /* Pods-iHealthS.debug.xcconfig */,
+				C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DA1A41DA1CE97B5B002C0F49 /* KLCPopup */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +343,7 @@
 				FA2F273F19D5495F00873763 /* iHealthS */,
 				FA2F273819D5495F00873763 /* Frameworks */,
 				FA2F273719D5495F00873763 /* Products */,
+				CC7B14218BA553EC6A2AC93A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +374,7 @@
 				FA2F273919D5495F00873763 /* Foundation.framework */,
 				FA2F273B19D5495F00873763 /* CoreGraphics.framework */,
 				FA2F273D19D5495F00873763 /* UIKit.framework */,
+				7CB4AA2D48F98F795795A25D /* libPods-iHealthS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -710,10 +726,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2F276E19D5495F00873763 /* Build configuration list for PBXNativeTarget "iHealthS" */;
 			buildPhases = (
+				4E464E8AEAE5C13BF98D5709 /* [CP] Check Pods Manifest.lock */,
 				FA2F273219D5495F00873763 /* Sources */,
 				FA2F273319D5495F00873763 /* Frameworks */,
 				FA2F273419D5495F00873763 /* Resources */,
 				DAFF7E641CE48D1B000AB508 /* Embed Frameworks */,
+				142528DE405555F5E632F20C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -798,6 +816,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		142528DE405555F5E632F20C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS-resources.sh",
+				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVOSCloud_Art.inc",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E464E8AEAE5C13BF98D5709 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iHealthS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA2F273219D5495F00873763 /* Sources */ = {
@@ -948,6 +1005,7 @@
 		};
 		FA2F276F19D5495F00873763 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E87A895EDB2AEBFDF5E0CD88 /* Pods-iHealthS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -977,6 +1035,7 @@
 		};
 		FA2F277019D5495F00873763 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
