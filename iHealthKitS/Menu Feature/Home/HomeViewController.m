@@ -1,7 +1,7 @@
 #import "HomeViewController.h"
 #import "HomeTableViewCell.h"
 
-#import "ListViewController.h"
+#import "DataListViewController.h"
 #import "DetailViewController.h"
 #import "StyledPageControl.h"
 #import "TalkingData.h"
@@ -317,7 +317,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    if ([[[resultArray objectAtIndex:indexPath.section] objectForKey:@"type"] isEqualToString:@"NEWSLIST"]){
-        static NSString *MyIdentifier = @"IndexCell";
+       NSString *MyIdentifier = @"IndexCell";
        HomeTableViewCell *cell = (HomeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier]; // changed this
        if (cell == nil) {
             cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier]; // changed this

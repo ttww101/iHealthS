@@ -1,7 +1,7 @@
-#import "ListViewController.h"
+#import "DataListViewController.h"
 #import "DetailViewController.h"
 
-@interface ListViewController ()
+@interface DataListViewController ()
 {
     NSString *name;
     NSString *url;
@@ -10,7 +10,7 @@
 }
 @end
 
-@implementation ListViewController
+@implementation DataListViewController
 
 
 -(id)initWithURL:(NSString *)__url AndName:(NSString *)__name {

@@ -32,7 +32,7 @@
 		FA95A25719F4F70700A94E19 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A19F19F4F70700A94E19 /* MoreViewController.m */; };
 		FA95A25819F4F70700A94E19 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A219F4F70700A94E19 /* DetailViewController.m */; };
 		FA95A25919F4F70700A94E19 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A419F4F70700A94E19 /* HomeViewController.m */; };
-		FA95A25A19F4F70700A94E19 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A619F4F70700A94E19 /* ListViewController.m */; };
+		FA95A25A19F4F70700A94E19 /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A619F4F70700A94E19 /* DataListViewController.m */; };
 		FA95A25B19F4F70700A94E19 /* MoreAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1A919F4F70700A94E19 /* MoreAppCell.m */; };
 		FA95A25C19F4F70700A94E19 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1AB19F4F70700A94E19 /* HomeTableViewCell.m */; };
 		FA95A25D19F4F70700A94E19 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95A1B019F4F70700A94E19 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -160,8 +160,8 @@
 		FA95A1A219F4F70700A94E19 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FA95A1A319F4F70700A94E19 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA95A1A419F4F70700A94E19 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		FA95A1A519F4F70700A94E19 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		FA95A1A619F4F70700A94E19 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		FA95A1A519F4F70700A94E19 /* DataListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataListViewController.h; sourceTree = "<group>"; };
+		FA95A1A619F4F70700A94E19 /* DataListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
 		FA95A1A819F4F70700A94E19 /* MoreAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreAppCell.h; sourceTree = "<group>"; };
 		FA95A1A919F4F70700A94E19 /* MoreAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreAppCell.m; sourceTree = "<group>"; };
 		FA95A1AA19F4F70700A94E19 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
@@ -312,13 +312,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		94C9B1E82237E0E700BB283D /* ListData */ = {
+		94C9B1E82237E0E700BB283D /* DataList */ = {
 			isa = PBXGroup;
 			children = (
-				FA95A1A519F4F70700A94E19 /* ListViewController.h */,
-				FA95A1A619F4F70700A94E19 /* ListViewController.m */,
+				FA95A1A519F4F70700A94E19 /* DataListViewController.h */,
+				FA95A1A619F4F70700A94E19 /* DataListViewController.m */,
 			);
-			path = ListData;
+			path = DataList;
 			sourceTree = "<group>";
 		};
 		94C9B1E92237E10500BB283D /* Detail */ = {
@@ -426,7 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				FA95A1A019F4F70700A94E19 /* Home */,
-				94C9B1E82237E0E700BB283D /* ListData */,
+				94C9B1E82237E0E700BB283D /* DataList */,
 				FA95A19719F4F70700A94E19 /* Bookmark */,
 				FA95A19D19F4F70700A94E19 /* More */,
 				94C9B1E92237E10500BB283D /* Detail */,
@@ -874,7 +874,7 @@
 				FA95A28019F4F70700A94E19 /* NSData+ImageContentType.m in Sources */,
 				FA95A28919F4F70700A94E19 /* UIImage+GIF.m in Sources */,
 				FA95A29519F4F70700A94E19 /* main.m in Sources */,
-				FA95A25A19F4F70700A94E19 /* ListViewController.m in Sources */,
+				FA95A25A19F4F70700A94E19 /* DataListViewController.m in Sources */,
 				FA95A28419F4F70700A94E19 /* SDWebImageDownloader.m in Sources */,
 				FA95A28219F4F70700A94E19 /* SDWebImageCompat.m in Sources */,
 				FA95A25719F4F70700A94E19 /* MoreViewController.m in Sources */,

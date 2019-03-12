@@ -1,6 +1,6 @@
 #import "LeftMenuViewController.h"
 #import "HomeViewController.h"
-#import "ListViewController.h"
+#import "DataListViewController.h"
 #import "MoreViewController.h"
 #import "BookmarkViewController.h"
 
@@ -175,7 +175,7 @@
         selectViewController = [[HomeViewController alloc] init];
     } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"list"]) {
         //資料頁
-        selectViewController = [[ListViewController alloc] initWithURL:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]];
+        selectViewController = [[DataListViewController alloc] initWithURL:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]];
         [self.sideMenuViewController hideMenuViewController];
     } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"fav"]) {
         //收藏
