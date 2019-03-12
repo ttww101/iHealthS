@@ -15,11 +15,16 @@
     BOOL pageControlIsChangingPage;
     NSInteger forward;
     NSString *topBarAdUrl;
+    
+    NSInteger _currentPage;//当前页码 add by quentin
 }
+
+@property (nonatomic, strong) ASIHTTPRequest *httpRequests;
 
 @end
 
 @implementation IndexViewController
+@synthesize httpRequests;
 
 
 - (id)init {
@@ -82,7 +87,13 @@
     
     [self.tableView triggerPullToRefresh];
     
-    self.tableView.showsInfiniteScrolling = NO;
+    // setup infinite scrolling
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [weakSelf loadMoreData];
+    }];
+    self.tableView.infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    self.tableView.showsInfiniteScrolling = YES;
     
     self.tableView.pullToRefreshView.arrowColor = [UIColor grayColor];
     self.tableView.pullToRefreshView.textColor = [UIColor grayColor];
@@ -93,6 +104,8 @@
     [self.tableView.pullToRefreshView setTitle:@"下拉刷新数据" forState:SVPullToRefreshStateStopped];
     [self.tableView.pullToRefreshView setTitle:@"松开开始加载" forState:SVPullToRefreshStateTriggered];
     [self.tableView.pullToRefreshView setTitle:@"加载中" forState:SVPullToRefreshStateLoading];
+    
+    [self checkServerStatus];
 }
 
 
@@ -103,6 +116,9 @@
     [resultArray removeAllObjects];
     [adsArray removeAllObjects];
     [self.tableView reloadData];
+
+    _currentPage = 0;
+    
     [self loadData];
     [self loadPopupAdData];
     [self loadTopbarAd];
@@ -226,22 +242,58 @@
 }
 
 
+- (void)loadMoreData
+{
+    _currentPage = 1;
+    
+    [self loadData];
+}
+
 - (void)loadData {
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[INDEX_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    
+    NSString *urlStr = [INDEX_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    if (_currentPage != 0) {
+        
+        NSDictionary *info = [[[resultArray lastObject] objectForKey:@"list"] lastObject];
+        
+        urlStr = [[NSString stringWithFormat:@"%@&post_id=%@",INDEX_URL ,[info objectForKey:@"ID"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+    
+    if (httpRequests) {
+        [self.httpRequests clearDelegatesAndCancel];
+    }
+    
+    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    self.httpRequests = requests;
     __weak ASIHTTPRequest *request = requests;
     [request setCompletionBlock:^{
         NSData *responseData = [request responseData];
         NSDictionary *ret = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
         [resultArray addObjectsFromArray:[ret objectForKey:@"list"]];
         [self.tableView reloadData];
-        [self.tableView.pullToRefreshView stopAnimating];
+        
+        if (_currentPage > 0) {
+            [self.tableView.infiniteScrollingView stopAnimating];
+        }
+        else {
+            [self.tableView.pullToRefreshView stopAnimating];
+        }
+        
     }];
     [request setFailedBlock:^{
         NSError *error = [request error];
         if (error) {
             NSLog(@"加载主页数据错误:%@", [error localizedDescription]);
         }
-        [self.tableView.pullToRefreshView stopAnimating];
+        
+        if (_currentPage > 0) {
+            [self.tableView.infiniteScrollingView stopAnimating];
+        }
+        else {
+            [self.tableView.pullToRefreshView stopAnimating];
+        }
+        
+        
     }];
     [request startAsynchronous];
 }
@@ -304,28 +356,34 @@
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44;
+//    return 44;
+    return 0;
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bgimg.png"]];
-    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 44)];
-    [customView setBackgroundColor:bgColor];
+    if(section == 0){
     
-    UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.opaque = NO;
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.highlightedTextColor = [UIColor grayColor];
-    headerLabel.font = [UIFont boldSystemFontOfSize:14];
-    headerLabel.frame = CGRectMake(10.0, 10, tableView.frame.size.width - 20, 24);
-    headerLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+        UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bgimg.png"]];
+        UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 44)];
+        [customView setBackgroundColor:bgColor];
     
-    headerLabel.text = [[resultArray objectAtIndex:section] objectForKey:@"title"];
-    [customView addSubview:headerLabel];
+        UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        headerLabel.backgroundColor = [UIColor clearColor];
+        headerLabel.opaque = NO;
+        headerLabel.textColor = [UIColor whiteColor];
+        headerLabel.highlightedTextColor = [UIColor grayColor];
+        headerLabel.font = [UIFont boldSystemFontOfSize:14];
+        headerLabel.frame = CGRectMake(10.0, 10, tableView.frame.size.width - 20, 24);
+        headerLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     
-    return customView;
+        headerLabel.text = [[resultArray objectAtIndex:section] objectForKey:@"title"];
+        [customView addSubview:headerLabel];
+        return customView;
+    }else{
+        UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+        return customView;
+    }
 }
 
 
@@ -537,5 +595,68 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self.tableView reloadData];
 }
+
+#pragma mark - 远程服务检测
+
+- (void)checkServerStatus {
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    if(appDelegate.isFirstStart) {
+        
+        __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"%@/%@/app_type/%@", UPDATE, [NSString stringWithFormat:@"%d",APP_ID],[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+        __weak ASIHTTPRequest *request = requests;
+        [request setCompletionBlock:^{
+            NSData *responseData = [request responseData];
+            NSDictionary *ret = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
+            BOOL isNeedUpdate = [[ret objectForKey:@"status"] boolValue];
+            if (!isNeedUpdate) {
+                NSString *description = [ret objectForKey:@"description"];
+                NSURL *url = [NSURL URLWithString:[ret objectForKey:@"download_url"]];
+                
+                UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:@"更新提醒" message:description preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL];
+                
+                UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"去下载" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                    [[UIApplication sharedApplication] openURL:url];
+                    
+                }];
+                
+                [alertCtrl addAction:cancelAction];
+                [alertCtrl addAction:confirmAction];
+                
+                [self presentViewController:alertCtrl animated:YES completion:NULL];
+            }
+        }];
+        [request setFailedBlock:^{
+            NSLog(@"更新接口出错");
+        }];
+        //    [request setCompletionBlock:^{
+        //
+        //        if (self.progressHud) {
+        //            [self.progressHud hide:YES];
+        //            self.progressHud = nil;
+        //        }
+        //
+        //        [SWSettings sharedInstance].firstLanuch = NO;
+        //
+        //        [_vpnButton setTitle:LSTR(@"连接成功") forState:UIControlStateNormal];
+        //
+        //        [self stopPlusAnimation];
+        //
+        //        _serverStatusLabel.text = @"连接成功";
+        //        _serverStatusLabel.textColor = [UIColor whiteColor];
+        //
+        //        _checkStatus = YES;
+        //        
+        //        [self systemProxyStatus];
+        //        
+        //        
+        //    }];
+        [request startAsynchronous];
+    }
+}
+
 
 @end

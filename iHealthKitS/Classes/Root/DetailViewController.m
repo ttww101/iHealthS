@@ -4,6 +4,7 @@
 #import "MBProgressHUD.h"
 #import "KLCPopup.h"
 #import "TalkingData.h"
+#import <GoogleMobileAds/GADInterstitial.h>
 
 
 typedef NS_ENUM(NSInteger, FontSizeChangeType) {
@@ -13,13 +14,15 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
 };
 
 
-@interface DetailViewController ()<UIWebViewDelegate,UIGestureRecognizerDelegate,UIActionSheetDelegate> {
+@interface DetailViewController ()<UIWebViewDelegate,UIGestureRecognizerDelegate,UIActionSheetDelegate, GADInterstitialDelegate> {
     NSString *index;
     UIWebView *webView;
     NSUInteger _currentFontSize;
     UIActivityIndicatorView *activityView;
     KLCPopup *popupAd;
     NSString *gotoUrl;
+    
+    GADInterstitial *_interstitial;
 }
 
 
@@ -108,6 +111,8 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
 }
 
 -(void)backAction {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadRequest) object:nil];
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
@@ -172,6 +177,43 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.view addSubview:webView];
+    
+    //google广告
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    if (appDelegate.googleAdSwitch)
+    {
+        if (_interstitial) {
+            _interstitial.delegate = nil;
+            _interstitial = nil;
+        }
+        //interstitial
+        _interstitial = [[GADInterstitial alloc] initWithAdUnitID:kAdMobInterstitialKey];
+        _interstitial.delegate = self;
+        
+        int i = arc4random() % 3;
+        
+        if (i == 0) {
+            GADRequest *request = [GADRequest request];
+            [_interstitial loadRequest:request];
+        }
+
+    }
+    
+    [self performSelector:@selector(loadRequest) withObject:nil afterDelay:15.f];
+}
+
+- (void)loadRequest
+{
+    if (_interstitial) {
+        _interstitial.delegate = nil;
+        _interstitial = nil;
+    }
+    //interstitial
+    _interstitial = [[GADInterstitial alloc] initWithAdUnitID:kAdMobInterstitialKey];
+    _interstitial.delegate = self;
+    
+    GADRequest *request = [GADRequest request];
+    [_interstitial loadRequest:request];
 }
 
 - (void)setADPopup:(NSData *) rawJSONData{
@@ -451,6 +493,18 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
         return (interfaceOrientation == UIInterfaceOrientationPortrait);
     }
     return YES;
+}
+
+#pragma mark - GADInterstitialDelegate
+
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad
+{
+    [_interstitial presentFromRootViewController:self];
+}
+
+- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    
 }
 
 @end

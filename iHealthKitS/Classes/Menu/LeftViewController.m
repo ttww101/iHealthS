@@ -168,7 +168,12 @@
     
     
     NSDictionary *data = [resultArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [data objectForKey:@"title"];
+    
+    if([[data objectForKey:@"title"] length] <= 6) {
+        cell.textLabel.text = [data objectForKey:@"title"];
+    }else{
+        cell.textLabel.text = [[data objectForKey:@"title"] substringToIndex:6];
+    }
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[data objectForKey:@"icon"]] placeholderImage:[UIImage imageNamed:@"default"]];
     
@@ -198,6 +203,7 @@
         [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[IndexViewController alloc] init]] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
     }else if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"list"]){
+        NSLog([[resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"]);
         [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[ListViewController alloc] initWithURL:[[resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]]] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
     }else if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"fav"]){

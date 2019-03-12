@@ -81,8 +81,6 @@
                                    target:self
                                    action:@selector(Edit:)];
     self.navigationItem.rightBarButtonItem = editButton;
-    
-    
 }
 
 -(void)Edit:(id)sender {

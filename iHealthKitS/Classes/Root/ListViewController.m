@@ -86,7 +86,8 @@
     [self.tableView.pullToRefreshView setTitle:@"加载中" forState:SVPullToRefreshStateLoading];
     
     self.tableView.infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-
+    
+    
 
 }
 
@@ -107,7 +108,7 @@
 
 - (void)loadData{
         
-    NSString *urlString = [NSString stringWithFormat:@"%@&p=%ld&pagesize=%d",url,(long)page,MAX_PAGE_COUNT];
+    NSString *urlString = [NSString stringWithFormat:@"%@",url,(long)page,MAX_PAGE_COUNT];
     
     __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
     __weak ASIHTTPRequest *request = requests;
@@ -116,9 +117,11 @@
         NSData *responseData = [request responseData];
         NSDictionary *wdic = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
         
-        if ([[wdic objectForKey:@"resultCount"] integerValue]>0) {
-            [resultArray addObjectsFromArray:[wdic objectForKey:@"results"]];
-        }
+//        if ([[wdic objectForKey:@"resultCount"] integerValue]>0) {
+        id value = [wdic objectForKey:@"list"];
+        value = [[value firstObject] objectForKey:@"list"];
+        [resultArray addObjectsFromArray:value];
+//        }
         [self.tableView reloadData];
         self.tableView.showsInfiniteScrolling = ([wdic objectForKey:@"totalpage"] == [wdic objectForKey:@"nowpage"]) ? NO : YES;
         if (page==1) {

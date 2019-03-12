@@ -7,13 +7,11 @@
 #define KDeviceHeight [UIScreen mainScreen].bounds.size.height
 
 // 主页列表接
-#define INDEX_URL @"http://wp.asopeixun.com:5000/get_post_from_category_id?category_id=8"
+#define INDEX_URL @"http://wp.asopeixun.com:5000/get_post_from_category_id?category_id=214"
 
 // 左侧列表接口
-#define LEFT_URL @"http://wp.asopeixun.com:5000/get_category_list"
-
-// 搜索列表接口
-#define SEARCH_URL @"http://"
+//#define LEFT_URL @"http://wp01.asopeixun.com:5000/get_category_list?app_id=1"
+#define LEFT_URL @"http://wp.asopeixun.com:5000/get_category_list?app_id=1110752205"
 
 // 文章显示接口
 #define SHOW_URL @"http://wp.asopeixun.com"
@@ -30,6 +28,9 @@
 // TalkingData ID
 #define TD_ID @"845430B5A0CAB4F105DB1F34261B25C7"
 
+// google广告接口开关
+#define GOOGLE_AD_SWITCH @"http://wp.asopeixun.com:5000/get_other_ad_switch?id=1&type=0"
+
 // UMeng ID
 #define UM_ID @""
 
@@ -42,5 +43,9 @@
 // APP_ID
 #define APP_ID 1111925568
 
+// 更新通知接口
+#define UPDATE @"http://wp.wrok.cn/check_version/appid"
+
+#define kAdMobInterstitialKey     @"ca-app-pub-7952766642809221/2975665994"//google插页广告ID
 
 #endif
