@@ -4,10 +4,9 @@
 #import "MoreViewController.h"
 #import "BookmarkViewController.h"
 
-@interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
-{
-    NSMutableArray *resultArray;
-}
+@interface LeftViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSMutableArray *resultArray;
 
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 
@@ -15,32 +14,12 @@
 
 @implementation LeftViewController
 
--(id)init {
-    self = [super init];
-    if (self) {
-
-    }
-    return self;
-}
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-}
-
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor clearColor];
 
-    resultArray = [[NSMutableArray alloc] initWithCapacity:20];
+    self.resultArray = [[NSMutableArray alloc] initWithCapacity:20];
     
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(20,60, self.view.frame.size.width, self.view.frame.size.height - 40) style:UITableViewStylePlain];
@@ -63,15 +42,14 @@
         self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
     
-    if (resultArray.count == 0) {
+    if (self.resultArray.count == 0) {
         [self loadData];
     }
 
 }
 
 
--(void)buildCate
-{
+- (void)buildCate {
     UIButton *reloadDataBtn = [[UIButton alloc] initWithFrame:CGRectMake((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ?20:50,120,200,100)];
     reloadDataBtn.autoresizingMask = UIViewAutoresizingFlexibleRightMargin + UIViewAutoresizingFlexibleTopMargin + UIViewAutoresizingFlexibleBottomMargin;
     [reloadDataBtn setTitle:@"点击重新加载" forState:UIControlStateNormal];
@@ -84,7 +62,7 @@
 }
 
 -(void)reloadButtonPressed:(id)sender{
-    UIButton *b  =  (UIButton *)sender;
+    UIButton *b = (UIButton *)sender;
     [b removeFromSuperview];
     
     [self loadData];
@@ -100,14 +78,14 @@
         NSData *responseData = [request responseData];
         
         NSDictionary *ret = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
-        [resultArray addObjectsFromArray:[ret objectForKey:@"category"]];
+        [self.resultArray addObjectsFromArray:[ret objectForKey:@"category"]];
         
         [self.tableView reloadData];
         
         float oneheight = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)? 50 :70;
-        self.tableView.frame = CGRectMake(20, (self.view.frame.size.height - [resultArray count]* oneheight)/2.0 , self.view.frame.size.width, [resultArray count]* oneheight);
+        self.tableView.frame = CGRectMake(20, (self.view.frame.size.height - [self.resultArray count]* oneheight)/2.0 , self.view.frame.size.width, [self.resultArray count]* oneheight);
         
-        if ([resultArray count]* oneheight > self.view.frame.size.height) {
+        if ([self.resultArray count]* oneheight > self.view.frame.size.height) {
             self.tableView.frame = CGRectMake(20, 20 , self.view.frame.size.width, self.view.frame.size.height - 20);
         }
     }];
@@ -119,28 +97,22 @@
         [self buildCate];
     }];
     [request startAsynchronous];
-    
 }
 
-#pragma mark -
-#pragma mark Table view methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+#pragma mark - TableView DataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [resultArray count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.resultArray count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)? 50 : 70;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -167,11 +139,11 @@
     }
     
     
-    NSDictionary *data = [resultArray objectAtIndex:indexPath.row];
+    NSDictionary *data = [self.resultArray objectAtIndex:indexPath.row];
     
-    if([[data objectForKey:@"title"] length] <= 6) {
+    if ([[data objectForKey:@"title"] length] <= 6) {
         cell.textLabel.text = [data objectForKey:@"title"];
-    }else{
+    } else {
         cell.textLabel.text = [[data objectForKey:@"title"] substringToIndex:6];
     }
     
@@ -181,66 +153,60 @@
         float sw=22/cell.imageView.image.size.width;
         float sh=22/cell.imageView.image.size.height;
         cell.imageView.transform=CGAffineTransformMakeScale(sw,sh);
-    }else{
+    } else {
         float sw=30/cell.imageView.image.size.width;
         float sh=30/cell.imageView.image.size.height;
         cell.imageView.transform=CGAffineTransformMakeScale(sw,sh);
     }
     
-    
     return cell;
-    
 }
 
 
-#pragma mark - Table view delegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+#pragma mark - TableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"index"]){
-        [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[IndexViewController alloc] init]] animated:YES];
+    UIViewController *selectViewController;
+    
+    if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"index"]) {
+        //首頁
+        selectViewController = [[IndexViewController alloc] init];
+    } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"list"]) {
+        //資料頁
+        selectViewController = [[ListViewController alloc] initWithURL:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]];
         [self.sideMenuViewController hideMenuViewController];
-    }else if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"list"]){
-        NSLog([[resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"]);
-        [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[ListViewController alloc] initWithURL:[[resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]]] animated:YES];
+    } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"fav"]) {
+        //收藏
+        selectViewController = [[BookmarkViewController alloc] init];
         [self.sideMenuViewController hideMenuViewController];
-    }else if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"fav"]){
-        [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[BookmarkViewController alloc] init]] animated:YES];
+    } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"more"]) {
+        //更多
+        selectViewController = [[MoreViewController alloc] init];
         [self.sideMenuViewController hideMenuViewController];
-    }else if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"more"]){
-        [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[MoreViewController alloc] init]] animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-    }else if ([[[resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"url"]){
-        [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:[[TOWebViewController alloc] initWithURL:[NSURL URLWithString:[[resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"]]]] animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-    }else{
-        
+    } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"url"]) {
+        //?
+        selectViewController = [[TOWebViewController alloc] initWithURL:[NSURL URLWithString:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"]]];
+    } else {
+        NSLog(@"empty select");
     }
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    if (selectViewController != nil) {
+        [self.sideMenuViewController setContentViewController:[[MLNavigationController alloc] initWithRootViewController:selectViewController] animated:YES];
+    }
+    [self.sideMenuViewController hideMenuViewController];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-    {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         return (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
     }
     return YES;
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self.tableView reloadData];
-    
 }
 
 @end
