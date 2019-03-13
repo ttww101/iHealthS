@@ -77,8 +77,8 @@
     [request setCompletionBlock:^{
         NSData *responseData = [request responseData];
         
-        NSDictionary *ret = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
-        [self.resultArray addObjectsFromArray:[ret objectForKey:@"category"]];
+        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
+        [self.resultArray addObjectsFromArray:[dataDic objectForKey:@"category"]];
         
         [self.tableView reloadData];
         
@@ -113,7 +113,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
+    NSString *cellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -124,7 +124,6 @@
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
-        
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
 
             UIImageView *segline = [[UIImageView alloc] initWithFrame:CGRectMake((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ?40 :60, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)?44:59, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)?120:140, 1)];
@@ -145,18 +144,6 @@
         cell.textLabel.text = [data objectForKey:@"title"];
     } else {
         cell.textLabel.text = [[data objectForKey:@"title"] substringToIndex:6];
-    }
-    
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[data objectForKey:@"icon"]] placeholderImage:[UIImage imageNamed:@"default"]];
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-        float sw=22/cell.imageView.image.size.width;
-        float sh=22/cell.imageView.image.size.height;
-        cell.imageView.transform=CGAffineTransformMakeScale(sw,sh);
-    } else {
-        float sw=30/cell.imageView.image.size.width;
-        float sh=30/cell.imageView.image.size.height;
-        cell.imageView.transform=CGAffineTransformMakeScale(sw,sh);
     }
     
     return cell;

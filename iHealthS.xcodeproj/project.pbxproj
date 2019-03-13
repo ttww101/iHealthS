@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
@@ -122,6 +123,8 @@
 
 /* Begin PBXFileReference section */
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
+		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "iHealthKitS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.release.xcconfig"; sourceTree = "<group>"; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
@@ -312,6 +315,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94955A632238B5F000030701 /* UIVIew+Constraint */ = {
+			isa = PBXGroup;
+			children = (
+				94955A642238B5F000030701 /* UIView+Constraint.m */,
+				94955A652238B5F000030701 /* UIView+Constraint.h */,
+			);
+			path = "UIVIew+Constraint";
+			sourceTree = "<group>";
+		};
 		94C9B1E82237E0E700BB283D /* DataList */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +498,7 @@
 		FA95A1AC19F4F70700A94E19 /* Manual Framework */ = {
 			isa = PBXGroup;
 			children = (
+				94955A632238B5F000030701 /* UIVIew+Constraint */,
 				66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */,
 				DAFF7E691CE48E21000AB508 /* libTalkingData.a */,
 				DAFF7E6A1CE48E21000AB508 /* TalkingData.h */,
@@ -911,6 +924,7 @@
 				DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */,
 				FA95A2B319F4FB6100A94E19 /* StyledPageControl.m in Sources */,
 				FA95A26419F4F70700A94E19 /* ASINetworkQueue.m in Sources */,
+				94955A662238B5F000030701 /* UIView+Constraint.m in Sources */,
 				FA95A26519F4F70700A94E19 /* Reachability.m in Sources */,
 				FA95A27D19F4F70700A94E19 /* RESideMenu.m in Sources */,
 				FA95A28F19F4F70700A94E19 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
