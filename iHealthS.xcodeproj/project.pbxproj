@@ -12,6 +12,7 @@
 		94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A7B22392DDC00030701 /* Feature2ViewController.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
+		CAF5D8391D43E92EF88B3D5D /* libPods-iHealthS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
 		DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A41DE1CE99991002C0F49 /* close_icon.png */; };
 		DA46D64F1CD8ABE900B899E7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA46D64E1CD8ABE900B899E7 /* MessageUI.framework */; };
@@ -125,6 +126,7 @@
 
 /* Begin PBXFileReference section */
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHealthS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
 		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
 		94955A712238FBD900030701 /* Feature1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature1ViewController.h; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				FA2F273C19D5495F00873763 /* CoreGraphics.framework in Frameworks */,
 				FA2F273E19D5495F00873763 /* UIKit.framework in Frameworks */,
 				FA2F273A19D5495F00873763 /* Foundation.framework in Frameworks */,
+				CAF5D8391D43E92EF88B3D5D /* libPods-iHealthS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +423,7 @@
 				FA2F273919D5495F00873763 /* Foundation.framework */,
 				FA2F273B19D5495F00873763 /* CoreGraphics.framework */,
 				FA2F273D19D5495F00873763 /* UIKit.framework */,
+				73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

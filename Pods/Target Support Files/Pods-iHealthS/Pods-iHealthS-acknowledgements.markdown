@@ -411,6 +411,18 @@ This application makes use of the following third party libraries:
    limitations under the License.
 
 
+## JAnalytics
+
+Copyright jiguang.cn
+
+## JCore
+
+Copyright jpush.cn
+
+## JPush
+
+Copyright jiguang.cn
+
 ## wax
 
 MIT License

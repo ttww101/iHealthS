@@ -8,6 +8,8 @@ target 'iHealthS' do
 pod 'wax', :git=>'https://github.com/alibaba/wax.git'
 pod 'AVOSCloud'
 pod 'AVOSCloudIM'
+pod 'JPush'
+pod 'JAnalytics'
 
   # Pods for iHealthS
 

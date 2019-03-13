@@ -123,14 +123,16 @@
 - (void)setContainerViewController {
     //add vcs to containterView
     Feature1ViewController *vc1 = [Feature1ViewController new];
+    vc1.view.backgroundColor = [UIColor redColor];
     Feature2ViewController *vc2 = [Feature2ViewController new];
-//    [self.mContainerVCArr addObject:vc1];
-//    [self.mContainerVCArr addObject:vc2];
+    vc2.view.backgroundColor = [UIColor blackColor];
+    [self.mContainerVCArr addObject:vc1];
+    [self.mContainerVCArr addObject:vc2];
     [self updateContainerViewControllers];
 }
 
 - (NSArray<NSString *> *)titles {
-    return @[@"功能一"];
+    return @[@"功能一", @"功能2"];
 }
 
 #pragma mark - Target Action
