@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UITableViewController
+@interface HomeViewController : UIViewController
 
 @end

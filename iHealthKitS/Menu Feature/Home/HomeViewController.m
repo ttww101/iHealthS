@@ -5,9 +5,11 @@
 #import "DetailViewController.h"
 #import "StyledPageControl.h"
 #import "TalkingData.h"
+#import "UIView+Constraint.h"
+#import "Feature1ViewController.h"
+#import "Feature2ViewController.h"
 
-
-@interface HomeViewController ()<UIScrollViewDelegate,UISearchBarDelegate> {
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
 	NSMutableArray *resultArray;
     NSMutableArray *adsArray;
     UIScrollView *adScrollView;
@@ -19,21 +21,20 @@
     NSInteger _currentPage;//当前页码 add by quentin
 }
 
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) ASIHTTPRequest *httpRequests;
+@property (nonatomic, strong) UIButton *homeButton;
+@property (nonatomic, strong) UIButton *featureButton;
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) NSMutableArray <UIViewController *> *mContainerVCArr;
+@property (nonatomic, strong) NSMutableArray <UIButton *> *mTabBarButtonArr;
+@property (nonatomic, strong) NSArray <NSString *> *titles;
+@property (nonatomic, strong) Feature1ViewController *feature1VC;
 
 @end
 
 @implementation HomeViewController
 @synthesize httpRequests;
-
-
-- (id)init {
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -63,6 +64,12 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
     
+    //table view
+    self.tableView = [UITableView new];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    [self.tableView constraints:self.view];
     if([self.tableView respondsToSelector:@selector(setCellLayoutMarginsFollowReadableWidth:)]) {
         self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
@@ -108,8 +115,113 @@
     [self.tableView.pullToRefreshView setTitle:@"加载中" forState:SVPullToRefreshStateLoading];
     
     [self checkServerStatus];
+    [self setupUI];
 }
 
+#pragma mark - 200 app duplicate
+
+- (void)setContainerViewController {
+    //add vcs to containterView
+    Feature1ViewController *vc1 = [Feature1ViewController new];
+    Feature2ViewController *vc2 = [Feature2ViewController new];
+//    [self.mContainerVCArr addObject:vc1];
+//    [self.mContainerVCArr addObject:vc2];
+    [self updateContainerViewControllers];
+}
+
+- (NSArray<NSString *> *)titles {
+    return @[@"功能一"];
+}
+
+#pragma mark - Target Action
+
+- (void)homeButtonDidTapped:(id)sender {
+    [self.containerView setHidden:YES];
+}
+
+- (void)vcButtonDidTapped:(UIButton *)button {
+    [self.containerView setHidden:NO];
+    int i = 0;
+    for (UIViewController *vc in self.mContainerVCArr) {
+        if (i == button.tag) {
+            [vc.view setHidden:NO];
+        } else {
+            [vc.view setHidden:YES];
+        }
+        i++;
+    }
+}
+
+#pragma mark - setup
+
+- (void)setupUI {
+    self.homeButton = [self createTabButtonWithTitle:@"首頁"];
+    [self.view addSubview:self.homeButton];
+    [self.homeButton addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.containerView = [UIView new];
+    [self.containerView setHidden:YES];
+    [self.view addSubview:self.containerView];
+    [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
+    
+    [self setContainerViewController];
+}
+
+- (UIButton *)createTabButtonWithTitle:(NSString *)title {
+    UIButton *button = [UIButton new];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor greenColor]];
+    [button.layer setBorderWidth:1.0];
+    [button.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    return button;
+}
+
+- (void)updateContainerViewControllers {
+    int i = 0;
+    for (UIViewController *vc in self.mContainerVCArr) {
+        //vc containter view setup
+        [vc.view setHidden:YES];
+        [self.containerView addSubview:vc.view];
+        [vc.view constraints:self.containerView];
+        
+        //tab bar button
+        UIButton *button = [self createTabButtonWithTitle:self.titles[i]];
+        button.tag = i;
+        [self.view addSubview:button];
+        //constraint
+        [self.homeButton constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeBottom leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.view toLayoutAttribute:NSLayoutAttributeBottom trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
+        [button constraintWidthToView:self.homeButton ByRatio:1];
+        [button constraintsTop:self.homeButton toLayoutAttribute:NSLayoutAttributeTop];
+        [button constraintsBottom:self.homeButton toLayoutAttribute:NSLayoutAttributeBottom];
+        if (i == 0) { // first
+            [button constraintsLeading:self.homeButton toLayoutAttribute:NSLayoutAttributeTrailing];
+        } else {
+            [button constraintsLeading:self.mTabBarButtonArr.lastObject toLayoutAttribute:NSLayoutAttributeTrailing];
+        }
+        if (i == self.mContainerVCArr.count - 1) { // last
+            [button constraintsTrailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing];
+        }
+        [button addTarget:self action:@selector(vcButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [self.mTabBarButtonArr addObject:button];
+        i++;
+    }
+}
+
+- (NSMutableArray<UIViewController *> *)mContainerVCArr {
+    if (_mContainerVCArr == nil) {
+        _mContainerVCArr = [NSMutableArray new];
+    }
+    return _mContainerVCArr;
+}
+
+- (NSMutableArray<UIButton *> *)mTabBarButtonArr {
+    if (_mTabBarButtonArr == nil) {
+        self.mTabBarButtonArr = [NSMutableArray new];
+    }
+    return _mTabBarButtonArr;
+}
+
+#pragma mark - Original Method
 
 /*
  刷新

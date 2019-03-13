@@ -1,24 +1,24 @@
 //
-//  Feature1ViewController.m
+//  Feature2ViewController.m
 //  iHealthS
 //
 //  Created by Wu on 2019/3/13.
 //  Copyright © 2019 whitelok.com. All rights reserved.
 //
 
-#import "Feature1ViewController.h"
+#import "Feature2ViewController.h"
 #import "UIView+Constraint.h"
 
-@interface Feature1ViewController ()
+@interface Feature2ViewController ()
 
 @end
 
-@implementation Feature1ViewController
+@implementation Feature2ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIView *view = [UIView new];
-    view.backgroundColor = [UIColor greenColor];
+    view.backgroundColor = [UIColor blueColor];
     [self.view addSubview:view];
     [view constraintsCenterX:self.view toLayoutAttribute:NSLayoutAttributeCenterX];
     [view constraintsCenterY:self.view toLayoutAttribute:NSLayoutAttributeCenterY];
