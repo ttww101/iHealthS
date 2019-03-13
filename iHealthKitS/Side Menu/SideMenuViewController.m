@@ -160,6 +160,7 @@
     if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"index"]) {
         //首頁
         selectViewController = [[HomeViewController alloc] init];
+        
     } else if ([[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"type"] isEqualToString:@"list"]) {
         //資料頁
         selectViewController = [[DataListViewController alloc] initWithURL:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"apiurl"] AndName:[[self.resultArray objectAtIndex:indexPath.row] objectForKey:@"title"]];

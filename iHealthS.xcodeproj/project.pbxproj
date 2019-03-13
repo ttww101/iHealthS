@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
+		94955A732238FBD900030701 /* Feature1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* Feature1ViewController.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
@@ -125,6 +126,8 @@
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
 		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
+		94955A712238FBD900030701 /* Feature1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature1ViewController.h; sourceTree = "<group>"; };
+		94955A722238FBD900030701 /* Feature1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feature1ViewController.m; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "iHealthKitS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.release.xcconfig"; sourceTree = "<group>"; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
@@ -324,6 +327,15 @@
 			path = "UIVIew+Constraint";
 			sourceTree = "<group>";
 		};
+		94955A702238FBBB00030701 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				94955A712238FBD900030701 /* Feature1ViewController.h */,
+				94955A722238FBD900030701 /* Feature1ViewController.m */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
 		94C9B1E82237E0E700BB283D /* DataList */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +503,7 @@
 				FA95A1A419F4F70700A94E19 /* HomeViewController.m */,
 				FA95A1AA19F4F70700A94E19 /* HomeTableViewCell.h */,
 				FA95A1AB19F4F70700A94E19 /* HomeTableViewCell.m */,
+				94955A702238FBBB00030701 /* Feature */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -903,6 +916,7 @@
 				FA95A29219F4F70700A94E19 /* TOActivitySafari.m in Sources */,
 				FA95A25F19F4F70700A94E19 /* ASIDataDecompressor.m in Sources */,
 				FA95A29319F4F70700A94E19 /* TOWebViewController.m in Sources */,
+				94955A732238FBD900030701 /* Feature1ViewController.m in Sources */,
 				FA95A28319F4F70700A94E19 /* SDWebImageDecoder.m in Sources */,
 				FA95A28619F4F70700A94E19 /* SDWebImageManager.m in Sources */,
 				FA95A29019F4F70700A94E19 /* UIScrollView+SVPullToRefresh.m in Sources */,
@@ -983,7 +997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1016,7 +1030,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

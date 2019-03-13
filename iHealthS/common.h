@@ -7,11 +7,11 @@
 #define KDeviceHeight [UIScreen mainScreen].bounds.size.height
 
 // 主页列表接
-#define INDEX_URL @"http://wp.asopeixun.com:5000/get_post_from_category_id?category_id=214"
+#define INDEX_URL @"http://wp.asopeixun.com:5000/get_post_from_category_id?category_id=164"
 
 // 左侧列表接口
 //#define LEFT_URL @"http://wp01.asopeixun.com:5000/get_category_list?app_id=1"
-#define LEFT_URL @"http://wp.asopeixun.com:5000/get_category_list?app_id=1110752205"
+#define LEFT_URL @"http://wp.asopeixun.com:5000/get_category_list?app_id=1123512284"
 
 // 文章显示接口
 #define SHOW_URL @"http://wp.asopeixun.com"
