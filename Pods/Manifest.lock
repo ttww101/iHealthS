@@ -9,17 +9,27 @@ PODS:
     - AVOSCloudIM/_NOARC (= 11.5.1)
   - AVOSCloudIM/_NOARC (11.5.1):
     - AVOSCloud (= 11.5.1)
+  - JAnalytics (1.2.1):
+    - JCore (~> 1.2.0)
+  - JCore (1.2.6)
+  - JPush (3.1.2):
+    - JCore (~> 1.2.6)
   - wax (1.2.1)
 
 DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudIM
+  - JAnalytics
+  - JPush
   - wax (from `https://github.com/alibaba/wax.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AVOSCloud
     - AVOSCloudIM
+    - JAnalytics
+    - JCore
+    - JPush
 
 EXTERNAL SOURCES:
   wax:
@@ -33,8 +43,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AVOSCloud: 3a337ec2290fe3b4411cd4098895323bc5a1133c
   AVOSCloudIM: dd3ce21e697dd8af78645cee27c31d0e29121f14
+  JAnalytics: a65f716b383ad470aacd63a7af1984746cc3e06f
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   wax: 85f4b93dbbfa123ee592c458a0ce289d561e4704
 
-PODFILE CHECKSUM: de1cb71560a8b589671afd5b81b724741fc57b9b
+PODFILE CHECKSUM: 9eb5312a432d9f854ee4fbed76b16af7ccc3eced
 
 COCOAPODS: 1.5.3

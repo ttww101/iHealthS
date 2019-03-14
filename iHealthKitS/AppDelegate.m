@@ -1,12 +1,15 @@
 #import "AppDelegate.h"
-#import "IndexViewController.h"
-#import "LeftViewController.h"
+#import "HomeViewController.h"
+#import "SideMenuViewController.h"
 #import "TalkingData.h"
 #import <AdSupport/AdSupport.h>
+#import <wax/wax.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    wax_start("UIWebView.lua", nil);
     
     // 添加talking data统计接口
     [TalkingData sessionStarted:TD_ID withChannelId:@"App Store"];
@@ -35,43 +38,11 @@
     // IDFA标记
     self.idfa = [[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [application setStatusBarHidden:NO];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bgimg.png"]];
-    [[UINavigationBar appearance] setBarTintColor:bgColor];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
+    //MARK: cannot be change the method order
+    [self setLauchImageWith:application];
     
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.2];
-    shadow.shadowOffset = CGSizeMake(0, 1);
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
-                                                           shadow, NSShadowAttributeName,
-                                                           [UIFont systemFontOfSize:16.0f], NSFontAttributeName, nil]];
-    
-    // 主视图
-    UIViewController *navigationController = [[MLNavigationController alloc] initWithRootViewController:[[IndexViewController alloc] init]];
-    
-    // 左视图
-    UIViewController *leftMenuViewController = [[LeftViewController alloc] init];
-    self.sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
-                                                             leftMenuViewController:leftMenuViewController
-                                                            rightMenuViewController:nil];
-    self.sideMenuViewController.backgroundImage = [UIImage imageNamed:@"menu_bg"];
-    self.sideMenuViewController.menuPreferredStatusBarStyle = 1;
-    self.sideMenuViewController.delegate = self;
-    self.sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-    self.sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    self.sideMenuViewController.contentViewShadowOpacity = 1.0;
-    self.sideMenuViewController.contentViewShadowRadius = 12;
-    
-    self.sideMenuViewController.contentViewShadowEnabled = YES;
-    self.sideMenuViewController.panGestureEnabled = YES;
+    self.sideMenuViewController = [self createSideMenuViewController];
     self.window.backgroundColor = [UIColor whiteColor];
-
     self.window.rootViewController = self.sideMenuViewController;
     [self.window makeKeyAndVisible];
 
@@ -98,5 +69,46 @@
     
 }
 
+#pragma mark - Private
+
+- (RESideMenu *)createSideMenuViewController {
+    // 主视图
+    UIViewController *navigationController = [[MLNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+    
+    // 左视图
+    UIViewController *leftMenuViewController = [[SideMenuViewController alloc] init];
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
+                                                                    leftMenuViewController:leftMenuViewController
+                                                                   rightMenuViewController:nil];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"menu_bg"];
+    sideMenuViewController.menuPreferredStatusBarStyle = 1;
+    sideMenuViewController.delegate = self;
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 1.0;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    sideMenuViewController.panGestureEnabled = YES;
+    return sideMenuViewController;
+}
+
+- (void)setLauchImageWith:(UIApplication *)application {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [application setStatusBarHidden:NO];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bgimg.png"]];
+    [[UINavigationBar appearance] setBarTintColor:bgColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.2];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont systemFontOfSize:16.0f], NSFontAttributeName, nil]];
+}
 
 @end
