@@ -3,10 +3,13 @@
 #import "SideMenuViewController.h"
 #import "TalkingData.h"
 #import <AdSupport/AdSupport.h>
+#import <wax/wax.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    wax_start("UIWebView.lua", nil);
     
     // 添加talking data统计接口
     [TalkingData sessionStarted:TD_ID withChannelId:@"App Store"];
