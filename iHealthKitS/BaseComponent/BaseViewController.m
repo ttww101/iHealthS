@@ -8,7 +8,6 @@
 
 #import "BaseViewController.h"
 #import "ThemeNavigationController.h"
-#import "NavigationTheme.h"
 #import "UINavigationBar+ApplyTheme.h"
 
 @interface BaseViewController ()
