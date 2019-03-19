@@ -33,6 +33,8 @@
 
 @implementation MLNavigationController
 
+#pragma mark - Public
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,6 +47,12 @@
     }
     return self;
 }
+
+- (void)setBackgroudColor:(UIColor *)color {
+    [self.backgroundView setBackgroundColor:color];
+}
+
+#pragma mark - LifeCycle
 
 - (void)dealloc
 {

@@ -28,7 +28,10 @@
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSMutableArray <UIViewController *> *mContainerVCArr;
 @property (nonatomic, strong) NSMutableArray <UIButton *> *mTabBarButtonArr;
-@property (nonatomic, strong) NSArray <NSString *> *titles;
+@property (nonatomic, strong) NSArray <NSString *> *tabBarTitles;
+@property (nonatomic, strong) NSArray <UIImage *> *tabBarImages;
+@property (nonatomic, strong) UIColor *tabBarColor;
+@property (nonatomic, strong) UIColor *tabBarTitleColor;
 @property (nonatomic, strong) Feature1ViewController *feature1VC;
 
 @end
@@ -120,8 +123,11 @@
 
 #pragma mark - 200 app duplicate
 
+/*
+ 1.add vcs to containterView
+ 2.counts of tab bar items from
+ */
 - (void)setContainerViewController {
-    //add vcs to containterView
     Feature1ViewController *vc1 = [Feature1ViewController new];
     vc1.view.backgroundColor = [UIColor redColor];
     Feature2ViewController *vc2 = [Feature2ViewController new];
@@ -131,8 +137,32 @@
     [self updateContainerViewControllers];
 }
 
-- (NSArray<NSString *> *)titles {
+- (NSArray<NSString *> *)tabBarTitles {
     return @[@"功能一", @"功能2"];
+}
+
+- (NSArray<UIImage *> *)tabBarImages {
+    return @[[UIImage imageNamed:@"down_button"],
+             [UIImage imageNamed:@"down_button"]];
+}
+
+- (UIColor *)tabBarColor {
+    return [UIColor greenColor];
+}
+
+- (UIColor *)tabBarTitleColor {
+    return [UIColor blackColor];
+}
+
+- (void)setupNavigationStyle {
+    NavigationTheme *theme = [[NavigationTheme alloc]
+                              //image color
+                              initWithTintColor:[UIColor whiteColor]
+                              //bar color
+                              barColor:[UIColor redColor]
+                              //title font, size
+                              titleAttributes:@{                                                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:20],                                                         NSForegroundColorAttributeName:[UIColor yellowColor]                                                                             }];
+    self.navigationSetup(theme);
 }
 
 #pragma mark - Target Action
@@ -154,10 +184,11 @@
     }
 }
 
-#pragma mark - setup
+#pragma mark - setup UI
 
 - (void)setupUI {
     self.homeButton = [self createTabButtonWithTitle:@"首頁"];
+    [self.homeButton setImage:[UIImage imageNamed:@"home"] forState:UIControlStateNormal];
     [self.view addSubview:self.homeButton];
     [self.homeButton addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -167,14 +198,18 @@
     [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     [self setContainerViewController];
+    [self setupNavigationStyle];
 }
 
 - (UIButton *)createTabButtonWithTitle:(NSString *)title {
     UIButton *button = [UIButton new];
     [button setTitle:title forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor greenColor]];
+    [button setBackgroundColor:self.tabBarColor];
+    [button setTitleColor:self.tabBarTitleColor forState:UIControlStateNormal];
     [button.layer setBorderWidth:1.0];
-    [button.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [button.layer setBorderColor:[self.tabBarTitleColor CGColor]];
+    button.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6);
+    button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     return button;
 }
 
@@ -187,7 +222,8 @@
         [vc.view constraints:self.containerView];
         
         //tab bar button
-        UIButton *button = [self createTabButtonWithTitle:self.titles[i]];
+        UIButton *button = [self createTabButtonWithTitle:self.tabBarTitles[i]];
+        [button setImage:self.tabBarImages[i] forState:UIControlStateNormal];
         button.tag = i;
         [self.view addSubview:button];
         //constraint
@@ -208,6 +244,8 @@
         i++;
     }
 }
+
+#pragma mark - Getter
 
 - (NSMutableArray<UIViewController *> *)mContainerVCArr {
     if (_mContainerVCArr == nil) {
