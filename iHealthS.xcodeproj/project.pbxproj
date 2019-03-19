@@ -10,6 +10,10 @@
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
 		94955A732238FBD900030701 /* Feature1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* Feature1ViewController.m */; };
 		94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A7B22392DDC00030701 /* Feature2ViewController.m */; };
+		9498D3752240F7BC00A8355B /* ThemeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3742240F7BC00A8355B /* ThemeNavigationController.m */; };
+		9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3782240FC9C00A8355B /* BaseViewController.m */; };
+		9498D37C2241155300A8355B /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D37B2241155300A8355B /* NavigationTheme.m */; };
+		9498D37F2241162400A8355B /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
 		94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B35223A12D4002CBD54 /* UIWebView.lua */; };
@@ -137,6 +141,14 @@
 		94955A722238FBD900030701 /* Feature1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feature1ViewController.m; sourceTree = "<group>"; };
 		94955A7A22392DDC00030701 /* Feature2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature2ViewController.h; sourceTree = "<group>"; };
 		94955A7B22392DDC00030701 /* Feature2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feature2ViewController.m; sourceTree = "<group>"; };
+		9498D3732240F7BC00A8355B /* ThemeNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeNavigationController.h; sourceTree = "<group>"; };
+		9498D3742240F7BC00A8355B /* ThemeNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeNavigationController.m; sourceTree = "<group>"; };
+		9498D3772240FC9C00A8355B /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9498D3782240FC9C00A8355B /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9498D37A2241155300A8355B /* NavigationTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationTheme.h; sourceTree = "<group>"; };
+		9498D37B2241155300A8355B /* NavigationTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTheme.m; sourceTree = "<group>"; };
+		9498D37D2241162400A8355B /* UINavigationBar+ApplyTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ApplyTheme.h"; sourceTree = "<group>"; };
+		9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ApplyTheme.m"; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "iHealthKitS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		94D41B35223A12D4002CBD54 /* UIWebView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIWebView.lua; sourceTree = "<group>"; };
 		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
@@ -352,6 +364,28 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		9498D3722240F12100A8355B /* NavigationStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9498D3732240F7BC00A8355B /* ThemeNavigationController.h */,
+				9498D3742240F7BC00A8355B /* ThemeNavigationController.m */,
+				9498D37A2241155300A8355B /* NavigationTheme.h */,
+				9498D37B2241155300A8355B /* NavigationTheme.m */,
+				9498D37D2241162400A8355B /* UINavigationBar+ApplyTheme.h */,
+				9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */,
+			);
+			path = NavigationStyle;
+			sourceTree = "<group>";
+		};
+		9498D3762240FC6F00A8355B /* BaseComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9498D3772240FC9C00A8355B /* BaseViewController.h */,
+				9498D3782240FC9C00A8355B /* BaseViewController.m */,
+			);
+			path = BaseComponent;
+			sourceTree = "<group>";
+		};
 		94C9B1E82237E0E700BB283D /* DataList */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +506,8 @@
 		FA95A19319F4F70700A94E19 /* iHealthKitS */ = {
 			isa = PBXGroup;
 			children = (
+				9498D3762240FC6F00A8355B /* BaseComponent */,
+				9498D3722240F12100A8355B /* NavigationStyle */,
 				FA95A19419F4F70700A94E19 /* AppDelegate.h */,
 				FA95A19519F4F70700A94E19 /* AppDelegate.m */,
 				FA95A19A19F4F70700A94E19 /* Side Menu */,
@@ -934,6 +970,8 @@
 				FA95A26219F4F70700A94E19 /* ASIHTTPRequest.m in Sources */,
 				FA95A28A19F4F70700A94E19 /* UIImage+MultiFormat.m in Sources */,
 				FA95A27E19F4F70700A94E19 /* UIViewController+RESideMenu.m in Sources */,
+				9498D37C2241155300A8355B /* NavigationTheme.m in Sources */,
+				9498D3752240F7BC00A8355B /* ThemeNavigationController.m in Sources */,
 				FA95A25C19F4F70700A94E19 /* HomeTableViewCell.m in Sources */,
 				FA95A26319F4F70700A94E19 /* ASIInputStream.m in Sources */,
 				FA95A28019F4F70700A94E19 /* NSData+ImageContentType.m in Sources */,
@@ -945,6 +983,7 @@
 				FA95A28219F4F70700A94E19 /* SDWebImageCompat.m in Sources */,
 				FA95A25719F4F70700A94E19 /* MoreViewController.m in Sources */,
 				FA95A28C19F4F70700A94E19 /* UIImageView+HighlightedWebCache.m in Sources */,
+				9498D37F2241162400A8355B /* UINavigationBar+ApplyTheme.m in Sources */,
 				FA95A29219F4F70700A94E19 /* TOActivitySafari.m in Sources */,
 				FA95A25F19F4F70700A94E19 /* ASIDataDecompressor.m in Sources */,
 				FA95A29319F4F70700A94E19 /* TOWebViewController.m in Sources */,
@@ -955,6 +994,7 @@
 				FA95A29419F4F70700A94E19 /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				FA95A25519F4F70700A94E19 /* BookmarkViewController.m in Sources */,
 				FA95A26119F4F70700A94E19 /* ASIFormDataRequest.m in Sources */,
+				9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */,
 				FA95A25B19F4F70700A94E19 /* MoreAppCell.m in Sources */,
 				FA95A28519F4F70700A94E19 /* SDWebImageDownloaderOperation.m in Sources */,
 				FA95A25D19F4F70700A94E19 /* ASIAuthenticationDialog.m in Sources */,

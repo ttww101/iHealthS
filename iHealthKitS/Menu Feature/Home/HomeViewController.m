@@ -154,7 +154,7 @@
     }
 }
 
-#pragma mark - setup
+#pragma mark - setup UI
 
 - (void)setupUI {
     self.homeButton = [self createTabButtonWithTitle:@"首頁"];
@@ -167,6 +167,7 @@
     [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     [self setContainerViewController];
+    [self setupNavigationTabButtonStyle];
 }
 
 - (UIButton *)createTabButtonWithTitle:(NSString *)title {
@@ -208,6 +209,12 @@
         i++;
     }
 }
+
+- (void)setupNavigationTabButtonStyle {
+    
+}
+
+#pragma mark - Getter
 
 - (NSMutableArray<UIViewController *> *)mContainerVCArr {
     if (_mContainerVCArr == nil) {
