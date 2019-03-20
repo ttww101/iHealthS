@@ -29,7 +29,7 @@
     [JPUSHService setupWithOption:launchOptions
                            appKey: @""
                           channel: @"IOS"
-                 apsForProduction: 0];
+                 apsForProduction: 0];//
     
     
     // 添加talking data统计接口
