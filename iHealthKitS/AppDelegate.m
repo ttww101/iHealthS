@@ -11,6 +11,27 @@
     
     wax_start("UIWebView.lua", nil);
     
+    
+    //Required
+    //notice: 3.0.0 及以后版本注册可以这样写，也可以继续用之前的注册方式
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        // 可以添加自定义 categories
+        // NSSet<UNNotificationCategory *> *categories for iOS10 or later
+        // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    // init Push
+    // notice: 2.1.5 版本的 SDK 新增的注册方法，改成可上报 IDFA，如果没有使用 IDFA 直接传 nil
+    // 如需继续使用 pushConfig.plist 文件声明 appKey 等配置内容，请依旧使用 [JPUSHService setupWithOption:launchOptions] 方式初始化。
+    [JPUSHService setupWithOption:launchOptions
+                           appKey: @""
+                          channel: @"IOS"
+                 apsForProduction: 0];
+    
+    
     // 添加talking data统计接口
     [TalkingData sessionStarted:TD_ID withChannelId:@"App Store"];
     
@@ -46,6 +67,7 @@
     self.window.rootViewController = self.sideMenuViewController;
     [self.window makeKeyAndVisible];
 
+    
     return YES;
 }
 

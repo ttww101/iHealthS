@@ -123,11 +123,11 @@
 - (void)setContainerViewController {
     //add vcs to containterView
     Feature1ViewController *vc1 = [Feature1ViewController new];
-    vc1.view.backgroundColor = [UIColor redColor];
-    Feature2ViewController *vc2 = [Feature2ViewController new];
-    vc2.view.backgroundColor = [UIColor blackColor];
+    //vc1.view.backgroundColor = [UIColor redColor];
+    //Feature2ViewController *vc2 = [Feature2ViewController new];
+    //vc2.view.backgroundColor = [UIColor blackColor];
     [self.mContainerVCArr addObject:vc1];
-    [self.mContainerVCArr addObject:vc2];
+    //[self.mContainerVCArr addObject:vc2];
     [self updateContainerViewControllers];
 }
 
@@ -146,7 +146,12 @@
     int i = 0;
     for (UIViewController *vc in self.mContainerVCArr) {
         if (i == button.tag) {
-            [vc.view setHidden:NO];
+            //[vc.view setHidden:NO];
+            [self.containerView setHidden:YES];
+            NSString *pg = [NSString stringWithFormat:@"%d",i];
+            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:pg bundle:[NSBundle mainBundle]];
+            Feature1ViewController *controllerD = [storyboard instantiateViewControllerWithIdentifier:pg];
+            [self.navigationController pushViewController:controllerD animated:YES];
         } else {
             [vc.view setHidden:YES];
         }
@@ -172,7 +177,7 @@
 - (UIButton *)createTabButtonWithTitle:(NSString *)title {
     UIButton *button = [UIButton new];
     [button setTitle:title forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor greenColor]];
+    [button setBackgroundColor:[UIColor colorWithPatternImage: [UIImage imageNamed:@"bgimg.png"]]];
     [button.layer setBorderWidth:1.0];
     [button.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     return button;

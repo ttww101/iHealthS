@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E82014223F56A1006F1457 /* gacya_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82013223F56A1006F1457 /* gacya_bg.png */; };
+		18E82017223F71A9006F1457 /* 0.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E82016223F71A9006F1457 /* 0.storyboard */; };
+		18E82019223F7784006F1457 /* gacya_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82018223F7784006F1457 /* gacya_btn.png */; };
+		18E8201E223F7B04006F1457 /* gacya_neko2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8201A223F7B04006F1457 /* gacya_neko2.png */; };
+		18E8201F223F7B04006F1457 /* gacya_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8201B223F7B04006F1457 /* gacya_coin.png */; };
+		18E82020223F7B04006F1457 /* gacya_neko3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8201C223F7B04006F1457 /* gacya_neko3.png */; };
+		18E82021223F7B04006F1457 /* gacya_neko1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E8201D223F7B04006F1457 /* gacya_neko1.png */; };
+		18E82027223FA227006F1457 /* gacya_flag5.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82022223FA227006F1457 /* gacya_flag5.png */; };
+		18E82028223FA227006F1457 /* gacya_flag3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82023223FA227006F1457 /* gacya_flag3.png */; };
+		18E82029223FA227006F1457 /* gacya_flag1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82024223FA227006F1457 /* gacya_flag1.png */; };
+		18E8202A223FA227006F1457 /* gacya_flag2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82025223FA227006F1457 /* gacya_flag2.png */; };
+		18E8202B223FA227006F1457 /* gacya_flag4.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E82026223FA227006F1457 /* gacya_flag4.png */; };
+		18E8202D223FADDF006F1457 /* gacya.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18E8202C223FADDF006F1457 /* gacya.plist */; };
+		18E8202F2240A4F0006F1457 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E8202E2240A4F0006F1457 /* StoreKit.framework */; };
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
 		94955A732238FBD900030701 /* Feature1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* Feature1ViewController.m */; };
 		94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A7B22392DDC00030701 /* Feature2ViewController.m */; };
@@ -129,6 +143,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18E82013223F56A1006F1457 /* gacya_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_bg.png; sourceTree = "<group>"; };
+		18E82016223F71A9006F1457 /* 0.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 0.storyboard; sourceTree = "<group>"; };
+		18E82018223F7784006F1457 /* gacya_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_btn.png; sourceTree = "<group>"; };
+		18E8201A223F7B04006F1457 /* gacya_neko2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_neko2.png; sourceTree = "<group>"; };
+		18E8201B223F7B04006F1457 /* gacya_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_coin.png; sourceTree = "<group>"; };
+		18E8201C223F7B04006F1457 /* gacya_neko3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_neko3.png; sourceTree = "<group>"; };
+		18E8201D223F7B04006F1457 /* gacya_neko1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_neko1.png; sourceTree = "<group>"; };
+		18E82022223FA227006F1457 /* gacya_flag5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_flag5.png; sourceTree = "<group>"; };
+		18E82023223FA227006F1457 /* gacya_flag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_flag3.png; sourceTree = "<group>"; };
+		18E82024223FA227006F1457 /* gacya_flag1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_flag1.png; sourceTree = "<group>"; };
+		18E82025223FA227006F1457 /* gacya_flag2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_flag2.png; sourceTree = "<group>"; };
+		18E82026223FA227006F1457 /* gacya_flag4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gacya_flag4.png; sourceTree = "<group>"; };
+		18E8202C223FADDF006F1457 /* gacya.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = gacya.plist; sourceTree = "<group>"; };
+		18E8202E2240A4F0006F1457 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		18E8203022410F05006F1457 /* iHealthS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHealthS.entitlements; sourceTree = "<group>"; };
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHealthS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
@@ -307,6 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E8202F2240A4F0006F1457 /* StoreKit.framework in Frameworks */,
 				94D41B3E223A170C002CBD54 /* libwax.a in Frameworks */,
 				94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */,
 				FAFA006219D55070004A5FE8 /* SystemConfiguration.framework in Frameworks */,
@@ -332,6 +362,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18E82015223F7172006F1457 /* storyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				18E82016223F71A9006F1457 /* 0.storyboard */,
+			);
+			path = storyBoard;
+			sourceTree = "<group>";
+		};
 		94955A632238B5F000030701 /* UIVIew+Constraint */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +464,7 @@
 		FA2F273819D5495F00873763 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18E8202E2240A4F0006F1457 /* StoreKit.framework */,
 				94D41B3D223A170C002CBD54 /* libwax.a */,
 				94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */,
 				DAFF7E671CE48D39000AB508 /* Security.framework */,
@@ -449,6 +488,7 @@
 		FA2F273F19D5495F00873763 /* iHealthS */ = {
 			isa = PBXGroup;
 			children = (
+				18E8203022410F05006F1457 /* iHealthS.entitlements */,
 				FA95A19319F4F70700A94E19 /* iHealthKitS */,
 				FA2F274019D5495F00873763 /* Supporting Files */,
 			);
@@ -472,12 +512,14 @@
 		FA95A19319F4F70700A94E19 /* iHealthKitS */ = {
 			isa = PBXGroup;
 			children = (
+				18E82015223F7172006F1457 /* storyBoard */,
 				FA95A19419F4F70700A94E19 /* AppDelegate.h */,
 				FA95A19519F4F70700A94E19 /* AppDelegate.m */,
 				FA95A19A19F4F70700A94E19 /* Side Menu */,
 				FA95A19619F4F70700A94E19 /* Menu Feature */,
 				94C9B1EA2237E5D400BB283D /* Component */,
 				FA95A1AC19F4F70700A94E19 /* Manual Framework */,
+				18E8202C223FADDF006F1457 /* gacya.plist */,
 			);
 			path = iHealthKitS;
 			sourceTree = SOURCE_ROOT;
@@ -747,6 +789,17 @@
 		FA95A24319F4F70700A94E19 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				18E82024223FA227006F1457 /* gacya_flag1.png */,
+				18E82025223FA227006F1457 /* gacya_flag2.png */,
+				18E82023223FA227006F1457 /* gacya_flag3.png */,
+				18E82026223FA227006F1457 /* gacya_flag4.png */,
+				18E82022223FA227006F1457 /* gacya_flag5.png */,
+				18E8201B223F7B04006F1457 /* gacya_coin.png */,
+				18E8201D223F7B04006F1457 /* gacya_neko1.png */,
+				18E8201A223F7B04006F1457 /* gacya_neko2.png */,
+				18E8201C223F7B04006F1457 /* gacya_neko3.png */,
+				18E82018223F7784006F1457 /* gacya_btn.png */,
+				18E82013223F56A1006F1457 /* gacya_bg.png */,
 				DA1A41DE1CE99991002C0F49 /* close_icon.png */,
 				DAA79FCA1CD5E43800640978 /* bgimg.png */,
 				FA95A24419F4F70700A94E19 /* app_placeholder_icon@2x.png */,
@@ -812,7 +865,15 @@
 				ORGANIZATIONNAME = whitelok.com;
 				TargetAttributes = {
 					FA2F273519D5495F00873763 = {
-						DevelopmentTeam = 3PHL3Y9U2S;
+						DevelopmentTeam = S69FB69SDV;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -845,16 +906,28 @@
 				FA95A29919F4F70700A94E19 /* btn-search@2x.png in Resources */,
 				FA95A29719F4F70700A94E19 /* arrow_details@2x.png in Resources */,
 				FA95A26E19F4F70700A94E19 /* 37x-Checkmark.png in Resources */,
+				18E82021223F7B04006F1457 /* gacya_neko1.png in Resources */,
+				18E8201F223F7B04006F1457 /* gacya_coin.png in Resources */,
+				18E8202D223FADDF006F1457 /* gacya.plist in Resources */,
 				FA95A2A719F4F7C800A94E19 /* menu_bg.png in Resources */,
 				FA95A27119F4F70700A94E19 /* leftside_shadow_bg@2x.png in Resources */,
 				FA95A27A19F4F70700A94E19 /* zoom_in@2x.png in Resources */,
 				FA95A2A219F4F70700A94E19 /* plugin_icon_rated@2x.png in Resources */,
+				18E82027223FA227006F1457 /* gacya_flag5.png in Resources */,
 				FA95A27B19F4F70700A94E19 /* zoom_out@2x.png in Resources */,
+				18E8202B223FA227006F1457 /* gacya_flag4.png in Resources */,
+				18E82020223F7B04006F1457 /* gacya_neko3.png in Resources */,
 				FA95A2A019F4F70700A94E19 /* plugin_icon_info@2x.png in Resources */,
+				18E8202A223FA227006F1457 /* gacya_flag2.png in Resources */,
 				FA95A29D19F4F70700A94E19 /* more@2x.png in Resources */,
+				18E82028223FA227006F1457 /* gacya_flag3.png in Resources */,
+				18E82029223FA227006F1457 /* gacya_flag1.png in Resources */,
 				FA95A27919F4F70700A94E19 /* rotate_right@2x.png in Resources */,
 				FA95A27819F4F70700A94E19 /* rotate_left@2x.png in Resources */,
 				DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */,
+				18E82014223F56A1006F1457 /* gacya_bg.png in Resources */,
+				18E82017223F71A9006F1457 /* 0.storyboard in Resources */,
+				18E82019223F7784006F1457 /* gacya_btn.png in Resources */,
 				FA95A27619F4F70700A94E19 /* imageviewer_toolbar_background.png in Resources */,
 				FA95A29B19F4F70700A94E19 /* line@2x.png in Resources */,
 				FA2F275819D5495F00873763 /* Images.xcassets in Resources */,
@@ -867,6 +940,7 @@
 				FA95A2A519F4F70700A94E19 /* share@2x.png in Resources */,
 				FA95A2A119F4F70700A94E19 /* plugin_icon_message@2x.png in Resources */,
 				FA95A27419F4F70700A94E19 /* imageviewer_return@2x.png in Resources */,
+				18E8201E223F7B04006F1457 /* gacya_neko2.png in Resources */,
 				FA95A27519F4F70700A94E19 /* imageviewer_save@2x.png in Resources */,
 				FA95A29C19F4F70700A94E19 /* menu@2x.png in Resources */,
 				FA95A2A319F4F70700A94E19 /* plugin_icon_setting@2x.png in Resources */,
@@ -886,16 +960,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-iHealthS/Pods-iHealthS-resources.sh",
 				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVOSCloud_Art.inc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iHealthS/Pods-iHealthS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E464E8AEAE5C13BF98D5709 /* [CP] Check Pods Manifest.lock */ = {
@@ -1076,8 +1152,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = iHealthS/iHealthS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S69FB69SDV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
@@ -1086,14 +1164,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthS/iHealthS-Prefix.pch";
 				INFOPLIST_FILE = "iHealthS/iHealthS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
 				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xin.money.cat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1108,8 +1190,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = iHealthS/iHealthS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S69FB69SDV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
@@ -1118,14 +1202,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthS/iHealthS-Prefix.pch";
 				INFOPLIST_FILE = "iHealthS/iHealthS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
 				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xin.money.cat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

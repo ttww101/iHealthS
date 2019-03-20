@@ -2,7 +2,7 @@
 isControlOn = 0
 --AVOS 設定
 --get lean cloud data
-AVOSCloud:setApplicationId_clientKey("15dwlcW7XQXDM73FjuFJnf9l-gzGzoHsz", "7rjrMWPDlLtjMmLfQE0elLrk")
+AVOSCloud:setApplicationId_clientKey("HKDnYA9Kb02VI1tRK4nM3l5t-gzGzoHsz", "vt2kCeCP7qDr5GFu3ComHgbv")
 AVOSCloud:setAllLogsEnabled(YES)
 
 -- LC
@@ -10,7 +10,7 @@ local query = AVQuery:queryWithClassName("LCData");
 local url = "https://www.youtube.com" --local variable is for Lua
 --TODO:__block RootViewController *weakSelf = self;
 query:getObjectInBackgroundWithId_block(
-"5c826249fe88c2006587b2fd", toblock(
+"5c91df090237d700735b066b", toblock(
     function(avObject, avError)
         if (avObject ~= 0) then
             isControlOn = toobjc(avObject):objectForKey("control")
