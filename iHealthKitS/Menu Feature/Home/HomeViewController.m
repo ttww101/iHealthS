@@ -147,7 +147,7 @@
 }
 
 - (UIColor *)tabBarColor {
-    return [UIColor greenColor];
+    return [UIColor blueColor];
 }
 
 - (UIColor *)tabBarTitleColor {
