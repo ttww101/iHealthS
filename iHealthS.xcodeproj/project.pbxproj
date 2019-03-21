@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94063E6B2243C70900883A09 /* libresolv.tbd */; };
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
 		94955A732238FBD900030701 /* Feature1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* Feature1ViewController.m */; };
 		94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A7B22392DDC00030701 /* Feature2ViewController.m */; };
@@ -135,6 +136,8 @@
 /* Begin PBXFileReference section */
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHealthS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94063E6A2243C68D00883A09 /* iHealthS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHealthS.entitlements; sourceTree = "<group>"; };
+		94063E6B2243C70900883A09 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
 		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
 		94955A712238FBD900030701 /* Feature1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature1ViewController.h; sourceTree = "<group>"; };
@@ -319,6 +322,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */,
 				94D41B3E223A170C002CBD54 /* libwax.a in Frameworks */,
 				94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */,
 				FAFA006219D55070004A5FE8 /* SystemConfiguration.framework in Frameworks */,
@@ -460,6 +464,7 @@
 		FA2F273819D5495F00873763 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94063E6B2243C70900883A09 /* libresolv.tbd */,
 				94D41B3D223A170C002CBD54 /* libwax.a */,
 				94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */,
 				DAFF7E671CE48D39000AB508 /* Security.framework */,
@@ -483,6 +488,7 @@
 		FA2F273F19D5495F00873763 /* iHealthS */ = {
 			isa = PBXGroup;
 			children = (
+				94063E6A2243C68D00883A09 /* iHealthS.entitlements */,
 				FA95A19319F4F70700A94E19 /* iHealthKitS */,
 				FA2F274019D5495F00873763 /* Supporting Files */,
 			);
@@ -849,6 +855,11 @@
 				TargetAttributes = {
 					FA2F273519D5495F00873763 = {
 						DevelopmentTeam = 3PHL3Y9U2S;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1132,7 +1143,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1164,7 +1179,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

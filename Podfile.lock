@@ -1,14 +1,14 @@
 PODS:
-  - AVOSCloud (11.5.1)
-  - AVOSCloudIM (11.5.1):
-    - AVOSCloud (= 11.5.1)
-    - AVOSCloudIM/_ARC (= 11.5.1)
-    - AVOSCloudIM/_NOARC (= 11.5.1)
-  - AVOSCloudIM/_ARC (11.5.1):
-    - AVOSCloud (= 11.5.1)
-    - AVOSCloudIM/_NOARC (= 11.5.1)
-  - AVOSCloudIM/_NOARC (11.5.1):
-    - AVOSCloud (= 11.5.1)
+  - AVOSCloud (11.5.2)
+  - AVOSCloudIM (11.5.2):
+    - AVOSCloud (= 11.5.2)
+    - AVOSCloudIM/_ARC (= 11.5.2)
+    - AVOSCloudIM/_NOARC (= 11.5.2)
+  - AVOSCloudIM/_ARC (11.5.2):
+    - AVOSCloud (= 11.5.2)
+    - AVOSCloudIM/_NOARC (= 11.5.2)
+  - AVOSCloudIM/_NOARC (11.5.2):
+    - AVOSCloud (= 11.5.2)
   - JAnalytics (1.2.1):
     - JCore (~> 1.2.0)
   - JCore (1.2.6)
@@ -41,8 +41,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/alibaba/wax.git
 
 SPEC CHECKSUMS:
-  AVOSCloud: 3a337ec2290fe3b4411cd4098895323bc5a1133c
-  AVOSCloudIM: dd3ce21e697dd8af78645cee27c31d0e29121f14
+  AVOSCloud: b3cb1ed20d46c0d55083363522cb2ea593d51ac7
+  AVOSCloudIM: ede93dc6155c3e73524469f5098a1ec2422915ae
   JAnalytics: a65f716b383ad470aacd63a7af1984746cc3e06f
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
