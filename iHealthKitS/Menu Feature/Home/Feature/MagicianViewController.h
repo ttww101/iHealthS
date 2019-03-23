@@ -1,5 +1,5 @@
 //
-//  Feature2ViewController.h
+//  MagicianViewController.m
 //  iHealthS
 //
 //  Created by Wu on 2019/3/13.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Feature2ViewController : UIViewController
+@interface MagicianViewController : UIViewController
+
+- (void)startupAnimation;
 
 @end
 

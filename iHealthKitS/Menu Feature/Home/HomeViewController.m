@@ -6,8 +6,7 @@
 #import "StyledPageControl.h"
 #import "TalkingData.h"
 #import "UIView+Constraint.h"
-#import "Feature1ViewController.h"
-#import "Feature2ViewController.h"
+#import "MagicianViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
 	NSMutableArray *resultArray;
@@ -32,7 +31,7 @@
 @property (nonatomic, strong) NSArray <UIImage *> *tabBarImages;
 @property (nonatomic, strong) UIColor *tabBarColor;
 @property (nonatomic, strong) UIColor *tabBarTitleColor;
-@property (nonatomic, strong) Feature1ViewController *feature1VC;
+@property (nonatomic, strong) MagicianViewController *feature1VC;
 
 @end
 
@@ -41,7 +40,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.title = @"教教我魔術";
     // talking data 页面进入统计
     [TalkingData trackPageBegin:@"Etrance_Main_List_Framework_1"];
 }
@@ -128,30 +127,25 @@
  2.counts of tab bar items from
  */
 - (void)setContainerViewController {
-    Feature1ViewController *vc1 = [Feature1ViewController new];
-    vc1.view.backgroundColor = [UIColor redColor];
-    Feature2ViewController *vc2 = [Feature2ViewController new];
-    vc2.view.backgroundColor = [UIColor blackColor];
+    MagicianViewController *vc1 = [MagicianViewController new];
     [self.mContainerVCArr addObject:vc1];
-    [self.mContainerVCArr addObject:vc2];
     [self updateContainerViewControllers];
 }
 
 - (NSArray<NSString *> *)tabBarTitles {
-    return @[@"功能一", @"功能2"];
+    return @[@"魔術教學"];
 }
 
 - (NSArray<UIImage *> *)tabBarImages {
-    return @[[UIImage imageNamed:@"down_button"],
-             [UIImage imageNamed:@"down_button"]];
+    return @[[UIImage imageNamed:@"down_button"]];
 }
 
 - (UIColor *)tabBarColor {
-    return [UIColor greenColor];
+    return [UIColor colorWithRed:151/255.f green:16/255.f blue:38/255.f alpha:1.0f];
 }
 
 - (UIColor *)tabBarTitleColor {
-    return [UIColor blackColor];
+    return [UIColor whiteColor];
 }
 
 - (void)setupNavigationStyle {
@@ -159,9 +153,9 @@
                               //image color
                               initWithTintColor:[UIColor whiteColor]
                               //bar color
-                              barColor:[UIColor redColor]
+                              barColor:[UIColor colorWithRed:151/255.f green:16/255.f blue:38/255.f alpha:1.0f]
                               //title font, size
-                              titleAttributes:@{                                                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:20],                                                         NSForegroundColorAttributeName:[UIColor yellowColor]                                                                             }];
+                              titleAttributes:@{                                                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:24],                                                         NSForegroundColorAttributeName:[UIColor whiteColor]                                                                             }];
     self.navigationSetup(theme);
 }
 
@@ -169,6 +163,7 @@
 
 - (void)homeButtonDidTapped:(id)sender {
     [self.containerView setHidden:YES];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)vcButtonDidTapped:(UIButton *)button {
@@ -177,24 +172,28 @@
     for (UIViewController *vc in self.mContainerVCArr) {
         if (i == button.tag) {
             [vc.view setHidden:NO];
+            MagicianViewController *magvc = (MagicianViewController *)vc;
+            [magvc startupAnimation];
         } else {
             [vc.view setHidden:YES];
         }
         i++;
     }
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 #pragma mark - setup UI
 
 - (void)setupUI {
+    self.containerView = [UIView new];
+    [self.containerView setHidden:YES];
+    [self.view addSubview:self.containerView];
+    
     self.homeButton = [self createTabButtonWithTitle:@"首頁"];
     [self.homeButton setImage:[UIImage imageNamed:@"home"] forState:UIControlStateNormal];
     [self.view addSubview:self.homeButton];
     [self.homeButton addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.containerView = [UIView new];
-    [self.containerView setHidden:YES];
-    [self.view addSubview:self.containerView];
     [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     [self setContainerViewController];
@@ -206,7 +205,7 @@
     [button setTitle:title forState:UIControlStateNormal];
     [button setBackgroundColor:self.tabBarColor];
     [button setTitleColor:self.tabBarTitleColor forState:UIControlStateNormal];
-    [button.layer setBorderWidth:1.0];
+    [button.layer setBorderWidth:0.5];
     [button.layer setBorderColor:[self.tabBarTitleColor CGColor]];
     button.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6);
     button.imageView.contentMode = UIViewContentModeScaleAspectFit;

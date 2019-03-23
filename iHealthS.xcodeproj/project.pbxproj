@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94063E6B2243C70900883A09 /* libresolv.tbd */; };
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
-		94955A732238FBD900030701 /* Feature1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* Feature1ViewController.m */; };
-		94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A7B22392DDC00030701 /* Feature2ViewController.m */; };
+		94955A732238FBD900030701 /* MagicianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* MagicianViewController.m */; };
 		9498D3752240F7BC00A8355B /* ThemeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3742240F7BC00A8355B /* ThemeNavigationController.m */; };
 		9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3782240FC9C00A8355B /* BaseViewController.m */; };
 		9498D37C2241155300A8355B /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D37B2241155300A8355B /* NavigationTheme.m */; };
@@ -140,10 +139,8 @@
 		94063E6B2243C70900883A09 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
 		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
-		94955A712238FBD900030701 /* Feature1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature1ViewController.h; sourceTree = "<group>"; };
-		94955A722238FBD900030701 /* Feature1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feature1ViewController.m; sourceTree = "<group>"; };
-		94955A7A22392DDC00030701 /* Feature2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature2ViewController.h; sourceTree = "<group>"; };
-		94955A7B22392DDC00030701 /* Feature2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feature2ViewController.m; sourceTree = "<group>"; };
+		94955A712238FBD900030701 /* MagicianViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicianViewController.h; sourceTree = "<group>"; };
+		94955A722238FBD900030701 /* MagicianViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicianViewController.m; sourceTree = "<group>"; };
 		9498D3732240F7BC00A8355B /* ThemeNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeNavigationController.h; sourceTree = "<group>"; };
 		9498D3742240F7BC00A8355B /* ThemeNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeNavigationController.m; sourceTree = "<group>"; };
 		9498D3772240FC9C00A8355B /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -360,10 +357,8 @@
 		94955A702238FBBB00030701 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				94955A712238FBD900030701 /* Feature1ViewController.h */,
-				94955A722238FBD900030701 /* Feature1ViewController.m */,
-				94955A7A22392DDC00030701 /* Feature2ViewController.h */,
-				94955A7B22392DDC00030701 /* Feature2ViewController.m */,
+				94955A712238FBD900030701 /* MagicianViewController.h */,
+				94955A722238FBD900030701 /* MagicianViewController.m */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -987,7 +982,6 @@
 				FA95A26319F4F70700A94E19 /* ASIInputStream.m in Sources */,
 				FA95A28019F4F70700A94E19 /* NSData+ImageContentType.m in Sources */,
 				FA95A28919F4F70700A94E19 /* UIImage+GIF.m in Sources */,
-				94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */,
 				FA95A29519F4F70700A94E19 /* main.m in Sources */,
 				FA95A25A19F4F70700A94E19 /* DataListViewController.m in Sources */,
 				FA95A28419F4F70700A94E19 /* SDWebImageDownloader.m in Sources */,
@@ -998,7 +992,7 @@
 				FA95A29219F4F70700A94E19 /* TOActivitySafari.m in Sources */,
 				FA95A25F19F4F70700A94E19 /* ASIDataDecompressor.m in Sources */,
 				FA95A29319F4F70700A94E19 /* TOWebViewController.m in Sources */,
-				94955A732238FBD900030701 /* Feature1ViewController.m in Sources */,
+				94955A732238FBD900030701 /* MagicianViewController.m in Sources */,
 				FA95A28319F4F70700A94E19 /* SDWebImageDecoder.m in Sources */,
 				FA95A28619F4F70700A94E19 /* SDWebImageManager.m in Sources */,
 				FA95A29019F4F70700A94E19 /* UIScrollView+SVPullToRefresh.m in Sources */,
