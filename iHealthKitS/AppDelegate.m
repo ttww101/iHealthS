@@ -11,6 +11,7 @@
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
 #import "JANALYTICSService.h"
+#import "MagicTutorialViewController.h"
 
 
 @implementation AppDelegate
@@ -51,6 +52,7 @@
     
     self.sideMenuViewController = [self createSideMenuViewController];
     self.window.backgroundColor = [UIColor whiteColor];
+    
     self.window.rootViewController = self.sideMenuViewController;
     [self.window makeKeyAndVisible];
     

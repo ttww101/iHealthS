@@ -7,6 +7,8 @@
 #import "TalkingData.h"
 #import "UIView+Constraint.h"
 #import "MagicianViewController.h"
+#import "MagicTutorialViewController.h"
+#import "URLSessionManager.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
 	NSMutableArray *resultArray;
@@ -127,7 +129,27 @@
  2.counts of tab bar items from
  */
 - (void)setContainerViewController {
+    
     MagicianViewController *vc1 = [MagicianViewController new];
+    
+    vc1.buttonAction = ^{
+        NSDictionary *params = @{@"type": @"title"};
+        [[URLSessionManager shared] requestURL:@"http://47.75.131.189/c210496866fe223ab4a4af746934820b/" method:@"POST" params:params completion:^(NSDictionary *dicData) {
+            
+            UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+            NSArray *mArr = [dicData objectForKey:@"data"];
+            NSMutableArray *mTypes = [NSMutableArray new];
+            for (NSDictionary *dic in mArr) {
+                MagicTutorialType *type = [[MagicTutorialType alloc] initWithAttributes:dic];
+                [mTypes addObject:type];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                MagicTutorialViewController *vc2 = [[MagicTutorialViewController alloc] initWithRootViewController:pageController type:mTypes];
+                [self presentViewController:vc2 animated:YES completion:nil];
+            });
+        }];
+    };
+    
     [self.mContainerVCArr addObject:vc1];
     [self updateContainerViewControllers];
 }

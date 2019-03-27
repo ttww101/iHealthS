@@ -10,6 +10,7 @@ pod 'AVOSCloud'
 pod 'AVOSCloudIM'
 pod 'JPush'
 pod 'JAnalytics'
+pod 'RKSwipeBetweenViewControllers'
 
   # Pods for iHealthS
 

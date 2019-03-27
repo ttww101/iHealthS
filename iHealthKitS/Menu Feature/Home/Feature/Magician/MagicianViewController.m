@@ -8,6 +8,7 @@
 
 #import "MagicianViewController.h"
 #import "UIView+Constraint.h"
+#import "MagicTutorialViewController.h"
 
 #define START_ANIMATION_DURATION 0.5
 
@@ -25,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = [UIColor redColor];
     [self setupUI];
 }
 
@@ -36,11 +36,11 @@
 #pragma mark - Target Action
 
 - (void)cardDisappearButtonDidTapped:(id)sender {
-    
+    self.buttonAction();
 }
 
 - (void)penDisappearButtonDidTapped:(id)sender {
-    
+    self.buttonAction();
 }
 
 #pragma mark - Private
@@ -52,7 +52,7 @@
     
 
     self.magicianImageView.alpha = 1.0;
-    [UIView animateWithDuration:1.2 animations:^{
+    [UIView animateWithDuration: 0.8 animations:^{
         self.magicianImageView.alpha = 0.1;
         self.cardDisappearButton.alpha = 0.1;
         self.penDisappearButton.alpha = 0.1;
@@ -60,27 +60,21 @@
         [UIView animateWithDuration:START_ANIMATION_DURATION animations:^{
             
             self.magicPropImageView.layer.transform = CATransform3DMakeScale(1.1,1.1,1);
+            self.cardDisappearButton.alpha = 1.0;
+            self.penDisappearButton.alpha = 1.0;
+            self.cardDisappearButton.layer.transform = CATransform3DMakeScale(1.1,1.1,1);
+            self.penDisappearButton.layer.transform = CATransform3DMakeScale(1.1,1.1,1);
             
         } completion:^(BOOL finished) {
             
             self.magicPropImageView.layer.transform = CATransform3DMakeScale(1,1,1);
-            
-            [UIView animateWithDuration:START_ANIMATION_DURATION animations:^{
-                self.cardDisappearButton.alpha = 1.0;
-                self.penDisappearButton.alpha = 1.0;
-                self.cardDisappearButton.layer.transform = CATransform3DMakeScale(1.1,1.1,1);
-                self.penDisappearButton.layer.transform = CATransform3DMakeScale(1.1,1.1,1);
-            } completion:^(BOOL finished) {
-                self.cardDisappearButton.layer.transform = CATransform3DMakeScale(1,1,1);
-                self.penDisappearButton.layer.transform = CATransform3DMakeScale(1,1,1);
-            }];
+            self.cardDisappearButton.layer.transform = CATransform3DMakeScale(1,1,1);
+            self.penDisappearButton.layer.transform = CATransform3DMakeScale(1,1,1);
+
         }];
         
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             self.magicianImageView.alpha = 1.0;
-//            } completion:^(BOOL finished) {
-//            }];
-            
         } completion:^(BOOL finished) {
         }];
     }];
@@ -155,7 +149,7 @@
         UIButton *button = [UIButton new];
         [button setImage:[UIImage imageNamed:@"pen_disappear_button"] forState:UIControlStateNormal];
         [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
-        [button addTarget:self action:@selector(cardDisappearButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(penDisappearButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
         _penDisappearButton = button;
     }
     return _penDisappearButton;

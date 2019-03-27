@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE52134A41D5CE191B6A40ABF0DB16F6"
-               BlueprintName = "wax"
+               BlueprintIdentifier = "4850C272C4E1B9AB457CC3808AB4CDED"
+               BlueprintName = "RKSwipeBetweenViewControllers"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libwax.a">
+               BuildableName = "libRKSwipeBetweenViewControllers.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

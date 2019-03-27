@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94063E6B2243C70900883A09 /* libresolv.tbd */; };
+		94305166224B84C8003C99F7 /* TutorialTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */; };
+		947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B626F224606C800A7CFCA /* MagicTutorialViewController.m */; };
+		947B628622461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */; };
+		947B628722461EAE00A7CFCA /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628422461EAE00A7CFCA /* NavigationTheme.m */; };
+		947B628822461EAE00A7CFCA /* ThemeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628522461EAE00A7CFCA /* ThemeNavigationController.m */; };
+		947B629B224640C400A7CFCA /* MagicTutorialType.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B629A224640C400A7CFCA /* MagicTutorialType.m */; };
+		947B629E2246410B00A7CFCA /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B629D2246410B00A7CFCA /* ISObject.m */; };
+		947B62A12246437400A7CFCA /* TutorialDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B62A02246437400A7CFCA /* TutorialDetailViewController.m */; };
+		947B62A42246456500A7CFCA /* URLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B62A32246456500A7CFCA /* URLSessionManager.m */; };
+		947B62A72246550000A7CFCA /* MagicTutorialDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B62A62246550000A7CFCA /* MagicTutorialDetail.m */; };
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
 		94955A732238FBD900030701 /* MagicianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* MagicianViewController.m */; };
-		9498D3752240F7BC00A8355B /* ThemeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3742240F7BC00A8355B /* ThemeNavigationController.m */; };
 		9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3782240FC9C00A8355B /* BaseViewController.m */; };
-		9498D37C2241155300A8355B /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D37B2241155300A8355B /* NavigationTheme.m */; };
-		9498D37F2241162400A8355B /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
 		94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B35223A12D4002CBD54 /* UIWebView.lua */; };
@@ -137,18 +144,32 @@
 		73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iHealthS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94063E6A2243C68D00883A09 /* iHealthS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iHealthS.entitlements; sourceTree = "<group>"; };
 		94063E6B2243C70900883A09 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		94305164224B84C8003C99F7 /* TutorialTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialTitleTableViewCell.h; sourceTree = "<group>"; };
+		94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialTitleTableViewCell.m; sourceTree = "<group>"; };
+		947B626E224606C800A7CFCA /* MagicTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialViewController.h; sourceTree = "<group>"; };
+		947B626F224606C800A7CFCA /* MagicTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialViewController.m; sourceTree = "<group>"; };
+		947B628022461EAE00A7CFCA /* NavigationTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTheme.h; sourceTree = "<group>"; };
+		947B628122461EAE00A7CFCA /* UINavigationBar+ApplyTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ApplyTheme.h"; sourceTree = "<group>"; };
+		947B628222461EAE00A7CFCA /* ThemeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNavigationController.h; sourceTree = "<group>"; };
+		947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ApplyTheme.m"; sourceTree = "<group>"; };
+		947B628422461EAE00A7CFCA /* NavigationTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTheme.m; sourceTree = "<group>"; };
+		947B628522461EAE00A7CFCA /* ThemeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeNavigationController.m; sourceTree = "<group>"; };
+		947B6299224640C400A7CFCA /* MagicTutorialType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialType.h; sourceTree = "<group>"; };
+		947B629A224640C400A7CFCA /* MagicTutorialType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialType.m; sourceTree = "<group>"; };
+		947B629C2246410B00A7CFCA /* ISObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISObject.h; sourceTree = "<group>"; };
+		947B629D2246410B00A7CFCA /* ISObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISObject.m; sourceTree = "<group>"; };
+		947B629F2246437400A7CFCA /* TutorialDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialDetailViewController.h; sourceTree = "<group>"; };
+		947B62A02246437400A7CFCA /* TutorialDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialDetailViewController.m; sourceTree = "<group>"; };
+		947B62A22246456500A7CFCA /* URLSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionManager.h; sourceTree = "<group>"; };
+		947B62A32246456500A7CFCA /* URLSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionManager.m; sourceTree = "<group>"; };
+		947B62A5224654FF00A7CFCA /* MagicTutorialDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialDetail.h; sourceTree = "<group>"; };
+		947B62A62246550000A7CFCA /* MagicTutorialDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialDetail.m; sourceTree = "<group>"; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
 		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
 		94955A712238FBD900030701 /* MagicianViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicianViewController.h; sourceTree = "<group>"; };
 		94955A722238FBD900030701 /* MagicianViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicianViewController.m; sourceTree = "<group>"; };
-		9498D3732240F7BC00A8355B /* ThemeNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeNavigationController.h; sourceTree = "<group>"; };
-		9498D3742240F7BC00A8355B /* ThemeNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeNavigationController.m; sourceTree = "<group>"; };
 		9498D3772240FC9C00A8355B /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9498D3782240FC9C00A8355B /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		9498D37A2241155300A8355B /* NavigationTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationTheme.h; sourceTree = "<group>"; };
-		9498D37B2241155300A8355B /* NavigationTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTheme.m; sourceTree = "<group>"; };
-		9498D37D2241162400A8355B /* UINavigationBar+ApplyTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ApplyTheme.h"; sourceTree = "<group>"; };
-		9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ApplyTheme.m"; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "iHealthKitS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		94D41B35223A12D4002CBD54 /* UIWebView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIWebView.lua; sourceTree = "<group>"; };
 		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
@@ -345,6 +366,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94305167224B84CD003C99F7 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				94305164224B84C8003C99F7 /* TutorialTitleTableViewCell.h */,
+				94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		947B627F22461EAE00A7CFCA /* NavigationStyle */ = {
+			isa = PBXGroup;
+			children = (
+				947B628022461EAE00A7CFCA /* NavigationTheme.h */,
+				947B628422461EAE00A7CFCA /* NavigationTheme.m */,
+				947B628222461EAE00A7CFCA /* ThemeNavigationController.h */,
+				947B628522461EAE00A7CFCA /* ThemeNavigationController.m */,
+				947B628122461EAE00A7CFCA /* UINavigationBar+ApplyTheme.h */,
+				947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */,
+			);
+			path = NavigationStyle;
+			sourceTree = "<group>";
+		};
+		947B629722463E4600A7CFCA /* Magician */ = {
+			isa = PBXGroup;
+			children = (
+				94955A712238FBD900030701 /* MagicianViewController.h */,
+				94955A722238FBD900030701 /* MagicianViewController.m */,
+			);
+			path = Magician;
+			sourceTree = "<group>";
+		};
+		947B629822463E5100A7CFCA /* Magician Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				947B626E224606C800A7CFCA /* MagicTutorialViewController.h */,
+				947B626F224606C800A7CFCA /* MagicTutorialViewController.m */,
+				947B6299224640C400A7CFCA /* MagicTutorialType.h */,
+				947B629A224640C400A7CFCA /* MagicTutorialType.m */,
+				947B629F2246437400A7CFCA /* TutorialDetailViewController.h */,
+				947B62A02246437400A7CFCA /* TutorialDetailViewController.m */,
+				947B62A5224654FF00A7CFCA /* MagicTutorialDetail.h */,
+				947B62A62246550000A7CFCA /* MagicTutorialDetail.m */,
+				94305167224B84CD003C99F7 /* TableViewCell */,
+			);
+			path = "Magician Tutorial";
+			sourceTree = "<group>";
+		};
 		94955A632238B5F000030701 /* UIVIew+Constraint */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,23 +425,10 @@
 		94955A702238FBBB00030701 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				94955A712238FBD900030701 /* MagicianViewController.h */,
-				94955A722238FBD900030701 /* MagicianViewController.m */,
+				947B629722463E4600A7CFCA /* Magician */,
+				947B629822463E5100A7CFCA /* Magician Tutorial */,
 			);
 			path = Feature;
-			sourceTree = "<group>";
-		};
-		9498D3722240F12100A8355B /* NavigationStyle */ = {
-			isa = PBXGroup;
-			children = (
-				9498D3732240F7BC00A8355B /* ThemeNavigationController.h */,
-				9498D3742240F7BC00A8355B /* ThemeNavigationController.m */,
-				9498D37A2241155300A8355B /* NavigationTheme.h */,
-				9498D37B2241155300A8355B /* NavigationTheme.m */,
-				9498D37D2241162400A8355B /* UINavigationBar+ApplyTheme.h */,
-				9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */,
-			);
-			path = NavigationStyle;
 			sourceTree = "<group>";
 		};
 		9498D3762240FC6F00A8355B /* BaseComponent */ = {
@@ -381,6 +436,10 @@
 			children = (
 				9498D3772240FC9C00A8355B /* BaseViewController.h */,
 				9498D3782240FC9C00A8355B /* BaseViewController.m */,
+				947B629C2246410B00A7CFCA /* ISObject.h */,
+				947B629D2246410B00A7CFCA /* ISObject.m */,
+				947B62A22246456500A7CFCA /* URLSessionManager.h */,
+				947B62A32246456500A7CFCA /* URLSessionManager.m */,
 			);
 			path = BaseComponent;
 			sourceTree = "<group>";
@@ -508,7 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				9498D3762240FC6F00A8355B /* BaseComponent */,
-				9498D3722240F12100A8355B /* NavigationStyle */,
+				947B627F22461EAE00A7CFCA /* NavigationStyle */,
 				FA95A19419F4F70700A94E19 /* AppDelegate.h */,
 				FA95A19519F4F70700A94E19 /* AppDelegate.m */,
 				FA95A19A19F4F70700A94E19 /* Side Menu */,
@@ -975,22 +1034,25 @@
 				FA95A25619F4F70700A94E19 /* SideMenuViewController.m in Sources */,
 				FA95A26219F4F70700A94E19 /* ASIHTTPRequest.m in Sources */,
 				FA95A28A19F4F70700A94E19 /* UIImage+MultiFormat.m in Sources */,
+				947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */,
+				947B62A72246550000A7CFCA /* MagicTutorialDetail.m in Sources */,
+				947B628722461EAE00A7CFCA /* NavigationTheme.m in Sources */,
 				FA95A27E19F4F70700A94E19 /* UIViewController+RESideMenu.m in Sources */,
-				9498D37C2241155300A8355B /* NavigationTheme.m in Sources */,
-				9498D3752240F7BC00A8355B /* ThemeNavigationController.m in Sources */,
 				FA95A25C19F4F70700A94E19 /* HomeTableViewCell.m in Sources */,
 				FA95A26319F4F70700A94E19 /* ASIInputStream.m in Sources */,
+				94305166224B84C8003C99F7 /* TutorialTitleTableViewCell.m in Sources */,
 				FA95A28019F4F70700A94E19 /* NSData+ImageContentType.m in Sources */,
 				FA95A28919F4F70700A94E19 /* UIImage+GIF.m in Sources */,
+				947B62A12246437400A7CFCA /* TutorialDetailViewController.m in Sources */,
 				FA95A29519F4F70700A94E19 /* main.m in Sources */,
 				FA95A25A19F4F70700A94E19 /* DataListViewController.m in Sources */,
 				FA95A28419F4F70700A94E19 /* SDWebImageDownloader.m in Sources */,
 				FA95A28219F4F70700A94E19 /* SDWebImageCompat.m in Sources */,
 				FA95A25719F4F70700A94E19 /* MoreViewController.m in Sources */,
 				FA95A28C19F4F70700A94E19 /* UIImageView+HighlightedWebCache.m in Sources */,
-				9498D37F2241162400A8355B /* UINavigationBar+ApplyTheme.m in Sources */,
 				FA95A29219F4F70700A94E19 /* TOActivitySafari.m in Sources */,
 				FA95A25F19F4F70700A94E19 /* ASIDataDecompressor.m in Sources */,
+				947B62A42246456500A7CFCA /* URLSessionManager.m in Sources */,
 				FA95A29319F4F70700A94E19 /* TOWebViewController.m in Sources */,
 				94955A732238FBD900030701 /* MagicianViewController.m in Sources */,
 				FA95A28319F4F70700A94E19 /* SDWebImageDecoder.m in Sources */,
@@ -1005,12 +1067,14 @@
 				FA95A25D19F4F70700A94E19 /* ASIAuthenticationDialog.m in Sources */,
 				FA95A27C19F4F70700A94E19 /* RECommonFunctions.m in Sources */,
 				FA95A25E19F4F70700A94E19 /* ASIDataCompressor.m in Sources */,
+				947B629B224640C400A7CFCA /* MagicTutorialType.m in Sources */,
 				FA95A27019F4F70700A94E19 /* MBProgressHUD.m in Sources */,
 				FA95A25419F4F70700A94E19 /* AppDelegate.m in Sources */,
 				FA95A26019F4F70700A94E19 /* ASIDownloadCache.m in Sources */,
 				FA95A28819F4F70700A94E19 /* UIButton+WebCache.m in Sources */,
 				FA95A27219F4F70700A94E19 /* MLNavigationController.m in Sources */,
 				FA95A27719F4F70700A94E19 /* PhotoViewer.m in Sources */,
+				947B628822461EAE00A7CFCA /* ThemeNavigationController.m in Sources */,
 				FA95A28119F4F70700A94E19 /* SDImageCache.m in Sources */,
 				DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */,
 				FA95A2B319F4FB6100A94E19 /* StyledPageControl.m in Sources */,
@@ -1020,7 +1084,9 @@
 				FA95A27D19F4F70700A94E19 /* RESideMenu.m in Sources */,
 				FA95A28F19F4F70700A94E19 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				FA95A25919F4F70700A94E19 /* HomeViewController.m in Sources */,
+				947B629E2246410B00A7CFCA /* ISObject.m in Sources */,
 				FA95A28D19F4F70700A94E19 /* UIImageView+WebCache.m in Sources */,
+				947B628622461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m in Sources */,
 				FA95A28B19F4F70700A94E19 /* UIImage+WebP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1131,7 +1197,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthS/iHealthS-Prefix.pch";
 				INFOPLIST_FILE = "iHealthS/iHealthS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1167,7 +1233,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthS/iHealthS-Prefix.pch";
 				INFOPLIST_FILE = "iHealthS/iHealthS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

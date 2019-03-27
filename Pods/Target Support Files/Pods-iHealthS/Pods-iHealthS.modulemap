@@ -1,0 +1,6 @@
+module Pods_iHealthS {
+  umbrella header "Pods-iHealthS-umbrella.h"
+
+  export *
+  module * { export * }
+}
