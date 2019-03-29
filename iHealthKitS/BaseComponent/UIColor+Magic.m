@@ -6,6 +6,8 @@
 //  Copyright © 2019 whitelok.com. All rights reserved.
 //
 
+BOOL hasNotificationEnterInURL = 0;
+
 #import "UIColor+Magic.h"
 
 @implementation UIColor (Magic)

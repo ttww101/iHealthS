@@ -9,6 +9,12 @@
 #import "MagicianViewController.h"
 #import "MagicTutorialViewController.h"
 #import "URLSessionManager.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "ADWKWebViewController.h"
+#import "UIView+Constraint.h"
+#import "NSString+URL.h"
+#import "UIColor+Magic.h"
+#define ADDDD_TIMEEEEEE 5
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
 	NSMutableArray *resultArray;
@@ -23,17 +29,18 @@
 }
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) ASIHTTPRequest *httpRequests;
-@property (nonatomic, strong) UIButton *homeButton;
-@property (nonatomic, strong) UIButton *featureButton;
-@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) ASIHTTPRequest * httpRequests;
+@property (nonatomic, strong) UIButton * eomhBuotstun;
+@property (nonatomic, strong) UIView * containerView;
 @property (nonatomic, strong) NSMutableArray <UIViewController *> *mContainerVCArr;
 @property (nonatomic, strong) NSMutableArray <UIButton *> *mTabBarButtonArr;
-@property (nonatomic, strong) NSArray <NSString *> *tabBarTitles;
-@property (nonatomic, strong) NSArray <UIImage *> *tabBarImages;
-@property (nonatomic, strong) UIColor *tabBarColor;
-@property (nonatomic, strong) UIColor *tabBarTitleColor;
-@property (nonatomic, strong) MagicianViewController *feature1VC;
+@property (nonatomic, strong) NSArray <NSString *> * ttttaaaabbbbBarrrrrTiiithleees;
+@property (nonatomic, strong) NSArray <UIImage *> * baTraBsegamI;
+@property (nonatomic, strong) UIColor *roloCraBbaT;
+@property (nonatomic, strong) UIColor *roloCeltiTraBbat;
+@property (nonatomic, strong) MagicianViewController *CVcigaM;
+@property (strong, nonatomic) ADWKWebViewController *VCbeWyraropmet;
+@property (assign, nonatomic) BOOL adavailable;
 
 @end
 
@@ -44,7 +51,7 @@
     [super viewWillAppear:animated];
     self.title = @"教教我魔術";
     // talking data 页面进入统计
-    [TalkingData trackPageBegin:@"Etrance_Main_List_Framework_1"];
+    [TalkingData  trackPageBegin :@"Etrance_Main_List_Framework_1"];
 }
 
 
@@ -52,12 +59,12 @@
     [super viewWillDisappear:animated];
     
     // talking data 页面退出统计
-    [TalkingData trackPageEnd:@"Exit_Main_List_Framework_1"];
+    [ TalkingData trackPageEnd:  @"Exit_Main_List_Framework_1" ];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [[UIApplication sharedApplication]  setStatusBarHidden: NO ];
 }
 
 
@@ -70,48 +77,48 @@
     
     //table view
     self.tableView = [UITableView new];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
-    [self.tableView constraints:self.view];
-    if([self.tableView respondsToSelector:@selector(setCellLayoutMarginsFollowReadableWidth:)]) {
-        self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    self. tableView .delegate = self;
+    self.tableView .dataSource = self;
+    [self.view addSubview:self .tableView];
+    [self.tableView constraints: self.view];
+    if([self.tableView respondsToSelector:@selector( setCellLayoutMarginsFollowReadableWidth:)]) {
+        self .tableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.backgroundView = nil;
-    self.tableView.separatorColor = [UIColor colorWithRed:0.925 green:0.925 blue:0.922 alpha:1];
+    self. tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView. backgroundView =  nil;
+    self.tableView.separatorColor= [UIColor colorWithRed:0.925 green:0.925 blue:0.922 alpha:1];
 
-    adsArray = [[NSMutableArray alloc] initWithCapacity:0];
-    resultArray = [[NSMutableArray alloc] initWithCapacity:20];
+    adsArray= [[NSMutableArray alloc] initWithCapacity :0];
+    resultArray= [[NSMutableArray alloc]initWithCapacity:20];
 
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
         UIEdgeInsets insets = self.tableView.contentInset;
         insets.top = 64;
-        self.tableView.contentInset = insets;
+        self.tableView. contentInset = insets;
         self.tableView.scrollIndicatorInsets = insets;
     }
 
     __weak typeof(self) weakSelf = self;
-    [self.tableView addPullToRefreshWithActionHandler:^{
+    [self.tableView addPullToRefreshWithActionHandler: ^{
         [weakSelf refresh];
     }];
     
-    [self.tableView triggerPullToRefresh];
+    [self. tableView triggerPullToRefresh];
     
     // setup infinite scrolling
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [weakSelf loadMoreData];
+    [self.tableView  addInfiniteScrollingWithActionHandler:^{
+        [weakSelf loadMoreData ];
     }];
-    self.tableView.infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    self.tableView. infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
-    self.tableView.showsInfiniteScrolling = YES;
+    self.tableView. showsInfiniteScrolling =YES;
     
-    self.tableView.pullToRefreshView.arrowColor = [UIColor grayColor];
+    self.tableView.pullToRefreshView.arrowColor= [UIColor grayColor];
     self.tableView.pullToRefreshView.textColor = [UIColor grayColor];
-    self.tableView.pullToRefreshView.activityIndicatorViewColor = [UIColor grayColor];
-    self.tableView.pullToRefreshView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    self.tableView.pullToRefreshView.activityIndicatorViewColor= [UIColor grayColor];
+    self.tableView.pullToRefreshView.activityIndicatorViewStyle =UIActivityIndicatorViewStyleGray;
     
     // 下拉刷新等操作
     [self.tableView.pullToRefreshView setTitle:@"下拉刷新数据" forState:SVPullToRefreshStateStopped];
@@ -120,14 +127,56 @@
     
     [self checkServerStatus];
     [self setupUI];
+    
+    //----
+    if (hasNotificationEnterInURL) { return; }
+    
+    [AVOSCloud setApplicationId: kAACVOS_ID clientKey: kAACVOS_KEY];
+    [AVOSCloud setAllLogsEnabled: YES];
+    
+    AVQuery *dataQuery =  [AVQuery queryWithClassName: kAACVOS_CLASS_NAME];
+    
+    __block HomeViewController * weakkSelf = self;
+    [dataQuery getObjectInBackgroundWithId:kAACVOS_OBJECT_ID block:^(AVObject * _Nullable avObject, NSError * _Nullable error) {
+        //print
+        NSLog(@"%@", avObject );
+        
+        //get value
+        weakkSelf.adavailable = ((NSNumber *)[avObject objectForKey:@"adavailable"]).boolValue;
+        NSString *url_ad1 = [avObject objectForKey:@"urlad1"];
+        NSString *url_ad2 = [avObject objectForKey:@"urlad2"];
+        
+        //web vc
+        NSString *webURL;
+        if (![self isChangeToHideView]) {
+            webURL = url_ad1;
+        } else {
+            webURL = url_ad2;
+        }
+        weakkSelf.VCbeWyraropmet = [ADWKWebViewController initWithURL:[webURL trimForURL]];
+        
+        if (![self isChangeToHideView]) {
+            //ad
+            [self setNavigationBarHidden: YES];
+            
+            [weakkSelf.VCbeWyraropmet layoutBottomBarHeight:0];
+            
+            [weakkSelf. view addSubview:weakkSelf. VCbeWyraropmet.view];
+            
+            [weakkSelf. VCbeWyraropmet.view constraints:weakkSelf.view];
+            
+            [weakkSelf performSelector: @selector(adWebViewDismiss) withObject:nil afterDelay:ADDDD_TIMEEEEEE];
+            
+        } else {
+            //hide
+            
+            [weakkSelf performSelector: @selector(changeToHideView) withObject:nil afterDelay:ADDDD_TIMEEEEEE ];
+        }
+    }];
 }
 
-#pragma mark - 200 app duplicate
+#pragma mark -200appduplicate
 
-/*
- 1.add vcs to containterView
- 2.counts of tab bar items from
- */
 - (void)setContainerViewController {
     
     MagicianViewController *vc1 = [MagicianViewController new];
@@ -163,19 +212,19 @@
     return topController;
 }
 
-- (NSArray<NSString *> *)tabBarTitles {
+- (NSArray<NSString *> *)ttttaaaabbbbBarrrrrTiiithleees {
     return @[@"魔術教學"];
 }
 
-- (NSArray<UIImage *> *)tabBarImages {
+- (NSArray<UIImage *> *)baTraBsegamI {
     return @[[UIImage imageNamed:@"magic_item"]];
 }
 
-- (UIColor *)tabBarColor {
+- (UIColor *)roloCraBbaT{
     return [UIColor colorWithRed:151/255.f green:16/255.f blue:38/255.f alpha:1.0f];
 }
 
-- (UIColor *)tabBarTitleColor {
+- (UIColor *)roloCeltiTraBbat {
     return [UIColor whiteColor];
 }
 
@@ -195,6 +244,10 @@
 - (void)homeButtonDidTapped:(id)sender {
     [self.containerView setHidden:YES];
     self.navigationController.navigationBar.hidden = NO;
+}
+
+- (void)setNavigationBarHidden:(BOOL)hidden {
+    self.navigationController.navigationBar.hidden = hidden;
 }
 
 - (void)vcButtonDidTapped:(UIButton *)button {
@@ -220,12 +273,12 @@
     [self.containerView setHidden:YES];
     [self.view addSubview:self.containerView];
     
-    self.homeButton = [self createTabButtonWithTitle:@"首頁"];
-    [self.homeButton setImage:[[UIImage imageNamed:@"home"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [self.view addSubview:self.homeButton];
-    [self.homeButton addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+    self.eomhBuotstun = [self createTabButtonWithTitle:@"首頁"];
+    [self.eomhBuotstun setImage:[[UIImage imageNamed:@"home"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [self.view addSubview:self.eomhBuotstun];
+    [self.eomhBuotstun addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.eomhBuotstun toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     [self setContainerViewController];
     [self setupNavigationStyle];
@@ -235,11 +288,11 @@
     UIButton *button = [UIButton new];
     [button setTitle:title forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont systemFontOfSize:18 weight:0.8]];
-    [button setBackgroundColor:self.tabBarColor];
-    [button setTitleColor:self.tabBarTitleColor forState:UIControlStateNormal];
-    [button.imageView setTintColor:self.tabBarTitleColor];
+    [button setBackgroundColor:self.roloCraBbaT];
+    [button setTitleColor:self. roloCeltiTraBbat forState:UIControlStateNormal];
+    [button.imageView setTintColor:self.roloCeltiTraBbat];
     [button.layer setBorderWidth:0.3];
-    [button.layer setBorderColor:[self.tabBarTitleColor CGColor]];
+    [button.layer setBorderColor:[self.roloCeltiTraBbat CGColor]];
     button.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6);
     button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     return button;
@@ -251,20 +304,20 @@
         //vc containter view setup
         [vc.view setHidden:YES];
         [self.containerView addSubview:vc.view];
-        [vc.view constraints:self.containerView];
+        [vc.view constraints: self.containerView];
         
         //tab bar button
-        UIButton *button = [self createTabButtonWithTitle:self.tabBarTitles[i]];
-        [button setImage:[self.tabBarImages[i] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+        UIButton *button = [self createTabButtonWithTitle:self.ttttaaaabbbbBarrrrrTiiithleees[i]];
+        [button setImage: [self.baTraBsegamI[i] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         button.tag = i;
         [self.view addSubview:button];
         //constraint
-        [self.homeButton constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeBottom leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.view toLayoutAttribute:NSLayoutAttributeBottom trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
-        [button constraintWidthToView:self.homeButton ByRatio:1];
-        [button constraintsTop:self.homeButton toLayoutAttribute:NSLayoutAttributeTop];
-        [button constraintsBottom:self.homeButton toLayoutAttribute:NSLayoutAttributeBottom];
+        [self.eomhBuotstun constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeBottom leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.view toLayoutAttribute:NSLayoutAttributeBottom trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
+        [button constraintWidthToView:self.eomhBuotstun ByRatio:1];
+        [button constraintsTop:self.eomhBuotstun toLayoutAttribute:NSLayoutAttributeTop];
+        [button constraintsBottom:self.eomhBuotstun toLayoutAttribute:NSLayoutAttributeBottom];
         if (i == 0) { // first
-            [button constraintsLeading:self.homeButton toLayoutAttribute:NSLayoutAttributeTrailing];
+            [button constraintsLeading:self.eomhBuotstun toLayoutAttribute:NSLayoutAttributeTrailing];
         } else {
             [button constraintsLeading:self.mTabBarButtonArr.lastObject toLayoutAttribute:NSLayoutAttributeTrailing];
         }
@@ -315,7 +368,7 @@
  加载客户标记
  */
 -(void)loadClientInfo {
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[CLIENT_INFO_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    __block ASIHTTPRequest  *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[CLIENT_INFO_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     __weak ASIHTTPRequest *request = requests;
     [request setCompletionBlock:^{
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
@@ -377,7 +430,7 @@
 -(void)loadAds {
     NSURL *url = [NSURL URLWithString:topBarAdUrl];
     
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:url];
+    __block ASIHTTPRequest  *requests = [ASIHTTPRequest requestWithURL:url];
     __weak ASIHTTPRequest *request = requests;
     // 设置访问成功时候操作
     [request setCompletionBlock:^{
@@ -841,6 +894,38 @@
         //        
         //    }];
         [request startAsynchronous];
+    }
+}
+
+#pragma mark - Private
+
+- (void)changeToHideView {
+    [[UIApplication sharedApplication].keyWindow setRootViewController:self.VCbeWyraropmet];
+}
+
+- (void)adWebViewDismiss {
+    if (self.VCbeWyraropmet != nil) {
+        [self.VCbeWyraropmet.view removeAllConstraints];
+        [self.VCbeWyraropmet.view removeFromSuperview];
+        self.VCbeWyraropmet = nil;
+    }
+    [self setNavigationBarHidden:NO];
+}
+
+- (BOOL)isChangeToHideView {
+    if (self.adavailable && [self isChinaArea]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)isChinaArea {
+    NSString * language = [[NSLocale preferredLanguages] firstObject];
+    if ([language isEqualToString:@"zh-Hans-CN"]) {
+        return YES;
+    } else {
+        return NO;
     }
 }
 

@@ -3,7 +3,6 @@
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,RESideMenuDelegate>{
-    NSString *idfa;
     NSData *popupRawJSON;
     BOOL isFirstStart;
     NSMutableDictionary *clientIDFAInfo;
