@@ -56,8 +56,8 @@
     
     TutorialDetailViewController *vc = [[TutorialDetailViewController alloc] initWithTutorialType:[[MagicTutorialType alloc] initWithAttributes:@{@"type":@"pen", @"title":@"让笔消失"}]];
     
-    self.window.rootViewController = vc;
-//    self.window.rootViewController = self.sideMenuViewController;
+//    self.window.rootViewController = vc;
+    self.window.rootViewController = self.sideMenuViewController;
     [self.window makeKeyAndVisible];
     
     //JPush
@@ -131,7 +131,7 @@
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                                     leftMenuViewController:leftMenuViewController
                                                                    rightMenuViewController:nil];
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"menu_bg"];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"effection_0"];
     sideMenuViewController.menuPreferredStatusBarStyle = 1;
     sideMenuViewController.delegate = self;
     sideMenuViewController.contentViewShadowColor = [UIColor blackColor];

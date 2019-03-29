@@ -132,6 +132,7 @@
     
     MagicianViewController *vc1 = [MagicianViewController new];
     
+    __weak __typeof(self) weakSelf = self;
     vc1.buttonAction = ^{
         NSDictionary *params = @{@"type": @"title"};
         [[URLSessionManager shared] requestURL:@"http://47.75.131.189/c210496866fe223ab4a4af746934820b/" method:@"POST" params:params completion:^(NSDictionary *dicData) {
@@ -145,7 +146,7 @@
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 MagicTutorialViewController *vc2 = [[MagicTutorialViewController alloc] initWithRootViewController:pageController type:mTypes];
-                [self presentViewController:vc2 animated:YES completion:nil];
+                [[self topMostController] presentViewController:vc2 animated:YES completion:nil];
             });
         }];
     };
@@ -154,12 +155,20 @@
     [self updateContainerViewControllers];
 }
 
+- (UIViewController *)topMostController {
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    while(topController.presentedViewController){
+        topController=topController.presentedViewController;
+    }
+    return topController;
+}
+
 - (NSArray<NSString *> *)tabBarTitles {
     return @[@"魔術教學"];
 }
 
 - (NSArray<UIImage *> *)tabBarImages {
-    return @[[UIImage imageNamed:@"down_button"]];
+    return @[[UIImage imageNamed:@"magic_item"]];
 }
 
 - (UIColor *)tabBarColor {
@@ -177,7 +186,7 @@
                               //bar color
                               barColor:[UIColor colorWithRed:151/255.f green:16/255.f blue:38/255.f alpha:1.0f]
                               //title font, size
-                              titleAttributes:@{                                                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:24],                                                         NSForegroundColorAttributeName:[UIColor whiteColor]                                                                             }];
+                              titleAttributes:@{                                                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:23],                                                         NSForegroundColorAttributeName:[UIColor whiteColor]                                                                             }];
     self.navigationSetup(theme);
 }
 
@@ -212,7 +221,7 @@
     [self.view addSubview:self.containerView];
     
     self.homeButton = [self createTabButtonWithTitle:@"首頁"];
-    [self.homeButton setImage:[UIImage imageNamed:@"home"] forState:UIControlStateNormal];
+    [self.homeButton setImage:[[UIImage imageNamed:@"home"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [self.view addSubview:self.homeButton];
     [self.homeButton addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -225,9 +234,11 @@
 - (UIButton *)createTabButtonWithTitle:(NSString *)title {
     UIButton *button = [UIButton new];
     [button setTitle:title forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:18 weight:0.8]];
     [button setBackgroundColor:self.tabBarColor];
     [button setTitleColor:self.tabBarTitleColor forState:UIControlStateNormal];
-    [button.layer setBorderWidth:0.5];
+    [button.imageView setTintColor:self.tabBarTitleColor];
+    [button.layer setBorderWidth:0.3];
     [button.layer setBorderColor:[self.tabBarTitleColor CGColor]];
     button.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6);
     button.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -244,7 +255,7 @@
         
         //tab bar button
         UIButton *button = [self createTabButtonWithTitle:self.tabBarTitles[i]];
-        [button setImage:self.tabBarImages[i] forState:UIControlStateNormal];
+        [button setImage:[self.tabBarImages[i] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         button.tag = i;
         [self.view addSubview:button];
         //constraint

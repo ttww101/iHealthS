@@ -12,6 +12,7 @@
 		9430516A224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305169224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m */; };
 		94305173224CFAB4003C99F7 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305172224CFAB4003C99F7 /* UIColor+Magic.m */; };
 		94305176224CFFE6003C99F7 /* TutorialContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */; };
+		9430517A224E3213003C99F7 /* BsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305179224E3213003C99F7 /* BsTableViewController.m */; };
 		947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B626F224606C800A7CFCA /* MagicTutorialViewController.m */; };
 		947B628622461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */; };
 		947B628722461EAE00A7CFCA /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628422461EAE00A7CFCA /* NavigationTheme.m */; };
@@ -155,6 +156,8 @@
 		94305172224CFAB4003C99F7 /* UIColor+Magic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Magic.m"; sourceTree = "<group>"; };
 		94305174224CFFE6003C99F7 /* TutorialContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialContentTableViewCell.h; sourceTree = "<group>"; };
 		94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialContentTableViewCell.m; sourceTree = "<group>"; };
+		94305178224E3213003C99F7 /* BsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BsTableViewController.h; sourceTree = "<group>"; };
+		94305179224E3213003C99F7 /* BsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BsTableViewController.m; sourceTree = "<group>"; };
 		947B626E224606C800A7CFCA /* MagicTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialViewController.h; sourceTree = "<group>"; };
 		947B626F224606C800A7CFCA /* MagicTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialViewController.m; sourceTree = "<group>"; };
 		947B628022461EAE00A7CFCA /* NavigationTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTheme.h; sourceTree = "<group>"; };
@@ -449,6 +452,8 @@
 			children = (
 				9498D3772240FC9C00A8355B /* BaseViewController.h */,
 				9498D3782240FC9C00A8355B /* BaseViewController.m */,
+				94305178224E3213003C99F7 /* BsTableViewController.h */,
+				94305179224E3213003C99F7 /* BsTableViewController.m */,
 				947B629C2246410B00A7CFCA /* ISObject.h */,
 				947B629D2246410B00A7CFCA /* ISObject.m */,
 				947B62A22246456500A7CFCA /* URLSessionManager.h */,
@@ -923,7 +928,8 @@
 				ORGANIZATIONNAME = whitelok.com;
 				TargetAttributes = {
 					FA2F273519D5495F00873763 = {
-						DevelopmentTeam = 3PHL3Y9U2S;
+						DevelopmentTeam = W34YF8UFY4;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -1097,6 +1103,7 @@
 				FA95A2B319F4FB6100A94E19 /* StyledPageControl.m in Sources */,
 				FA95A26419F4F70700A94E19 /* ASINetworkQueue.m in Sources */,
 				94955A662238B5F000030701 /* UIView+Constraint.m in Sources */,
+				9430517A224E3213003C99F7 /* BsTableViewController.m in Sources */,
 				FA95A26519F4F70700A94E19 /* Reachability.m in Sources */,
 				FA95A27D19F4F70700A94E19 /* RESideMenu.m in Sources */,
 				FA95A28F19F4F70700A94E19 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
@@ -1207,6 +1214,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W34YF8UFY4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
@@ -1226,9 +1235,10 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.show;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1243,6 +1253,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W34YF8UFY4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
@@ -1262,9 +1274,10 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.show;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

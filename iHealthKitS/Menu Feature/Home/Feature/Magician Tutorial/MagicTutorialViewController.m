@@ -39,17 +39,23 @@
     }
     self.buttonText = mtitles;
     [self.viewControllerArray addObjectsFromArray:mVCArr];
+    
+    UIButton *button = [UIButton new];
+    [button setImage:[[UIImage imageNamed:@"open-door"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    button.layer.cornerRadius = 36;
+    button.layer.masksToBounds = YES;
+    button.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    [button.imageView setTintColor:[UIColor purpleColor]];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(closeButtonDidTouchupInside:) forControlEvents:UIControlEventTouchUpInside];
+    [button constraintsLeading:self.view toLayoutAttribute:NSLayoutAttributeLeading constant:15];
+    [button constraintsBottom:self.view toLayoutAttribute:NSLayoutAttributeBottom constant:-15];
+    [button constraintsWidthWithConstant:72];
+    [button constraintsHeightWithConstant:72];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    UIButton *button = [UIButton new];
-    [button setTitle:@"關閉" forState:UIControlStateNormal];
-    [self.navigationView addSubview:button];
-    button.frame = CGRectMake(self.view.frame.size.width - 100, -24, 100, 44);
-    [button addTarget:self action:@selector(closeButtonDidTouchupInside:) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.selectionBar setBackgroundColor:[UIColor whiteColor]];
     [self.selectionBar setAlpha:0.8];
     [self setNavigationBackgroundColor];

@@ -45,12 +45,13 @@
 - (void)requestDetail:(MagicTutorialType *)tutorialType {
     NSDictionary *params = @{@"type":self.tutorialType.type,
                              @"page":@"1"};
+    __weak __typeof(self) weakSelf = self;
     [[URLSessionManager shared] requestURL:@"http://47.75.131.189/c210496866fe223ab4a4af746934820b/" method:@"POST" params:params completion:^(NSDictionary *dicData) {
         NSArray *dic = [dicData objectForKey:@"data"];
         MagicTutorialDetail *detail = [[MagicTutorialDetail alloc] initWithAttributes:dic[0]];
-        self.detail = detail;
+        weakSelf.detail = detail;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
         });
     }];
 }

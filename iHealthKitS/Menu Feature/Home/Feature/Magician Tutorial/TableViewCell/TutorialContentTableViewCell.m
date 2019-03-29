@@ -15,9 +15,9 @@
 @interface TutorialContentTableViewCell ()
 
 @property (nonatomic, strong) UILabel *contentLabel;
+//@property (strong, nonatomic) YYAnimatedImageView *imageURLView;
 @property (strong, nonatomic) FLAnimatedImageView *imageURLView;
 @property (strong, nonatomic) UIView *separatorView;
-@property (strong, nonatomic) NSLayoutConstraint *imageViewRatioConstraint;
 
 @end
 
@@ -31,15 +31,17 @@
         self.contentView.backgroundColor = [UIColor purpleDark2];
         
         [self.contentView addSubview:self.contentLabel];
-        [self.contentLabel constraintsTop:self.contentView toLayoutAttribute:NSLayoutAttributeTop leading:self.contentView toLayoutAttribute:NSLayoutAttributeLeading bottom:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute trailing:self.contentView toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(20, 10, 0, -10)];
-        
         [self.contentView addSubview:self.imageURLView];
-        [self.imageURLView constraintsTop:self.contentLabel toLayoutAttribute:NSLayoutAttributeBottom leading:self.contentView toLayoutAttribute:NSLayoutAttributeLeading bottom:self.contentView toLayoutAttribute:NSLayoutAttributeBottom trailing:self.contentView toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(20, 20, -20, -20)];
-        
         self.separatorView = [UIView new];
         self.separatorView.backgroundColor = [UIColor whiteColor];
         self.separatorView.alpha = 0.5;
         [self.contentView addSubview:self.separatorView];
+        
+        [self.contentLabel constraintsTop:self.contentView toLayoutAttribute:NSLayoutAttributeTop leading:self.contentView toLayoutAttribute:NSLayoutAttributeLeading bottom:self.imageURLView toLayoutAttribute:NSLayoutAttributeTop trailing:self.contentView toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(20, 10, -20, -10)];
+        
+        [self.imageURLView constraintsTop:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute leading:self.contentView toLayoutAttribute:NSLayoutAttributeLeading bottom:self.contentView toLayoutAttribute:NSLayoutAttributeBottom trailing:self.contentView toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(20, 20, -20, -20)];
+        [self.imageURLView constraintSelfWidthHeightByRatio:2/1.f];
+
         [self.separatorView constraintsTop:self.contentView toLayoutAttribute:NSLayoutAttributeBottom leading:self.contentView toLayoutAttribute:NSLayoutAttributeLeading bottom:self.contentView toLayoutAttribute:NSLayoutAttributeBottom trailing:self.contentView toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(-3, 0, 0, 0)];
     }
     return self;
@@ -51,57 +53,57 @@
 
 - (void)setImageFromURL:(NSString *)urlStr {
     NSURL *url = [NSURL URLWithString:urlStr];
-    [self loadAnimatedImageWithURL:url completion:^(FLAnimatedImage *animatedImage) {
-        self.imageURLView.animatedImage = animatedImage;
-        self.imageURLView.userInteractionEnabled = YES;
-        CGFloat ratio = animatedImage.size.width/animatedImage.size.height;
-        self.imageViewRatioConstraint = [NSLayoutConstraint constraintWithItem:self.imageURLView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.imageURLView attribute:NSLayoutAttributeHeight multiplier:ratio constant:0.0];
+    
+    __weak __typeof(self) weakSelf = self;
+    [weakSelf loadAnimatedImageWithURL:url completion:^(FLAnimatedImage *animatedImage) {
+        weakSelf.imageURLView.animatedImage = animatedImage;
+        weakSelf.imageURLView.userInteractionEnabled = YES;
+        [weakSelf.imageURLView layoutIfNeeded];
     }];
 }
 
 - (void)loadAnimatedImageWithURL:(NSURL *const)url completion:(void (^)(FLAnimatedImage *animatedImage))completion {
     NSString *const filename = url.lastPathComponent;
-    NSString *const diskPath = [NSHomeDirectory() stringByAppendingPathComponent:filename];
     
-    NSData * __block animatedImageData = [[NSFileManager defaultManager] contentsAtPath:diskPath];
-    FLAnimatedImage * __block animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:animatedImageData];
+    FLAnimatedImage * __block animatedImage = [self getImage:filename];
     
     if (animatedImage) {
         if (completion) {
             completion(animatedImage);
         }
     } else {
+        __weak __typeof(self) weakSelf = self;
         [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            animatedImageData = data;
-            animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:animatedImageData];
+            animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:data];
             if (animatedImage) {
                 if (completion) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completion(animatedImage);
                     });
                 }
-                [data writeToFile:diskPath atomically:YES];
+                [weakSelf saveData:data filename:filename];
             }
         }] resume];
     }
 }
 
-#pragma mark - Getter, Setter
-
-- (void)setImageViewRatioConstraint:(NSLayoutConstraint *)imageViewRatioConstraint {
-    _imageViewRatioConstraint = imageViewRatioConstraint;
-    if (_imageViewRatioConstraint != nil) {
-        [self.imageURLView removeConstraint:_imageViewRatioConstraint];
-    }
-    if (imageViewRatioConstraint != nil) {
-        [self.imageURLView addConstraint:imageViewRatioConstraint];
-    }
+- (void)saveData:(NSData *)data filename:(NSString *)filename {
+    filename = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@", filename];
+    [data writeToFile:filename atomically:YES];
 }
+
+- (FLAnimatedImage *)getImage:(NSString *)filename {
+    filename = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@", filename];
+    NSData *data = [NSData dataWithContentsOfFile:filename];
+    return [[FLAnimatedImage alloc] initWithAnimatedGIFData:data];
+}
+
+
+#pragma mark - Getter, Setter
 
 - (FLAnimatedImageView *)imageURLView {
     if (_imageURLView == nil) {
         FLAnimatedImageView *imageView = [FLAnimatedImageView new];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
         _imageURLView = imageView;
     }
     return _imageURLView;
