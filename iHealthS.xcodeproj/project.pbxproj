@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94063E6B2243C70900883A09 /* libresolv.tbd */; };
 		94305166224B84C8003C99F7 /* TutorialTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */; };
+		9430516A224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305169224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m */; };
+		94305173224CFAB4003C99F7 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305172224CFAB4003C99F7 /* UIColor+Magic.m */; };
+		94305176224CFFE6003C99F7 /* TutorialContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */; };
 		947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B626F224606C800A7CFCA /* MagicTutorialViewController.m */; };
 		947B628622461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */; };
 		947B628722461EAE00A7CFCA /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628422461EAE00A7CFCA /* NavigationTheme.m */; };
@@ -146,6 +149,12 @@
 		94063E6B2243C70900883A09 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		94305164224B84C8003C99F7 /* TutorialTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialTitleTableViewCell.h; sourceTree = "<group>"; };
 		94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialTitleTableViewCell.m; sourceTree = "<group>"; };
+		94305168224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialSubtitleTableViewCell.h; sourceTree = "<group>"; };
+		94305169224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialSubtitleTableViewCell.m; sourceTree = "<group>"; };
+		94305171224CFAB4003C99F7 /* UIColor+Magic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Magic.h"; sourceTree = "<group>"; };
+		94305172224CFAB4003C99F7 /* UIColor+Magic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Magic.m"; sourceTree = "<group>"; };
+		94305174224CFFE6003C99F7 /* TutorialContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialContentTableViewCell.h; sourceTree = "<group>"; };
+		94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialContentTableViewCell.m; sourceTree = "<group>"; };
 		947B626E224606C800A7CFCA /* MagicTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialViewController.h; sourceTree = "<group>"; };
 		947B626F224606C800A7CFCA /* MagicTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialViewController.m; sourceTree = "<group>"; };
 		947B628022461EAE00A7CFCA /* NavigationTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTheme.h; sourceTree = "<group>"; };
@@ -371,6 +380,10 @@
 			children = (
 				94305164224B84C8003C99F7 /* TutorialTitleTableViewCell.h */,
 				94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */,
+				94305168224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.h */,
+				94305169224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m */,
+				94305174224CFFE6003C99F7 /* TutorialContentTableViewCell.h */,
+				94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -440,6 +453,8 @@
 				947B629D2246410B00A7CFCA /* ISObject.m */,
 				947B62A22246456500A7CFCA /* URLSessionManager.h */,
 				947B62A32246456500A7CFCA /* URLSessionManager.m */,
+				94305171224CFAB4003C99F7 /* UIColor+Magic.h */,
+				94305172224CFAB4003C99F7 /* UIColor+Magic.m */,
 			);
 			path = BaseComponent;
 			sourceTree = "<group>";
@@ -1025,6 +1040,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94D41B3C223A1560002CBD54 /* libPods-iHealthS.a in Sources */,
+				9430516A224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m in Sources */,
 				FA95A28719F4F70700A94E19 /* SDWebImagePrefetcher.m in Sources */,
 				FA95A28E19F4F70700A94E19 /* UIView+WebCacheOperation.m in Sources */,
 				FA95A29119F4F70700A94E19 /* TOActivityChrome.m in Sources */,
@@ -1040,6 +1056,7 @@
 				FA95A27E19F4F70700A94E19 /* UIViewController+RESideMenu.m in Sources */,
 				FA95A25C19F4F70700A94E19 /* HomeTableViewCell.m in Sources */,
 				FA95A26319F4F70700A94E19 /* ASIInputStream.m in Sources */,
+				94305173224CFAB4003C99F7 /* UIColor+Magic.m in Sources */,
 				94305166224B84C8003C99F7 /* TutorialTitleTableViewCell.m in Sources */,
 				FA95A28019F4F70700A94E19 /* NSData+ImageContentType.m in Sources */,
 				FA95A28919F4F70700A94E19 /* UIImage+GIF.m in Sources */,
@@ -1088,6 +1105,7 @@
 				FA95A28D19F4F70700A94E19 /* UIImageView+WebCache.m in Sources */,
 				947B628622461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m in Sources */,
 				FA95A28B19F4F70700A94E19 /* UIImage+WebP.m in Sources */,
+				94305176224CFFE6003C99F7 /* TutorialContentTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

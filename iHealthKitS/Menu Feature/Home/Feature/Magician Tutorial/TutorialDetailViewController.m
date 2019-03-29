@@ -10,8 +10,12 @@
 #import "URLSessionManager.h"
 #import "UIView+Constraint.h"
 #import "MagicTutorialDetail.h"
+#import "TutorialTitleTableViewCell.h"
+#import "TutorialSubtitleTableViewCell.h"
+#import "TutorialContentTableViewCell.h"
+#import "UIColor+Magic.h"
 
-@interface TutorialDetailViewController () <UITableViewDataSource>
+@interface TutorialDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) MagicTutorialType *tutorialType;
 @property (nonatomic, strong) UITableView *tableView;
@@ -33,10 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView = [UITableView new];
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"contencell"];
     [self.view addSubview:self.tableView];
     [self.tableView constraints:self.view];
     [self requestDetail:self.tutorialType];
@@ -47,32 +47,74 @@
                              @"page":@"1"};
     [[URLSessionManager shared] requestURL:@"http://47.75.131.189/c210496866fe223ab4a4af746934820b/" method:@"POST" params:params completion:^(NSDictionary *dicData) {
         NSArray *dic = [dicData objectForKey:@"data"];
-        MagicTutorialDetail *detail = [[MagicTutorialDetail alloc] initWithAttributes:[dic[0] objectForKey:@"data"]];
+        MagicTutorialDetail *detail = [[MagicTutorialDetail alloc] initWithAttributes:dic[0]];
         self.detail = detail;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
     }];
 }
+#pragma mark - Getter
+
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        UITableView *tableView = [[UITableView alloc] init];
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        tableView.estimatedRowHeight = 77;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.allowsSelection = NO;
+        [tableView setShowsVerticalScrollIndicator:NO];
+        tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        tableView.backgroundColor = [UIColor purpleDark2];
+        _tableView = tableView;
+    }
+    return _tableView;
+}
 
 #pragma mark - UITableViewDataSource
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.detail == nil) return 0;
-    return self.detail.contents.count;
+    return self.detail.contents.count + 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *identifiers = @[@"titlecell", @"subtitlecell",@"contencell"];
-    NSString *identifier = identifiers[indexPath.row];
+    NSString *identifier;
+    if (indexPath.row == 0) {
+        identifier = identifiers[0];
+    } else if (indexPath.row == 1) {
+        identifier = identifiers[1];
+    } else {
+        identifier = identifiers[2];
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         if ([identifier isEqualToString:@"titlecell"]) {
-            
+            cell = [[TutorialTitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        } else if ([identifier isEqualToString:@"subtitlecell"]) {
+            cell = [[TutorialSubtitleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        } else {
+            cell = [[TutorialContentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = @"123";
+    if ([identifier isEqualToString:@"titlecell"]) {
+        TutorialTitleTableViewCell *titleCell = (TutorialTitleTableViewCell *)cell;
+        [titleCell setTitleText:self.detail.mainTitle];
+    } else if ([identifier isEqualToString:@"subtitlecell"]) {
+        TutorialSubtitleTableViewCell *subtitleCell = (TutorialSubtitleTableViewCell *)cell;
+        [subtitleCell setSubtitleText:self.detail.title];
+    } else {
+        TutorialContentTableViewCell *contentCell = (TutorialContentTableViewCell *)cell;
+        [contentCell setContentText:self.detail.contents[indexPath.row - 2]];
+        [contentCell setImageFromURL:self.detail.imageURLs[indexPath.row - 2]];
+    }
     return cell;
 }
 

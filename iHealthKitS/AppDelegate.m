@@ -12,13 +12,14 @@
 #import <UserNotifications/UserNotifications.h>
 #import "JANALYTICSService.h"
 #import "MagicTutorialViewController.h"
+#import "TutorialDetailViewController.h"
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    wax_start("UIWebView.lua", nil);
+//    wax_start("UIWebView.lua", nil);
     
     // 添加talking data统计接口
     [TalkingData sessionStarted:TD_ID withChannelId:@"App Store"];
@@ -53,7 +54,10 @@
     self.sideMenuViewController = [self createSideMenuViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.window.rootViewController = self.sideMenuViewController;
+    TutorialDetailViewController *vc = [[TutorialDetailViewController alloc] initWithTutorialType:[[MagicTutorialType alloc] initWithAttributes:@{@"type":@"pen", @"title":@"让笔消失"}]];
+    
+    self.window.rootViewController = vc;
+//    self.window.rootViewController = self.sideMenuViewController;
     [self.window makeKeyAndVisible];
     
     //JPush

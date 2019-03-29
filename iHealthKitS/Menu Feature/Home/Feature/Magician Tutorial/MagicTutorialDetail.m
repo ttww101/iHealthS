@@ -13,18 +13,10 @@
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
     self = [super initWithAttributes:attributes];
     if (self) {
-//        NSArray *arr = (NSArray *)attributes;
-//        int i = 0;
-//        for (id object in arr) {
-//            i++;
-//        }
-//        NSLog(@"%@", @(i));
         self.mainTitle = [attributes objectForKey:@"main_title"];
         self.title = [attributes objectForKey:@"title"];
-//        self.imageURLs = [attributes objectForKey:@"image"];
-        self.imageURLs = @[@"1234", @"123"];
-        self.contents = @[@"12344", @"1234"];
-//        self.contents = [attributes objectForKey:@"text"];
+        self.imageURLs = [attributes objectForKey:@"image"];
+        self.contents = [attributes objectForKey:@"text"];
     }
     return self;
 }

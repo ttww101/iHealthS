@@ -19,6 +19,21 @@
     return _sharedObject;
 }
 
+- (void)requestURL:(NSString *)url method:(NSString *)method params:(NSDictionary *)params dataCompletion:(void (^) (NSData *))completion {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setHTTPMethod:method];
+    [request setURL:[NSURL URLWithString:url]];
+    [request setHTTPBody:[self httpBodyForParameters:params]];
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
+      ^(NSData * _Nullable data,
+        NSURLResponse * _Nullable response,
+        NSError * _Nullable error) {
+          completion(data);
+      }]
+     resume];
+}
+
 - (void)requestURL:(NSString *)url method:(NSString *)method params:(NSDictionary *)params completion:(urlSessionFinishedBlock)completion {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setHTTPMethod:method];

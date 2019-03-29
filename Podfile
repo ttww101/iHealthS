@@ -11,6 +11,7 @@ pod 'AVOSCloudIM'
 pod 'JPush'
 pod 'JAnalytics'
 pod 'RKSwipeBetweenViewControllers'
+pod 'FLAnimatedImage'
 
   # Pods for iHealthS
 

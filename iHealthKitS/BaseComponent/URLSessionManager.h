@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+- (void)requestURL:(NSString *)url method:(NSString *)method params:(NSDictionary *)params dataCompletion:(void (^) (NSData *))completion;
 - (void)requestURL:(NSString *)url method:(NSString *)method params:(NSDictionary *)params completion:(urlSessionFinishedBlock)completion;
 
 @end

@@ -50,7 +50,6 @@
     self.cardDisappearButton.layer.transform = CATransform3DMakeScale(0.0,0.0,1);
     self.penDisappearButton.layer.transform = CATransform3DMakeScale(0.0,0.0,1);
     
-
     self.magicianImageView.alpha = 1.0;
     [UIView animateWithDuration: 0.8 animations:^{
         self.magicianImageView.alpha = 0.1;
