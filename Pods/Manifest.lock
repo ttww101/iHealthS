@@ -16,7 +16,6 @@ PODS:
   - JPush (3.1.2):
     - JCore (~> 1.2.6)
   - RKSwipeBetweenViewControllers (0.1.4)
-  - wax (1.2.1)
 
 DEPENDENCIES:
   - AVOSCloud
@@ -25,7 +24,6 @@ DEPENDENCIES:
   - JAnalytics
   - JPush
   - RKSwipeBetweenViewControllers
-  - wax (from `https://github.com/alibaba/wax.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -37,15 +35,6 @@ SPEC REPOS:
     - JPush
     - RKSwipeBetweenViewControllers
 
-EXTERNAL SOURCES:
-  wax:
-    :git: https://github.com/alibaba/wax.git
-
-CHECKOUT OPTIONS:
-  wax:
-    :commit: 0267d9f895fb605e91a7086b7eb746087b682103
-    :git: https://github.com/alibaba/wax.git
-
 SPEC CHECKSUMS:
   AVOSCloud: b3cb1ed20d46c0d55083363522cb2ea593d51ac7
   AVOSCloudIM: ede93dc6155c3e73524469f5098a1ec2422915ae
@@ -54,8 +43,7 @@ SPEC CHECKSUMS:
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   RKSwipeBetweenViewControllers: 2236038119d6f7eb64ff589eb423fcda80cbe962
-  wax: 85f4b93dbbfa123ee592c458a0ce289d561e4704
 
-PODFILE CHECKSUM: c4908db7ffbe176523cb4e54ccad0f868946a2cf
+PODFILE CHECKSUM: b4e9d425fb5423de86f4000557cd71b44737e557
 
 COCOAPODS: 1.5.3
