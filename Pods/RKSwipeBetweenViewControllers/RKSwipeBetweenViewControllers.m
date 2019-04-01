@@ -11,8 +11,8 @@
 
 //%%% customizeable button attributes
 CGFloat X_BUFFER = 0.0; //%%% the number of pixels on either side of the segment
-CGFloat Y_BUFFER = 5.0; //%%% number of pixels on top of the segment
-CGFloat HEIGHT = 39.0; //%%% height of the segment
+CGFloat Y_BUFFER = 14.0; //%%% number of pixels on top of the segment
+CGFloat HEIGHT = 30.0; //%%% height of the segment
 
 //%%% customizeable selector bar attributes (the black bar under the buttons)
 CGFloat BOUNCE_BUFFER = 10.0; //%%% adds bounce to the selection bar when you scroll
@@ -27,7 +27,6 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 @property (nonatomic) UIScrollView *pageScrollView;
 @property (nonatomic) NSInteger currentPageIndex;
 @property (nonatomic) BOOL isPageScrollingFlag; //%%% prevents scrolling / segment tap crash
-@property (strong, nonatomic) NSMutableArray <UIButton *> *buttonArr;
 
 @end
 
@@ -36,6 +35,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 @synthesize selectionBar;
 @synthesize pageController;
 @synthesize navigationView;
+@synthesize buttonText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,19 +59,6 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 #pragma mark Customizables
 
-- (void)setButtonText:(NSArray *)buttonText {
-    if (self.buttonArr.count <= buttonText.count) {
-        int i = 0;
-        for (NSString *text in buttonText) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.buttonArr[i] setTitle:text forState:UIControlStateNormal];
-            });
-            i++;
-        }
-    }
-    _buttonText = buttonText;
-}
-
 //%%% color of the status bar
 -(UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -80,16 +67,12 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 
 //%%% sets up the tabs using a loop.  You can take apart the loop to customize individual buttons, but remember to tag the buttons.  (button.tag=0 and the second button.tag=1, etc)
 -(void)setupSegmentButtons {
-    self.buttonArr = [NSMutableArray new];
-    
     navigationView = [[UIView alloc]initWithFrame:CGRectMake(0,0,self.view.frame.size.width,self.navigationBar.frame.size.height)];
-    
-//    navigationView.backgroundColor = [UIColor colorWithRed:200/255.f green:140/255.f blue:200/255.f alpha:1];
     
     NSInteger numControllers = [viewControllerArray count];
     
-    if (!self.buttonText) {
-         self.buttonText = [[NSArray alloc]initWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",nil]; //%%%buttontitle
+    if (!buttonText) {
+         buttonText = [[NSArray alloc]initWithObjects: @"first",@"second",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
     }
     
     for (int i = 0; i<numControllers; i++) {
@@ -97,16 +80,11 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
         [navigationView addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-        button.backgroundColor = [UIColor colorWithRed:51/255.f green:18/255.f blue:47/255.f alpha:1];//%%% buttoncolors
-        [button.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        button.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];//%%% buttoncolors
         
         [button addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         
-        [button setTitle:[self.buttonText objectAtIndex:i] forState:UIControlStateNormal]; //%%%buttontitle
-        
-        [button setTitleColor:[UIColor colorWithRed:252/255.f green:195/255.f blue:255/255.f alpha:1] forState:UIControlStateNormal];
-        
-        [self.buttonArr addObject:button];
+        [button setTitle:[buttonText objectAtIndex:i] forState:UIControlStateNormal]; //%%%buttontitle
     }
     
     pageController.navigationController.navigationBar.topItem.titleView = navigationView;
@@ -146,7 +124,7 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
 //%%% sets up the selection bar under the buttons on the navigation bar
 -(void)setupSelector {
     selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER-X_OFFSET, SELECTOR_Y_BUFFER,(self.view.frame.size.width-2*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
-    selectionBar.backgroundColor = [UIColor whiteColor]; //%%% sbcolor
+    selectionBar.backgroundColor = [UIColor greenColor]; //%%% sbcolor
     selectionBar.alpha = 0.8; //%%% sbalpha
     [navigationView addSubview:selectionBar];
 }

@@ -160,6 +160,6 @@
 @property (nonatomic, strong) UIView *selectionBar;
 @property (nonatomic, strong)UIPageViewController *pageController;
 @property (nonatomic, strong)UIView *navigationView;
-@property (nonatomic, strong) NSArray *buttonText;
+@property (nonatomic, strong)NSArray *buttonText;
 
 @end
