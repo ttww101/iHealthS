@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "ThemeNavigationController.h"
 #import "UINavigationBar+ApplyTheme.h"
+#import "BaseViewController+Setup.h"
 
 @interface BaseViewController ()
 
@@ -27,6 +28,7 @@
             [themeNavigationController.navigationBar applyTheme:theme];
         }
     };
+    [self navigationsetuptest];
     self.navigationSetup([[aNasssfggvifsgastionTehemde alloc]
                           initWithTintColor:[UIColor blackColor]
                           barColor:[UIColor whiteColor]

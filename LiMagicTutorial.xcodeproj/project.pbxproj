@@ -38,6 +38,8 @@
 		9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3782240FC9C00A8355B /* BaseViewController.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
+		94E621B8225341470003496B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E621B7225341470003496B /* Launch Screen.storyboard */; };
+		94E621BB22538F6C0003496B /* BaseViewController+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E621BA22538F6C0003496B /* BaseViewController+Setup.m */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
 		DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A41DE1CE99991002C0F49 /* close_icon.png */; };
 		DA46D64F1CD8ABE900B899E7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA46D64E1CD8ABE900B899E7 /* MessageUI.framework */; };
@@ -207,6 +209,9 @@
 		9498D3772240FC9C00A8355B /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9498D3782240FC9C00A8355B /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "LiMagicTutorialS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		94E621B7225341470003496B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		94E621B922538F6C0003496B /* BaseViewController+Setup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseViewController+Setup.h"; sourceTree = "<group>"; };
+		94E621BA22538F6C0003496B /* BaseViewController+Setup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BaseViewController+Setup.m"; sourceTree = "<group>"; };
 		B62700E746E43C287B56C972 /* libPods-LiMagicTutorial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiMagicTutorial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
@@ -463,6 +468,8 @@
 				947B628522461EAE00A7CFCA /* ThemeNavigationController.m */,
 				947B628122461EAE00A7CFCA /* UINavigationBar+ApplyTheme.h */,
 				947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */,
+				94E621B922538F6C0003496B /* BaseViewController+Setup.h */,
+				94E621BA22538F6C0003496B /* BaseViewController+Setup.m */,
 			);
 			path = NavigationStyle;
 			sourceTree = "<group>";
@@ -626,6 +633,7 @@
 				FA2F274219D5495F00873763 /* InfoPlist.strings */,
 				FA2F274719D5495F00873763 /* LiMagicTutorial-Prefix.pch */,
 				FA99522D19D54C4700E1FCA4 /* common.h */,
+				94E621B7225341470003496B /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1042,6 +1050,7 @@
 				FA95A2A519F4F70700A94E19 /* share@2x.png in Resources */,
 				FA95A2A119F4F70700A94E19 /* plugin_icon_message@2x.png in Resources */,
 				FA95A27419F4F70700A94E19 /* imageviewer_return@2x.png in Resources */,
+				94E621B8225341470003496B /* Launch Screen.storyboard in Resources */,
 				FA95A27519F4F70700A94E19 /* imageviewer_save@2x.png in Resources */,
 				FA95A29C19F4F70700A94E19 /* menu@2x.png in Resources */,
 				FA95A2A319F4F70700A94E19 /* plugin_icon_setting@2x.png in Resources */,
@@ -1145,6 +1154,7 @@
 				FA95A28219F4F70700A94E19 /* SDWebImageCompat.m in Sources */,
 				FA95A25719F4F70700A94E19 /* MoreViewController.m in Sources */,
 				FA95A28C19F4F70700A94E19 /* UIImageView+HighlightedWebCache.m in Sources */,
+				94E621BB22538F6C0003496B /* BaseViewController+Setup.m in Sources */,
 				FA95A29219F4F70700A94E19 /* TOActivitySafari.m in Sources */,
 				FA95A25F19F4F70700A94E19 /* ASIDataDecompressor.m in Sources */,
 				947B62A42246456500A7CFCA /* URLSessionManager.m in Sources */,

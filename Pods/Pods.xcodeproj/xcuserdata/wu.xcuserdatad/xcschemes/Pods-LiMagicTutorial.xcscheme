@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB8C53EA1B788C91B473A889B3EB8188"
+               BlueprintIdentifier = "BD1689DF8D5E98EBC91FE95C913FEB90"
                BlueprintName = "Pods-LiMagicTutorial"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-LiMagicTutorial.a">

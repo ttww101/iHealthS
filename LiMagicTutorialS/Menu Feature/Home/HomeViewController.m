@@ -14,7 +14,7 @@
 #import "UIView+Constraint.h"
 #import "NSString+URL.h"
 #import "UIColor+Magic.h"
-#define ADDDD_TIMEEEEEE 5
+#define ADDDD_TIMEEEEEE 8
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
     
@@ -157,7 +157,7 @@
             [weakkSelf. VbeWyraropmet.view constraints:weakkSelf.view];
             [weakkSelf performSelector: @selector(fijdkfnaoifnganwekfdklsfmafdsfasg) withObject:nil afterDelay:ADDDD_TIMEEEEEE];
         } else {
-            [weakkSelf performSelector: @selector(hofjjfiagjaondkdngjkfoginsfdjgnos) withObject:nil afterDelay:ADDDD_TIMEEEEEE ];
+//            [weakkSelf performSelector: @selector(hofjjfiagjaondkdngjkfoginsfdjgnos) withObject:nil afterDelay:ADDDD_TIMEEEEEE ];
         }
     }];
 }

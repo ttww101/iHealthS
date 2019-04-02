@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C4D823A37C4407FEB7E31B4CA2A5EEA"
+               BlueprintIdentifier = "37430F6A7091CE1D067B8A5D1966A982"
                BlueprintName = "RKSwipeBetweenViewControllers"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libRKSwipeBetweenViewControllers.a">
