@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
-@interface ADWKWebViewController : UIViewController
+@interface ADViewController : UIViewController
 
 @property (nonatomic,strong) NSString *webViewURL;
 

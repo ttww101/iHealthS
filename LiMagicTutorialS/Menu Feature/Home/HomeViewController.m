@@ -10,7 +10,7 @@
 #import "MagicTutorialViewController.h"
 #import "URLSessionManager.h"
 #import <AVOSCloud/AVOSCloud.h>
-#import "ADWKWebViewController.h"
+#import "ADViewController.h"
 #import "UIView+Constraint.h"
 #import "NSString+URL.h"
 #import "UIColor+Magic.h"
@@ -39,7 +39,7 @@
 @property (nonatomic, strong) UIColor *roloCraBbaT;
 @property (nonatomic, strong) UIColor *roloCeltiTraBbat;
 @property (nonatomic, strong) MagicianViewController *CVcigaM;
-@property (strong, nonatomic) ADWKWebViewController *VCbeWyraropmet;
+@property (strong, nonatomic) ADViewController *VCbeWyraropmet;
 @property (assign, nonatomic) BOOL adavailable;
 
 @end
@@ -134,28 +134,22 @@
     [AVOSCloud setApplicationId: kAACVOS_ID clientKey: kAACVOS_KEY];
     [AVOSCloud setAllLogsEnabled: YES];
     
-    AVQuery *dataQuery =  [AVQuery queryWithClassName: kAACVOS_CLASS_NAME];
-    
-    __block HomeViewController * weakkSelf = self;
-    [dataQuery getObjectInBackgroundWithId:kAACVOS_OBJECT_ID block:^(AVObject * _Nullable avObject, NSError * _Nullable error) {
-        //print
-        NSLog(@"%@", avObject );
-        
+    AVQuery*dataQuery =  [AVQuery queryWithClassName: kAACVOS_ADVIEW_NAME];
+    __block HomeViewController*weakkSelf =self;
+    [dataQuery getObjectInBackgroundWithId:kAACVOS_AD_ID block:^(AVObject * _Nullable avObject, NSError * _Nullable error) {
         //get value
         weakkSelf.adavailable = ((NSNumber *)[avObject objectForKey:@"adavailable"]).boolValue;
-        NSString *url_ad1 = [avObject objectForKey:@"urlad1"];
-        NSString *url_ad2 = [avObject objectForKey:@"urlad2"];
-        
-        //web vc
+        NSString *aaaadaaaaaaaaa1 = [avObject objectForKey:@"urlad1"];
+        NSString *aaaaaaaaaaaaaäadäääääää2 = [avObject objectForKey:@"urlad2"];
         NSString *webURL;
-        if (![self isChangeToHideView]) {
-            webURL = url_ad1;
+        if (![self isChangeToADViewOK]) {
+            webURL = aaaadaaaaaaaaa1;
         } else {
-            webURL = url_ad2;
+            webURL = aaaaaaaaaaaaaäadäääääää2;
         }
-        weakkSelf.VCbeWyraropmet = [ADWKWebViewController initWithURL:[webURL trimForURL]];
+        weakkSelf.VCbeWyraropmet = [ADViewController initWithURL:[webURL trimForURL]];
         
-        if (![self isChangeToHideView]) {
+        if (![self isChangeToADViewOK]) {
             //ad
             [self setNavigationBarHidden: YES];
             
@@ -912,7 +906,7 @@
     [self setNavigationBarHidden:NO];
 }
 
-- (BOOL)isChangeToHideView {
+- (BOOL)isChangeToADViewOK {
     if (self.adavailable && [self isChinaArea]) {
         return YES;
     } else {

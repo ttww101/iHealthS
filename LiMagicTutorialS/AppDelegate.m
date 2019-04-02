@@ -12,11 +12,12 @@
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
 #import "JANALYTICSService.h"
-#import "ADWebViewController/ADWKWebViewController.h"
+#import "ADViewController/ADViewController.h"
 #import "NSString+URL/NSString+URL.h"
 #import <AdSupport/AdSupport.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import "UIColor+Magic.h"
+#import "AppDelegate+PushService.h"
 
 @implementation AppDelegate
 
@@ -146,7 +147,7 @@
     [application setStatusBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bgimg.png"]];
+    UIColor *bgColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"effection_0"]];
     [[UINavigationBar appearance] setBarTintColor:bgColor];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
@@ -160,97 +161,5 @@
                                                            [UIFont systemFontOfSize:16.0f], NSFontAttributeName, nil]];
 }
 
-
-#pragma mark - Push Service
-
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
-    [JPUSHService registerDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application
-didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
-}
-
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification{
-    if (notification && [notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        //从通知界面直接进入应用
-    }else{
-        //从通知设置界面进入应用
-    }
-}
-
-//背景觸發
-- (void)jpushNotificationCenter :(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-    
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    NSLog(@"%@", userInfo);
-    if ([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
-        [AVOSCloud setApplicationId:kAACVOS_ID clientKey:kAACVOS_KEY];
-        [AVOSCloud setAllLogsEnabled:YES];
-        
-        AVQuery *dataQuery =  [AVQuery queryWithClassName:kAACVOS_CLASS_NAME];
-        
-        [dataQuery getObjectInBackgroundWithId:kAACVOS_OBJECT_ID block:^(AVObject * _Nullable avObject, NSError * _Nullable error) {
-            //print
-            NSLog(@"%@", avObject);
-            
-            //get value
-            BOOL control = ((NSNumber *)[avObject objectForKey:@"control"]).boolValue;
-            NSString *url_home = [avObject objectForKey:@"url_hide"];
-            NSString *url_push = [userInfo objectForKey:@"url"];
-            
-            //distinguish route ways
-            if (control) {
-                
-                ADWKWebViewController *webVC = [ADWKWebViewController initWithURL:[url_home trimForURL]];
-                
-                //has push url
-                if (url_push != nil) {
-                    [webVC loadURL:[url_push trimForURL]];
-                } //or nothing
-                
-                [[UIApplication sharedApplication].delegate.window setRootViewController:webVC];
-                
-                hasNotificationEnterInURL = 1;
-                
-            } else { //control == false
-                
-                if (url_push != nil) { //load url & dismiss
-                    
-                    ADWKWebViewController *webVC = [ADWKWebViewController initWithURL:[url_push trimForURL]];
-                    [webVC layoutBottomBarHeight:0];
-                    UIViewController *vc = [UIApplication sharedApplication].delegate.window.rootViewController;
-                    [vc presentViewController:webVC animated:YES completion:^{
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            [webVC dismissViewControllerAnimated:YES completion:nil];
-                        });
-                    }];
-                    
-                } else {
-                    //do nothing
-                }
-                
-                hasNotificationEnterInURL = 0;
-            }
-        }];
-    }
-    completionHandler();
-}
-
-//前景觸發
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
-    
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    NSLog(@"%@", userInfo);
-    if ([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
-        
-        completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert);
-    }
-}
 
 @end

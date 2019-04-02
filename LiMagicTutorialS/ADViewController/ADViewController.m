@@ -1,8 +1,8 @@
-#import "ADWKWebViewController.h"
+#import "ADViewController.h"
 #import "ADReachability.h"
 #import <AdSupport/AdSupport.h>
 
-@interface ADWKWebViewController ()<WKNavigationDelegate, WKUIDelegate,UIAlertViewDelegate>
+@interface ADViewController ()<WKNavigationDelegate, WKUIDelegate,UIAlertViewDelegate>
 
 @property (nonatomic) ADReachability *hostReachability;//域名检查
 @property (nonatomic) ADReachability *internetReachability;//网络检查
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation ADWKWebViewController
+@implementation ADViewController
 
 #pragma mark - Public
 
@@ -33,7 +33,7 @@
 }
 
 + (instancetype)initWithURL:(NSString *)urlString{
-    ADWKWebViewController *adWKWebViewController = [[ADWKWebViewController alloc]init];
+    ADViewController *adWKWebViewController = [[ADViewController alloc]init];
     adWKWebViewController.webViewURL = urlString;
     return adWKWebViewController;
 }

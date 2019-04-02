@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94063E6B2243C70900883A09 /* libresolv.tbd */; };
+		942E62BD22520778007F59D2 /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 942E62BC22520778007F59D2 /* AppDelegate+PushService.m */; };
 		94305166224B84C8003C99F7 /* TutorialTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */; };
 		9430516A224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305169224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m */; };
 		94305173224CFAB4003C99F7 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305172224CFAB4003C99F7 /* UIColor+Magic.m */; };
 		94305176224CFFE6003C99F7 /* TutorialContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */; };
 		9430517A224E3213003C99F7 /* BsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305179224E3213003C99F7 /* BsTableViewController.m */; };
-		94305188224E363A003C99F7 /* ADWKWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9430517C224E3639003C99F7 /* ADWKWebViewController.xib */; };
+		94305188224E363A003C99F7 /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9430517C224E3639003C99F7 /* ADViewController.xib */; };
 		94305189224E363A003C99F7 /* NoNet.png in Resources */ = {isa = PBXBuildFile; fileRef = 9430517F224E3639003C99F7 /* NoNet.png */; };
 		9430518A224E363A003C99F7 /* aa.png in Resources */ = {isa = PBXBuildFile; fileRef = 94305180224E3639003C99F7 /* aa.png */; };
 		9430518B224E363A003C99F7 /* ee.png in Resources */ = {isa = PBXBuildFile; fileRef = 94305181224E3639003C99F7 /* ee.png */; };
 		9430518C224E363A003C99F7 /* dd.png in Resources */ = {isa = PBXBuildFile; fileRef = 94305182224E3639003C99F7 /* dd.png */; };
 		9430518D224E363A003C99F7 /* bb.png in Resources */ = {isa = PBXBuildFile; fileRef = 94305183224E3639003C99F7 /* bb.png */; };
 		9430518E224E363A003C99F7 /* cc.png in Resources */ = {isa = PBXBuildFile; fileRef = 94305184224E3639003C99F7 /* cc.png */; };
-		9430518F224E363A003C99F7 /* ADWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305186224E3639003C99F7 /* ADWKWebViewController.m */; };
+		9430518F224E363A003C99F7 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305186224E3639003C99F7 /* ADViewController.m */; };
 		94305190224E363A003C99F7 /* ADReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305187224E3639003C99F7 /* ADReachability.m */; };
 		94305194224E36AC003C99F7 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305192224E36AC003C99F7 /* NSString+URL.m */; };
 		947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B626F224606C800A7CFCA /* MagicTutorialViewController.m */; };
@@ -37,8 +38,6 @@
 		9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3782240FC9C00A8355B /* BaseViewController.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
-		94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B35223A12D4002CBD54 /* UIWebView.lua */; };
-		94D41B39223A137E002CBD54 /* a.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B38223A137E002CBD54 /* a.lua */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
 		DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A41DE1CE99991002C0F49 /* close_icon.png */; };
 		DA46D64F1CD8ABE900B899E7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA46D64E1CD8ABE900B899E7 /* MessageUI.framework */; };
@@ -157,6 +156,8 @@
 		66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		94063E6A2243C68D00883A09 /* LiMagicTutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiMagicTutorial.entitlements; sourceTree = "<group>"; };
 		94063E6B2243C70900883A09 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		942E62BB22520778007F59D2 /* AppDelegate+PushService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushService.h"; sourceTree = "<group>"; };
+		942E62BC22520778007F59D2 /* AppDelegate+PushService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushService.m"; sourceTree = "<group>"; };
 		94305164224B84C8003C99F7 /* TutorialTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialTitleTableViewCell.h; sourceTree = "<group>"; };
 		94305165224B84C8003C99F7 /* TutorialTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialTitleTableViewCell.m; sourceTree = "<group>"; };
 		94305168224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialSubtitleTableViewCell.h; sourceTree = "<group>"; };
@@ -167,8 +168,8 @@
 		94305175224CFFE6003C99F7 /* TutorialContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialContentTableViewCell.m; sourceTree = "<group>"; };
 		94305178224E3213003C99F7 /* BsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BsTableViewController.h; sourceTree = "<group>"; };
 		94305179224E3213003C99F7 /* BsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BsTableViewController.m; sourceTree = "<group>"; };
-		9430517C224E3639003C99F7 /* ADWKWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADWKWebViewController.xib; sourceTree = "<group>"; };
-		9430517D224E3639003C99F7 /* ADWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADWKWebViewController.h; sourceTree = "<group>"; };
+		9430517C224E3639003C99F7 /* ADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADViewController.xib; sourceTree = "<group>"; };
+		9430517D224E3639003C99F7 /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		9430517F224E3639003C99F7 /* NoNet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoNet.png; sourceTree = "<group>"; };
 		94305180224E3639003C99F7 /* aa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aa.png; sourceTree = "<group>"; };
 		94305181224E3639003C99F7 /* ee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ee.png; sourceTree = "<group>"; };
@@ -176,7 +177,7 @@
 		94305183224E3639003C99F7 /* bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bb.png; sourceTree = "<group>"; };
 		94305184224E3639003C99F7 /* cc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cc.png; sourceTree = "<group>"; };
 		94305185224E3639003C99F7 /* ADReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADReachability.h; sourceTree = "<group>"; };
-		94305186224E3639003C99F7 /* ADWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADWKWebViewController.m; sourceTree = "<group>"; };
+		94305186224E3639003C99F7 /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		94305187224E3639003C99F7 /* ADReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReachability.m; sourceTree = "<group>"; };
 		94305192224E36AC003C99F7 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		94305193224E36AC003C99F7 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
@@ -206,8 +207,6 @@
 		9498D3772240FC9C00A8355B /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9498D3782240FC9C00A8355B /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "LiMagicTutorialS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		94D41B35223A12D4002CBD54 /* UIWebView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIWebView.lua; sourceTree = "<group>"; };
-		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
 		B62700E746E43C287B56C972 /* libPods-LiMagicTutorial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiMagicTutorial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
@@ -420,17 +419,17 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		9430517B224E3639003C99F7 /* ADWebViewController */ = {
+		9430517B224E3639003C99F7 /* ADViewController */ = {
 			isa = PBXGroup;
 			children = (
 				94305185224E3639003C99F7 /* ADReachability.h */,
 				94305187224E3639003C99F7 /* ADReachability.m */,
-				9430517D224E3639003C99F7 /* ADWKWebViewController.h */,
-				94305186224E3639003C99F7 /* ADWKWebViewController.m */,
-				9430517C224E3639003C99F7 /* ADWKWebViewController.xib */,
+				9430517D224E3639003C99F7 /* ADViewController.h */,
+				94305186224E3639003C99F7 /* ADViewController.m */,
+				9430517C224E3639003C99F7 /* ADViewController.xib */,
 				9430517E224E3639003C99F7 /* TabarImage */,
 			);
-			path = ADWebViewController;
+			path = ADViewController;
 			sourceTree = "<group>";
 		};
 		9430517E224E3639003C99F7 /* TabarImage */ = {
@@ -549,18 +548,11 @@
 		94C9B1EA2237E5D400BB283D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				942E62BB22520778007F59D2 /* AppDelegate+PushService.h */,
+				942E62BC22520778007F59D2 /* AppDelegate+PushService.m */,
 				FA95A23819F4F70700A94E19 /* TOWebViewController */,
 			);
 			path = Component;
-			sourceTree = "<group>";
-		};
-		94D41B34223A12D4002CBD54 /* Lua */ = {
-			isa = PBXGroup;
-			children = (
-				94D41B35223A12D4002CBD54 /* UIWebView.lua */,
-				94D41B38223A137E002CBD54 /* a.lua */,
-			);
-			path = Lua;
 			sourceTree = "<group>";
 		};
 		DA1A41DA1CE97B5B002C0F49 /* KLCPopup */ = {
@@ -642,7 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				94305191224E36AC003C99F7 /* NSString+URL */,
-				9430517B224E3639003C99F7 /* ADWebViewController */,
+				9430517B224E3639003C99F7 /* ADViewController */,
 				9498D3762240FC6F00A8355B /* BaseComponent */,
 				947B627F22461EAE00A7CFCA /* NavigationStyle */,
 				FA95A19419F4F70700A94E19 /* AppDelegate.h */,
@@ -711,7 +703,6 @@
 		FA95A1AC19F4F70700A94E19 /* Manual Framework */ = {
 			isa = PBXGroup;
 			children = (
-				94D41B34223A12D4002CBD54 /* Lua */,
 				94955A632238B5F000030701 /* UIVIew+Constraint */,
 				66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */,
 				DAFF7E691CE48E21000AB508 /* libTalkingData.a */,
@@ -1021,7 +1012,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D41B39223A137E002CBD54 /* a.lua in Resources */,
 				FA95A29919F4F70700A94E19 /* btn-search@2x.png in Resources */,
 				FA95A29719F4F70700A94E19 /* arrow_details@2x.png in Resources */,
 				FA95A26E19F4F70700A94E19 /* 37x-Checkmark.png in Resources */,
@@ -1046,9 +1036,8 @@
 				FA95A26F19F4F70700A94E19 /* 37x-Checkmark@2x.png in Resources */,
 				9430518B224E363A003C99F7 /* ee.png in Resources */,
 				FA2F274419D5495F00873763 /* InfoPlist.strings in Resources */,
-				94305188224E363A003C99F7 /* ADWKWebViewController.xib in Resources */,
+				94305188224E363A003C99F7 /* ADViewController.xib in Resources */,
 				DAA79FCB1CD5E43800640978 /* bgimg.png in Resources */,
-				94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */,
 				FA95A29F19F4F70700A94E19 /* placeholder-zt@2x.png in Resources */,
 				FA95A2A519F4F70700A94E19 /* share@2x.png in Resources */,
 				FA95A2A119F4F70700A94E19 /* plugin_icon_message@2x.png in Resources */,
@@ -1127,7 +1116,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9430518F224E363A003C99F7 /* ADWKWebViewController.m in Sources */,
+				9430518F224E363A003C99F7 /* ADViewController.m in Sources */,
 				9430516A224B8EFF003C99F7 /* TutorialSubtitleTableViewCell.m in Sources */,
 				FA95A28719F4F70700A94E19 /* SDWebImagePrefetcher.m in Sources */,
 				FA95A28E19F4F70700A94E19 /* UIView+WebCacheOperation.m in Sources */,
@@ -1150,6 +1139,7 @@
 				FA95A28919F4F70700A94E19 /* UIImage+GIF.m in Sources */,
 				947B62A12246437400A7CFCA /* TutorialDetailViewController.m in Sources */,
 				FA95A29519F4F70700A94E19 /* main.m in Sources */,
+				942E62BD22520778007F59D2 /* AppDelegate+PushService.m in Sources */,
 				FA95A25A19F4F70700A94E19 /* DataListViewController.m in Sources */,
 				FA95A28419F4F70700A94E19 /* SDWebImageDownloader.m in Sources */,
 				FA95A28219F4F70700A94E19 /* SDWebImageCompat.m in Sources */,
