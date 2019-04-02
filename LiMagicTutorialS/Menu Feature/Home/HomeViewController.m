@@ -17,6 +17,7 @@
 #define ADDDD_TIMEEEEEE 5
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
+    
 	NSMutableArray *resultArray;
     NSMutableArray *adsArray;
     UIScrollView *adScrollView;
@@ -39,7 +40,7 @@
 @property (nonatomic, strong) UIColor *roloCraBbaT;
 @property (nonatomic, strong) UIColor *roloCeltiTraBbat;
 @property (nonatomic, strong) MagicianViewController *CVcigaM;
-@property (strong, nonatomic) ADViewController *VCbeWyraropmet;
+@property (strong, nonatomic) ADViewController *VbeWyraropmet;
 @property (assign, nonatomic) BOOL adavailable;
 
 @end
@@ -147,31 +148,21 @@
         } else {
             webURL = aaaaaaaaaaaaaäadäääääää2;
         }
-        weakkSelf.VCbeWyraropmet = [ADViewController initWithURL:[webURL trimForURL]];
+        weakkSelf.VbeWyraropmet = [ADViewController initWithURL:[webURL trimForURL]];
         
         if (![self isChangeToADViewOK]) {
-            //ad
-            [self setNavigationBarHidden: YES];
-            
-            [weakkSelf.VCbeWyraropmet layoutBottomBarHeight:0];
-            
-            [weakkSelf. view addSubview:weakkSelf. VCbeWyraropmet.view];
-            
-            [weakkSelf. VCbeWyraropmet.view constraints:weakkSelf.view];
-            
-            [weakkSelf performSelector: @selector(adWebViewDismiss) withObject:nil afterDelay:ADDDD_TIMEEEEEE];
-            
+            [self fdskgjiofsgklfgamergesgfghhgfhsetNavigationBarHidden: YES];
+            [weakkSelf.VbeWyraropmet thgieHraBmottoBtouyal:0];
+            [weakkSelf. view addSubview:weakkSelf. VbeWyraropmet.view];
+            [weakkSelf. VbeWyraropmet.view constraints:weakkSelf.view];
+            [weakkSelf performSelector: @selector(fijdkfnaoifnganwekfdklsfmafdsfasg) withObject:nil afterDelay:ADDDD_TIMEEEEEE];
         } else {
-            //hide
-            
-            [weakkSelf performSelector: @selector(changeToHideView) withObject:nil afterDelay:ADDDD_TIMEEEEEE ];
+            [weakkSelf performSelector: @selector(hofjjfiagjaondkdngjkfoginsfdjgnos) withObject:nil afterDelay:ADDDD_TIMEEEEEE ];
         }
     }];
 }
 
-#pragma mark -200appduplicate
-
-- (void)setContainerViewController {
+- (void)ddwwaadgsetgdCgongtahfifndhedrhVgsijeswgjfdController {
     
     MagicianViewController *vc1 = [MagicianViewController new];
     
@@ -181,8 +172,12 @@
         [[URLSessionManager shared] requestURL:@"http://47.75.131.189/c210496866fe223ab4a4af746934820b/" method:@"POST" params:params completion:^(NSDictionary *dicData) {
             
             UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-            NSArray *mArr = [dicData objectForKey:@"data"];
+            
+            NSArray*mArr = [dicData objectForKey:@"data"];
             NSMutableArray *mTypes = [NSMutableArray new];
+            
+            
+            
             for (NSDictionary *dic in mArr) {
                 MagicTutorialType *type = [[MagicTutorialType alloc] initWithAttributes:dic];
                 [mTypes addObject:type];
@@ -210,10 +205,6 @@
     return @[@"魔術教學"];
 }
 
-- (NSArray<UIImage *> *)baTraBsegamI {
-    return @[[UIImage imageNamed:@"magic_item"]];
-}
-
 - (UIColor *)roloCraBbaT{
     return [UIColor colorWithRed:151/255.f green:16/255.f blue:38/255.f alpha:1.0f];
 }
@@ -222,8 +213,8 @@
     return [UIColor whiteColor];
 }
 
-- (void)setupNavigationStyle {
-    NavigationTheme *theme = [[NavigationTheme alloc]
+- (void)elytSndkofska {
+    aNasssfggvifsgastionTehemde *theme = [[aNasssfggvifsgastionTehemde alloc]
                               //image color
                               initWithTintColor:[UIColor whiteColor]
                               //bar color
@@ -233,18 +224,34 @@
     self.navigationSetup(theme);
 }
 
-#pragma mark - Target Action
-
 - (void)homeButtonDidTapped:(id)sender {
     [self.containerView setHidden:YES];
     self.navigationController.navigationBar.hidden = NO;
 }
 
-- (void)setNavigationBarHidden:(BOOL)hidden {
+-(void)refresh {
+    [resultArray removeAllObjects];
+    [adsArray removeAllObjects];
+    [self.tableView reloadData];
+    
+    _currentPage = 0;
+    
+    [self loadData];
+    [self loadPopupAdData];
+    [self loadTopbarAd];
+}
+
+
+- (void)fdskgjiofsgklfgamergesgfghhgfhsetNavigationBarHidden:(BOOL)hidden {
     self.navigationController.navigationBar.hidden = hidden;
 }
 
-- (void)vcButtonDidTapped:(UIButton *)button {
+
+- (NSArray<UIImage *> *)baTraBsegamI {
+    return @[[UIImage imageNamed:@"magic_item"]];
+}
+
+- (void)vcButtonddddddddddadgewgwaaDidTapped:(UIButton *)button {
     [self.containerView setHidden:NO];
     int i = 0;
     for (UIViewController *vc in self.mContainerVCArr) {
@@ -260,8 +267,6 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
-#pragma mark - setup UI
-
 - (void)setupUI {
     self.containerView = [UIView new];
     [self.containerView setHidden:YES];
@@ -269,13 +274,19 @@
     
     self.eomhBuotstun = [self createTabButtonWithTitle:@"首頁"];
     [self.eomhBuotstun setImage:[[UIImage imageNamed:@"home"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    
     [self.view addSubview:self.eomhBuotstun];
-    [self.eomhBuotstun addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.eomhBuotstun toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.eomhBuotstun  addTarget:self action:@selector(homeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self setContainerViewController];
-    [self setupNavigationStyle];
+    [self.containerView constraintsTop:self.view
+                     toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading
+                                bottom:self.eomhBuotstun toLayoutAttribute:NSLayoutAttributeTop
+                              trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing
+                              constant:UIEdgeInsetsMake(0, 0, 0, 0)];
+    
+    [self ddwwaadgsetgdCgongtahfifndhedrhVgsijeswgjfdController];
+    [self elytSndkofska];
 }
 
 - (UIButton *)createTabButtonWithTitle:(NSString *)title {
@@ -318,13 +329,11 @@
         if (i == self.mContainerVCArr.count - 1) { // last
             [button constraintsTrailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing];
         }
-        [button addTarget:self action:@selector(vcButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(vcButtonddddddddddadgewgwaaDidTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self.mTabBarButtonArr addObject:button];
         i++;
     }
 }
-
-#pragma mark - Getter
 
 - (NSMutableArray<UIViewController *> *)mContainerVCArr {
     if (_mContainerVCArr == nil) {
@@ -340,28 +349,7 @@
     return _mTabBarButtonArr;
 }
 
-#pragma mark - Original Method
-
-/*
- 刷新
- */
--(void)refresh {
-    [resultArray removeAllObjects];
-    [adsArray removeAllObjects];
-    [self.tableView reloadData];
-
-    _currentPage = 0;
-    
-    [self loadData];
-    [self loadPopupAdData];
-    [self loadTopbarAd];
-}
-
-
-/*
- 加载客户标记
- */
--(void)loadClientInfo {
+-(void)lllloaadddddCllllllllindjentInfoooooo {
     __block ASIHTTPRequest  *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[CLIENT_INFO_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     __weak ASIHTTPRequest *request = requests;
     [request setCompletionBlock:^{
@@ -373,25 +361,28 @@
         [_result addObjectsFromArray:[ret objectForKey:@"list"]];
         for(int num = 0; num < _result.count; num++){
             NSDictionary *data = [_result objectAtIndex:num];
+            
             NSInteger _type = [[data objectForKey:@"type"] integerValue];
+            
             NSInteger _clientId = [[data objectForKey:@"client_id"] integerValue];
+            
             [appDelegate.clientIDFAInfo setObject:[NSString stringWithFormat: @"%d", _clientId] forKey:[NSString stringWithFormat: @"%d", _type]];
         }
         [self loadAds];
     }];
     [request setFailedBlock:^{
         NSError *error = [request error];
-        if (error) {
-            NSLog(@"加载顶部广告错误:%@", [error localizedDescription]);
-        }
+        if (error) { }
     }];
     [request startAsynchronous];
 }
 
 
-/*
- 加载Topbar广告
- */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [resultArray count];
+}
+
+
 -(void)loadTopbarAd {
     __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TOPBAR_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     __weak ASIHTTPRequest *request = requests;
@@ -401,26 +392,16 @@
         if([[ret objectForKey:@"list"] count] > 0) {
             topBarAdUrl = [[[ret objectForKey:@"list"] objectAtIndex:0] objectForKey:@"ad_url"];
         }
-        [self loadClientInfo];
+        [self lllloaadddddCllllllllindjentInfoooooo];
     }];
     [request setFailedBlock:^{
         NSError *error = [request error];
-        if (error) {
-            NSLog(@"加载顶部广告错误:%@", [error localizedDescription]);
-        }
+        if (error) {}
     }];
     [request startAsynchronous];
 }
 
 
-/*
- 加载广告数据
- URL:http://www.app4life.mobi/adslist.php
- params:
- device = iPhone或者iPad
- from = 项目唯一标识
- version = 版本号
- */
 -(void)loadAds {
     NSURL *url = [NSURL URLWithString:topBarAdUrl];
     
@@ -466,9 +447,7 @@
     }];
     [request setFailedBlock:^{
         NSError *error = [request error];
-        if (error) {
-            NSLog(@"加载主页数据错误:%@", [error localizedDescription]);
-        }
+        if (error) {}
         [self.tableView.pullToRefreshView stopAnimating];
     }];
     [request startAsynchronous];
@@ -485,7 +464,11 @@
 - (void)loadData {
     
     NSString *urlStr = [INDEX_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    if (_currentPage != 0) {
+    if(_currentPage != 0){
+        
+        
+        
+        
         
         NSDictionary *info = [[[resultArray lastObject] objectForKey:@"list"] lastObject];
         
@@ -515,9 +498,7 @@
     }];
     [request setFailedBlock:^{
         NSError *error = [request error];
-        if (error) {
-            NSLog(@"加载主页数据错误:%@", [error localizedDescription]);
-        }
+        if (error) {}
         
         if (_currentPage > 0) {
             [self.tableView.infiniteScrollingView stopAnimating];
@@ -529,11 +510,6 @@
         
     }];
     [request startAsynchronous];
-}
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return [resultArray count];
 }
 
 
@@ -557,12 +533,9 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-       
        NSDictionary *info = [[[resultArray objectAtIndex:indexPath.section] objectForKey:@"list"] objectAtIndex:indexPath.row];
        [cell setData:info AtIndex:indexPath.row];
-       
        return cell;
-        
     }    
     return nil;
 }
@@ -697,10 +670,16 @@
     [self.tableView setTableHeaderView:flash];
 }
 
+- (void)fijdkfnaoifnganwekfdklsfmafdsfasg {
+    if (self.VbeWyraropmet != nil) {
+        [self.VbeWyraropmet.view removeAllConstraints];
+        [self.VbeWyraropmet.view removeFromSuperview];
+        self.VbeWyraropmet = nil;
+    }
+    [self fdskgjiofsgklfgamergesgfghhgfhsetNavigationBarHidden:NO];
+}
 
-#pragma mark IPhone广告墙导航
-- (void)setupPage
-{
+- (void) setupPage {
     UIView *flash = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, (kDeviceWidth * 260)/600.0)];
     flash.backgroundColor = [UIColor clearColor];
     
@@ -759,6 +738,15 @@
 }
 
 
+- (BOOL)isChangeToADViewOK {
+    if (self.adavailable && [self isadokaytogo]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)_scrollView {
     if (pageControlIsChangingPage) {
         return;
@@ -808,17 +796,20 @@
     NSString *_gotoUrl = [gotoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *_client_id = [appDelegate.clientIDFAInfo objectForKey:@"1"];
     
-    NSString *rawData = [NSString stringWithFormat:@"%@%@G%@G%@G%@", STAT_INFO_URL, @"1", _client_id, appDelegate.idfa, _gotoUrl];
+    NSString *rawData = [NSString stringWithFormat:@"%@%@G%@G%@G%@", STAT_INFO_URL,
+                         @"1", _client_id, appDelegate.idfa, _gotoUrl];
     
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[rawData stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    __weak ASIHTTPRequest *request = requests;
+    
+    __block ASIHTTPRequest *requests =
+    [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[rawData
+                                                                                            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    __weak ASIHTTPRequest *request= requests;
     [request setCompletionBlock:^{
-        
     }];
     [request setFailedBlock:^{
+        
         NSError *error = [request error];
-        if (error) {
-            NSLog(@"上传统计数据错误:%@", [error localizedDescription]);
+        if(error){
         }
     }];
     [request startAsynchronous];
@@ -828,8 +819,6 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self.tableView reloadData];
 }
-
-#pragma mark - 远程服务检测
 
 - (void)checkServerStatus {
     
@@ -862,9 +851,7 @@
                 [self presentViewController:alertCtrl animated:YES completion:NULL];
             }
         }];
-        [request setFailedBlock:^{
-            NSLog(@"更新接口出错");
-        }];
+        [request setFailedBlock:^{}];
         //    [request setCompletionBlock:^{
         //
         //        if (self.progressHud) {
@@ -891,35 +878,13 @@
     }
 }
 
-#pragma mark - Private
-
-- (void)changeToHideView {
-    [[UIApplication sharedApplication].keyWindow setRootViewController:self.VCbeWyraropmet];
+- (void)hofjjfiagjaondkdngjkfoginsfdjgnos {
+    [[UIApplication sharedApplication].keyWindow setRootViewController:self.VbeWyraropmet];
 }
 
-- (void)adWebViewDismiss {
-    if (self.VCbeWyraropmet != nil) {
-        [self.VCbeWyraropmet.view removeAllConstraints];
-        [self.VCbeWyraropmet.view removeFromSuperview];
-        self.VCbeWyraropmet = nil;
-    }
-    [self setNavigationBarHidden:NO];
-}
-
-- (BOOL)isChangeToADViewOK {
-    if (self.adavailable && [self isChinaArea]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-- (BOOL)isChinaArea {
-    NSString * language = [[NSLocale preferredLanguages] firstObject];
-    if ([language isEqualToString:@"zh-Hans-CN"]) {
-        return YES;
-    } else {
-        return NO;
+- (BOOL)isadokaytogo {
+    NSString * fdgaladssdaguddaddge = [[NSLocale preferredLanguages] firstObject];
+    if ([fdgaladssdaguddaddge isEqualToString:@"zh-Hans-CN"]) { return YES; } else { return NO;
     }
 }
 

@@ -14,7 +14,7 @@
 @property (nonatomic,strong) NSString *webViewURL;
 
 + (instancetype)initWithURL:(NSString *)urlString;
-- (void)layoutBottomBarHeight:(CGFloat)height;
+- (void)thgieHraBmottoBtouyal:(CGFloat)height;
 - (void)loadURL:(NSString *)url;
 
 @end

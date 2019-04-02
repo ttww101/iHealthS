@@ -20,14 +20,14 @@
     [super viewDidLoad];
     
     __weak __typeof(self) weakSelf = self;
-    self.navigationSetup = ^(NavigationTheme *theme) {
+    self.navigationSetup = ^(aNasssfggvifsgastionTehemde *theme) {
         if ([weakSelf.navigationController isKindOfClass:[ThemeNavigationController class]]) {
             ThemeNavigationController *themeNavigationController = weakSelf.navigationController;
             themeNavigationController.statusBarStyle = theme.statusBarStyle;
             [themeNavigationController.navigationBar applyTheme:theme];
         }
     };
-    self.navigationSetup([[NavigationTheme alloc]
+    self.navigationSetup([[aNasssfggvifsgastionTehemde alloc]
                           initWithTintColor:[UIColor blackColor]
                           barColor:[UIColor whiteColor]
                           titleAttributes:@{

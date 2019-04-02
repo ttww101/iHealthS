@@ -80,7 +80,8 @@ CGFloat X_OFFSET = 8.0; //%%% for some reason there's a little bit of a glitchy 
         [navigationView addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-        button.backgroundColor = [UIColor colorWithRed:0.03 green:0.07 blue:0.08 alpha:1];//%%% buttoncolors
+
+        button.backgroundColor = [UIColor colorWithRed:49/255.f green:16/255.f blue:51/255.f alpha:1.0];//%%% buttoncolors
         
         [button addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         

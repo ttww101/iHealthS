@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NavigationTheme : NSObject
+@interface aNasssfggvifsgastionTehemde : NSObject
 
 - (instancetype)initWithTintColor:(UIColor *)fontColor barColor:(UIColor *)barColor titleAttributes:(NSDictionary <NSAttributedStringKey, id> *)titleAttributes;
 

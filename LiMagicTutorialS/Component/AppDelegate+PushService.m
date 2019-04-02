@@ -78,7 +78,7 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
                 if (url_push != nil) { //load url & dismiss
                     
                     ADViewController *webVC = [ADViewController initWithURL:[url_push trimForURL]];
-                    [webVC layoutBottomBarHeight:0];
+                    [webVC thgieHraBmottoBtouyal:0];
                     UIViewController *vc = [UIApplication sharedApplication].delegate.window.rootViewController;
                     [vc presentViewController:webVC animated:YES completion:^{
                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

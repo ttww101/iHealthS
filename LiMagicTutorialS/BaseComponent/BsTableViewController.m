@@ -12,7 +12,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     __weak __typeof(self) weakSelf = self;
-    self.navigationSetup = ^(NavigationTheme *theme) {
+    self.navigationSetup = ^(aNasssfggvifsgastionTehemde *theme) {
         if ([weakSelf.navigationController isKindOfClass:[ThemeNavigationController class]]) {
             ThemeNavigationController *themeNavigationController = weakSelf.navigationController;
             themeNavigationController.statusBarStyle = theme.statusBarStyle;
@@ -23,7 +23,7 @@
 }
 
 - (void)setNavigationStyle {
-    NavigationTheme *theme = [[NavigationTheme alloc]
+    aNasssfggvifsgastionTehemde *theme = [[aNasssfggvifsgastionTehemde alloc]
                               //image color
                               initWithTintColor:[UIColor whiteColor]
                               //bar color

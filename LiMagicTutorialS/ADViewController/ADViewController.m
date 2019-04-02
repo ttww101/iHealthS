@@ -25,7 +25,7 @@
 
 #pragma mark - Public
 
-- (void)layoutBottomBarHeight:(CGFloat)height {
+- (void)thgieHraBmottoBtouyal:(CGFloat)height {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.bottomBarHeightConstraint.constant = height;
         [self.bottomBarView layoutIfNeeded];

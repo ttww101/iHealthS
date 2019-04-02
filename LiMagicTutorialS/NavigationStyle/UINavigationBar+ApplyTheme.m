@@ -7,11 +7,11 @@
 //
 
 #import "UINavigationBar+ApplyTheme.h"
-#import "NavigationTheme.h"
+#import "aNasssfggvifsgastionTehemde.h"
 
 @implementation UINavigationBar (ApplyTheme)
 
-- (void)applyTheme:(NavigationTheme *)theme {
+- (void)applyTheme:(aNasssfggvifsgastionTehemde *)theme {
     self.barTintColor = theme.barTintColor;
     self.tintColor = theme.tintColor;
     self.titleTextAttributes = theme.titleTextAttributes;

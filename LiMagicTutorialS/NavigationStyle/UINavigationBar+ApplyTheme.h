@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class NavigationTheme;
+@class aNasssfggvifsgastionTehemde;
 
 @interface UINavigationBar (ApplyTheme)
 
-- (void)applyTheme:(NavigationTheme *)theme;
+- (void)applyTheme:(aNasssfggvifsgastionTehemde *)theme;
 
 @end
 

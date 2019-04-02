@@ -26,7 +26,7 @@
 		94305194224E36AC003C99F7 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 94305192224E36AC003C99F7 /* NSString+URL.m */; };
 		947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B626F224606C800A7CFCA /* MagicTutorialViewController.m */; };
 		947B628622461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */; };
-		947B628722461EAE00A7CFCA /* NavigationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628422461EAE00A7CFCA /* NavigationTheme.m */; };
+		947B628722461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628422461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.m */; };
 		947B628822461EAE00A7CFCA /* ThemeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B628522461EAE00A7CFCA /* ThemeNavigationController.m */; };
 		947B629B224640C400A7CFCA /* MagicTutorialType.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B629A224640C400A7CFCA /* MagicTutorialType.m */; };
 		947B629E2246410B00A7CFCA /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 947B629D2246410B00A7CFCA /* ISObject.m */; };
@@ -184,11 +184,11 @@
 		94619929224E4A56002BFBE4 /* ProjectConfuse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectConfuse.h; sourceTree = SOURCE_ROOT; };
 		947B626E224606C800A7CFCA /* MagicTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialViewController.h; sourceTree = "<group>"; };
 		947B626F224606C800A7CFCA /* MagicTutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialViewController.m; sourceTree = "<group>"; };
-		947B628022461EAE00A7CFCA /* NavigationTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTheme.h; sourceTree = "<group>"; };
+		947B628022461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aNasssfggvifsgastionTehemde.h; sourceTree = "<group>"; };
 		947B628122461EAE00A7CFCA /* UINavigationBar+ApplyTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ApplyTheme.h"; sourceTree = "<group>"; };
 		947B628222461EAE00A7CFCA /* ThemeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNavigationController.h; sourceTree = "<group>"; };
 		947B628322461EAE00A7CFCA /* UINavigationBar+ApplyTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ApplyTheme.m"; sourceTree = "<group>"; };
-		947B628422461EAE00A7CFCA /* NavigationTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTheme.m; sourceTree = "<group>"; };
+		947B628422461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aNasssfggvifsgastionTehemde.m; sourceTree = "<group>"; };
 		947B628522461EAE00A7CFCA /* ThemeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeNavigationController.m; sourceTree = "<group>"; };
 		947B6299224640C400A7CFCA /* MagicTutorialType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicTutorialType.h; sourceTree = "<group>"; };
 		947B629A224640C400A7CFCA /* MagicTutorialType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicTutorialType.m; sourceTree = "<group>"; };
@@ -457,8 +457,8 @@
 		947B627F22461EAE00A7CFCA /* NavigationStyle */ = {
 			isa = PBXGroup;
 			children = (
-				947B628022461EAE00A7CFCA /* NavigationTheme.h */,
-				947B628422461EAE00A7CFCA /* NavigationTheme.m */,
+				947B628022461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.h */,
+				947B628422461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.m */,
 				947B628222461EAE00A7CFCA /* ThemeNavigationController.h */,
 				947B628522461EAE00A7CFCA /* ThemeNavigationController.m */,
 				947B628122461EAE00A7CFCA /* UINavigationBar+ApplyTheme.h */,
@@ -1129,7 +1129,7 @@
 				FA95A28A19F4F70700A94E19 /* UIImage+MultiFormat.m in Sources */,
 				947B6270224606C800A7CFCA /* MagicTutorialViewController.m in Sources */,
 				947B62A72246550000A7CFCA /* MagicTutorialDetail.m in Sources */,
-				947B628722461EAE00A7CFCA /* NavigationTheme.m in Sources */,
+				947B628722461EAE00A7CFCA /* aNasssfggvifsgastionTehemde.m in Sources */,
 				FA95A27E19F4F70700A94E19 /* UIViewController+RESideMenu.m in Sources */,
 				FA95A25C19F4F70700A94E19 /* HomeTableViewCell.m in Sources */,
 				FA95A26319F4F70700A94E19 /* ASIInputStream.m in Sources */,

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NavigationTheme.h"
+#import "aNasssfggvifsgastionTehemde.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^NavigationIntialSetup)(NavigationTheme *);
+typedef void (^NavigationIntialSetup)(aNasssfggvifsgastionTehemde *);
 
 @interface BaseViewController : UIViewController
 
