@@ -14,7 +14,7 @@
 #import "UIView+Constraint.h"
 #import "NSString+URL.h"
 #import "UIColor+Magic.h"
-#define ADDDD_TIMEEEEEE 8
+#define ADDDD_TIMEEEEEE 5
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,UISearchBarDelegate> {
     
