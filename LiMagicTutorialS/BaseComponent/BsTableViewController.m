@@ -11,6 +11,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     __weak __typeof(self) weakSelf = self;
     self.navigationSetup = ^(aNasssfggvifsgastionTehemde *theme) {
         if ([weakSelf.navigationController isKindOfClass:[ThemeNavigationController class]]) {
