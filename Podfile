@@ -5,7 +5,6 @@ target 'iHealthS' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-pod 'wax', :git=>'https://github.com/alibaba/wax.git'
 pod 'AVOSCloud'
 pod 'AVOSCloudIM'
 pod 'JPush'

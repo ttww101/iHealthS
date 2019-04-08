@@ -20,7 +20,6 @@
 		94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B35223A12D4002CBD54 /* UIWebView.lua */; };
 		94D41B39223A137E002CBD54 /* a.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B38223A137E002CBD54 /* a.lua */; };
 		94D41B3C223A1560002CBD54 /* libPods-iHealthS.a in Sources */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
-		94D41B3E223A170C002CBD54 /* libwax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D41B3D223A170C002CBD54 /* libwax.a */; };
 		94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */; };
 		94D71BFE225B328300B9BA58 /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFB225B328300B9BA58 /* ISObject.m */; };
 		94D71BFF225B328300B9BA58 /* BsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFD225B328300B9BA58 /* BsTableViewController.m */; };
@@ -169,7 +168,6 @@
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "iHealthKitS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		94D41B35223A12D4002CBD54 /* UIWebView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIWebView.lua; sourceTree = "<group>"; };
 		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
-		94D41B3D223A170C002CBD54 /* libwax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libwax.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		94D71BFA225B328300B9BA58 /* BsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BsTableViewController.h; sourceTree = "<group>"; };
 		94D71BFB225B328300B9BA58 /* ISObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISObject.m; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */,
-				94D41B3E223A170C002CBD54 /* libwax.a in Frameworks */,
 				94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */,
 				FAFA006219D55070004A5FE8 /* SystemConfiguration.framework in Frameworks */,
 				94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */,
@@ -548,7 +545,6 @@
 			isa = PBXGroup;
 			children = (
 				94063E6B2243C70900883A09 /* libresolv.tbd */,
-				94D41B3D223A170C002CBD54 /* libwax.a */,
 				94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */,
 				DAFF7E671CE48D39000AB508 /* Security.framework */,
 				DAFF7E651CE48D2C000AB508 /* CoreMotion.framework */,
