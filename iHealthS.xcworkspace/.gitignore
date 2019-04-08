@@ -29,6 +29,8 @@ UserInterfaceState.xcuserstate
 project.xcworkspace/  
 xcuserdata/  
 UserInterface.xcuserstate
+xcschememanagement.plist
+ProjectConfuse.h
 
 ## Other
 *.moved-aside
