@@ -188,6 +188,7 @@
 		94D71C0F225B3B8F00B9BA58 /* AppDelegate+PushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushService.m"; sourceTree = "<group>"; };
 		94D71C1B225B3C0100B9BA58 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		94D71C1C225B3C0100B9BA58 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
+		94D71C1E225B40C300B9BA58 /* ProjectConfuse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectConfuse.h; sourceTree = SOURCE_ROOT; };
 		C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.release.xcconfig"; sourceTree = "<group>"; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
@@ -585,6 +586,7 @@
 				FA2F274719D5495F00873763 /* iHealthS-Prefix.pch */,
 				FA99522D19D54C4700E1FCA4 /* common.h */,
 				94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */,
+				94D71C1E225B40C300B9BA58 /* ProjectConfuse.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -916,6 +918,7 @@
 				FA2F273419D5495F00873763 /* Resources */,
 				DAFF7E641CE48D1B000AB508 /* Embed Frameworks */,
 				142528DE405555F5E632F20C /* [CP] Copy Pods Resources */,
+				94D71C1F225B419200B9BA58 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1052,6 +1055,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		94D71C1F225B419200B9BA58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PROJECT_DIR/confuse.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
