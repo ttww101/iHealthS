@@ -171,7 +171,6 @@
 
 - (void)homeButtonDidTapped:(id)sender {
     [self.containerView setHidden:YES];
-    [self setNavigationHidden:NO];
 }
 
 - (void)vcButtonDidTapped:(UIButton *)button {
@@ -185,7 +184,6 @@
         }
         i++;
     }
-    [self setNavigationHidden:YES];
 }
 
 #pragma mark - setup UI
@@ -199,7 +197,10 @@
     self.containerView = [UIView new];
     [self.containerView setHidden:YES];
     [self.view addSubview:self.containerView];
-    [self.containerView constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeTop leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop trailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing constant:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self.containerView constraintsTopLayoutGuide:self toLayoutAttribute:NSLayoutAttributeBottom constant:0];
+    [self.containerView constraintsLeading:self.view toLayoutAttribute:NSLayoutAttributeLeading];
+    [self.containerView constraintsTrailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing];
+    [self.containerView constraintsBottom:self.homeButton toLayoutAttribute:NSLayoutAttributeTop];
     
     [self setContainerViewController];
     [self setupNavigationStyle];
@@ -231,7 +232,6 @@
         button.tag = i;
         [self.view addSubview:button];
         //constraint
-//        [self.homeButton constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeBottom leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.view toLayoutAttribute:NSLayoutAttributeBottom trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
         [self.homeButton constraintsTop:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
         [self.homeButton constraintsBottomLayoutGuide:self toLayoutAttribute:NSLayoutAttributeTop constant:-44];
         [self.homeButton constraintsBottomLayoutGuide:self toLayoutAttribute:NSLayoutAttributeBottom constant:0];
@@ -254,9 +254,7 @@
 
 #pragma mark - Private
 
-- (void)setNavigationHidden:(BOOL)hidden {
-    self.navigationController.navigationBar.hidden = hidden;
-}
+
 
 #pragma mark - Getter
 
