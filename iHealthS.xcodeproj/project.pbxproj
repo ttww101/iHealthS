@@ -21,6 +21,7 @@
 		94D41B39223A137E002CBD54 /* a.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B38223A137E002CBD54 /* a.lua */; };
 		94D41B3C223A1560002CBD54 /* libPods-iHealthS.a in Sources */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
 		94D41B3E223A170C002CBD54 /* libwax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D41B3D223A170C002CBD54 /* libwax.a */; };
+		94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */; };
 		CAF5D8391D43E92EF88B3D5D /* libPods-iHealthS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
 		DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A41DE1CE99991002C0F49 /* close_icon.png */; };
@@ -156,6 +157,7 @@
 		94D41B35223A12D4002CBD54 /* UIWebView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIWebView.lua; sourceTree = "<group>"; };
 		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
 		94D41B3D223A170C002CBD54 /* libwax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libwax.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.release.xcconfig"; sourceTree = "<group>"; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				FA2F274219D5495F00873763 /* InfoPlist.strings */,
 				FA2F274719D5495F00873763 /* iHealthS-Prefix.pch */,
 				FA99522D19D54C4700E1FCA4 /* common.h */,
+				94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 			files = (
 				94D41B39223A137E002CBD54 /* a.lua in Resources */,
 				FA95A29919F4F70700A94E19 /* btn-search@2x.png in Resources */,
+				94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */,
 				FA95A29719F4F70700A94E19 /* arrow_details@2x.png in Resources */,
 				FA95A26E19F4F70700A94E19 /* 37x-Checkmark.png in Resources */,
 				FA95A2A719F4F7C800A94E19 /* menu_bg.png in Resources */,
@@ -1137,7 +1141,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthS/iHealthS-Prefix.pch";
 				INFOPLIST_FILE = "iHealthS/iHealthS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1173,7 +1177,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iHealthS/iHealthS-Prefix.pch";
 				INFOPLIST_FILE = "iHealthS/iHealthS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

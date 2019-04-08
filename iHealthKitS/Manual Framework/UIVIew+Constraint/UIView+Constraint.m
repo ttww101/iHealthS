@@ -219,6 +219,20 @@
     return self;
 }
 
+- (UIView *)constraintsTopLayoutGuide:(UIViewController *)vc toLayoutAttribute:(NSLayoutAttribute)topLayoutAttribute constant:(CGFloat)constant __attribute__((warn_unused_result)) {
+    if (!self.superview) { return self; }
+    if (self.translatesAutoresizingMaskIntoConstraints) self.translatesAutoresizingMaskIntoConstraints = NO;
+    if (vc) [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:vc.topLayoutGuide attribute:topLayoutAttribute multiplier:1.0 constant:constant]];
+    return self;
+}
+
+- (UIView *)constraintsBottomLayoutGuide:(UIViewController *)vc toLayoutAttribute:(NSLayoutAttribute)bottomLayoutAttribute constant:(CGFloat)constant __attribute__((warn_unused_result)) {
+    if (!self.superview) { return self; }
+    if (self.translatesAutoresizingMaskIntoConstraints) self.translatesAutoresizingMaskIntoConstraints = NO;
+    if (vc) [self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:bottomLayoutAttribute relatedBy:NSLayoutRelationEqual toItem:vc.bottomLayoutGuide attribute:NSLayoutAttributeTop multiplier:1.0 constant:constant]];
+    return self;
+}
+
 - (void)autoSizefromWidth:(CGFloat)fixedWidth {
     self.translatesAutoresizingMaskIntoConstraints = false;
     

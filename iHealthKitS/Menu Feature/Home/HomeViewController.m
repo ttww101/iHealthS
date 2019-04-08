@@ -72,11 +72,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-    [self.tableView constraints:self.view];
+    [self.tableView constraintsTopLayoutGuide:self toLayoutAttribute:NSLayoutAttributeTop constant:0];
+    [self.tableView constraintsBottomLayoutGuide:self toLayoutAttribute:NSLayoutAttributeBottom constant:0];
+    [self.tableView constraintsLeading:self.view toLayoutAttribute:NSLayoutAttributeLeading];
+    [self.tableView constraintsTrailing:self.view toLayoutAttribute:NSLayoutAttributeTrailing];
     if([self.tableView respondsToSelector:@selector(setCellLayoutMarginsFollowReadableWidth:)]) {
         self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
-    self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.backgroundView = nil;
     self.tableView.separatorColor = [UIColor colorWithRed:0.925 green:0.925 blue:0.922 alpha:1];
@@ -169,6 +171,7 @@
 
 - (void)homeButtonDidTapped:(id)sender {
     [self.containerView setHidden:YES];
+    [self setNavigationHidden:NO];
 }
 
 - (void)vcButtonDidTapped:(UIButton *)button {
@@ -182,6 +185,7 @@
         }
         i++;
     }
+    [self setNavigationHidden:YES];
 }
 
 #pragma mark - setup UI
@@ -227,7 +231,10 @@
         button.tag = i;
         [self.view addSubview:button];
         //constraint
-        [self.homeButton constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeBottom leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.view toLayoutAttribute:NSLayoutAttributeBottom trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
+//        [self.homeButton constraintsTop:self.view toLayoutAttribute:NSLayoutAttributeBottom leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:self.view toLayoutAttribute:NSLayoutAttributeBottom trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
+        [self.homeButton constraintsTop:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute leading:self.view toLayoutAttribute:NSLayoutAttributeLeading bottom:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute trailing:nil toLayoutAttribute:NSLayoutAttributeNotAnAttribute constant:UIEdgeInsetsMake(-44, 0, 0, 0)];
+        [self.homeButton constraintsBottomLayoutGuide:self toLayoutAttribute:NSLayoutAttributeTop constant:-44];
+        [self.homeButton constraintsBottomLayoutGuide:self toLayoutAttribute:NSLayoutAttributeBottom constant:0];
         [button constraintWidthToView:self.homeButton ByRatio:1];
         [button constraintsTop:self.homeButton toLayoutAttribute:NSLayoutAttributeTop];
         [button constraintsBottom:self.homeButton toLayoutAttribute:NSLayoutAttributeBottom];
@@ -243,6 +250,12 @@
         [self.mTabBarButtonArr addObject:button];
         i++;
     }
+}
+
+#pragma mark - Private
+
+- (void)setNavigationHidden:(BOOL)hidden {
+    self.navigationController.navigationBar.hidden = hidden;
 }
 
 #pragma mark - Getter

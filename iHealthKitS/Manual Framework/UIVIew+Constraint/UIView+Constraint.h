@@ -50,6 +50,17 @@
 - (UIView *)constraintLayoutAttribute:(NSLayoutAttribute)fromLayoutAttribute toView:(UIView *)ratioView layoutAttribute:(NSLayoutAttribute)toLayoutAttribute ByRatio:(CGFloat)ratio;
 
 /**
+ TopLayoutGuide For iPhone X, XR, Xs, Xs Max
+ (iOS 11.0, *)
+ */
+- (UIView *)constraintsTopLayoutGuide:(UIViewController *)vc toLayoutAttribute:(NSLayoutAttribute)topLayoutAttribute constant:(CGFloat)constant;
+/**
+ BottomLayoutGuide For iPhone X, XR, Xs, Xs Max
+ (iOS 11.0, *)
+ */
+- (UIView *)constraintsBottomLayoutGuide:(UIViewController *)vc toLayoutAttribute:(NSLayoutAttribute)bottomLayoutAttribute constant:(CGFloat)constant;
+
+/**
  For adding subview to scroll view.
  Call it before => [self.scrollView setContentSize:self.exampleView.frame.size];
  */

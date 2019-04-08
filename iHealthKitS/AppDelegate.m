@@ -2,6 +2,8 @@
 #define kJPushAppKey @"6be4d9e2bbc8b3b9baf99ffc"
 #define kJPushChannel @"Publish channel"
 
+#define kSideMenuBackgroundImageName @"menu_bg"
+
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "SideMenuViewController.h"
@@ -125,7 +127,7 @@
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                                     leftMenuViewController:leftMenuViewController
                                                                    rightMenuViewController:nil];
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"menu_bg"];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:kSideMenuBackgroundImageName];
     sideMenuViewController.menuPreferredStatusBarStyle = 1;
     sideMenuViewController.delegate = self;
     sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
