@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "BsTableViewController.h"
 
-@interface BookmarkViewController : UITableViewController
+@interface BookmarkViewController : BsTableViewController
 
 @end

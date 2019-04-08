@@ -22,6 +22,8 @@
 		94D41B3C223A1560002CBD54 /* libPods-iHealthS.a in Sources */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
 		94D41B3E223A170C002CBD54 /* libwax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D41B3D223A170C002CBD54 /* libwax.a */; };
 		94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */; };
+		94D71BFE225B328300B9BA58 /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFB225B328300B9BA58 /* ISObject.m */; };
+		94D71BFF225B328300B9BA58 /* BsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFD225B328300B9BA58 /* BsTableViewController.m */; };
 		CAF5D8391D43E92EF88B3D5D /* libPods-iHealthS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
 		DA1A41DD1CE97B5B002C0F49 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */; };
 		DA1A41DF1CE99991002C0F49 /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1A41DE1CE99991002C0F49 /* close_icon.png */; };
@@ -158,6 +160,10 @@
 		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
 		94D41B3D223A170C002CBD54 /* libwax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libwax.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		94D71BFA225B328300B9BA58 /* BsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BsTableViewController.h; sourceTree = "<group>"; };
+		94D71BFB225B328300B9BA58 /* ISObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISObject.m; sourceTree = "<group>"; };
+		94D71BFC225B328300B9BA58 /* ISObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISObject.h; sourceTree = "<group>"; };
+		94D71BFD225B328300B9BA58 /* BsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BsTableViewController.m; sourceTree = "<group>"; };
 		C6A6D2C8F305C63955DDC5E5 /* Pods-iHealthS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHealthS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHealthS/Pods-iHealthS.release.xcconfig"; sourceTree = "<group>"; };
 		DA1A41DB1CE97B5B002C0F49 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		DA1A41DC1CE97B5B002C0F49 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
@@ -388,6 +394,10 @@
 			children = (
 				9498D3772240FC9C00A8355B /* BaseViewController.h */,
 				9498D3782240FC9C00A8355B /* BaseViewController.m */,
+				94D71BFA225B328300B9BA58 /* BsTableViewController.h */,
+				94D71BFD225B328300B9BA58 /* BsTableViewController.m */,
+				94D71BFC225B328300B9BA58 /* ISObject.h */,
+				94D71BFB225B328300B9BA58 /* ISObject.m */,
 			);
 			path = BaseComponent;
 			sourceTree = "<group>";
@@ -1004,10 +1014,12 @@
 				FA95A29319F4F70700A94E19 /* TOWebViewController.m in Sources */,
 				94955A732238FBD900030701 /* Feature1ViewController.m in Sources */,
 				FA95A28319F4F70700A94E19 /* SDWebImageDecoder.m in Sources */,
+				94D71BFF225B328300B9BA58 /* BsTableViewController.m in Sources */,
 				FA95A28619F4F70700A94E19 /* SDWebImageManager.m in Sources */,
 				FA95A29019F4F70700A94E19 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				FA95A29419F4F70700A94E19 /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				FA95A25519F4F70700A94E19 /* BookmarkViewController.m in Sources */,
+				94D71BFE225B328300B9BA58 /* ISObject.m in Sources */,
 				FA95A26119F4F70700A94E19 /* ASIFormDataRequest.m in Sources */,
 				9498D3792240FC9C00A8355B /* BaseViewController.m in Sources */,
 				FA95A25B19F4F70700A94E19 /* MoreAppCell.m in Sources */,

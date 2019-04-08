@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
+#import "BsTableViewController.h"
 
-@interface DataListViewController : UITableViewController
+@interface DataListViewController : BsTableViewController
 
 -(id)initWithURL:(NSString *)__url AndName:(NSString *)__name;
 
