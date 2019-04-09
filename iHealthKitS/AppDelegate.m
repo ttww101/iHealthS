@@ -1,5 +1,5 @@
 
-#define kJPushAppKey @"6be4d9e2bbc8b3b9baf99ffc"
+#define kJPushAppKey @"820a75ac60f7f9b288f57b20"
 #define kJPushChannel @"Publish channel"
 
 #define kSideMenuBackgroundImageName @"menu_bg"
@@ -12,12 +12,11 @@
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
 #import "JANALYTICSService.h"
-
+#import "AppDelegate+PushService.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     
     // 添加talking data统计接口
     [TalkingData sessionStarted:TD_ID withChannelId:@"App Store"];
@@ -155,60 +154,5 @@
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont systemFontOfSize:16.0f], NSFontAttributeName, nil]];
 }
-
-
-#pragma mark - Push Service
-
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    
-    NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
-    [JPUSHService registerDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application
-didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
-}
-
-
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo
-fetchCompletionHandler:
-(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    [JPUSHService handleRemoteNotification:userInfo];
-    completionHandler(UIBackgroundFetchResultNewData);
-}
-
-- (void)application:(UIApplication *)application
-didReceiveLocalNotification:(UILocalNotification *)notification {
-    [JPUSHService showLocalNotificationAtFront:notification identifierKey:nil];
-}
-
-
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
-    
-    completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert);
-}
-
-- (void)jpushNotificationCenter :(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-    
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
-        
-    }
-    completionHandler();
-}
-
-
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification{
-    
-    
-}
-
-
 
 @end

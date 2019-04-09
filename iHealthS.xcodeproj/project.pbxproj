@@ -17,8 +17,6 @@
 		9498D37F2241162400A8355B /* UINavigationBar+ApplyTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */; };
 		94C9B1E52237DF7000BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */; };
 		94C9B1E72237E08700BB283D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */; };
-		94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B35223A12D4002CBD54 /* UIWebView.lua */; };
-		94D41B39223A137E002CBD54 /* a.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94D41B38223A137E002CBD54 /* a.lua */; };
 		94D41B3C223A1560002CBD54 /* libPods-iHealthS.a in Sources */ = {isa = PBXBuildFile; fileRef = 73F1E7BE4E01F0B5D7FDC37F /* libPods-iHealthS.a */; };
 		94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */; };
 		94D71BFE225B328300B9BA58 /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFB225B328300B9BA58 /* ISObject.m */; };
@@ -166,8 +164,6 @@
 		9498D37D2241162400A8355B /* UINavigationBar+ApplyTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+ApplyTheme.h"; sourceTree = "<group>"; };
 		9498D37E2241162400A8355B /* UINavigationBar+ApplyTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+ApplyTheme.m"; sourceTree = "<group>"; };
 		94C9B1E62237E08700BB283D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "iHealthKitS/Manual Framework/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		94D41B35223A12D4002CBD54 /* UIWebView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIWebView.lua; sourceTree = "<group>"; };
-		94D41B38223A137E002CBD54 /* a.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.lua; sourceTree = "<group>"; };
 		94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		94D71BFA225B328300B9BA58 /* BsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BsTableViewController.h; sourceTree = "<group>"; };
 		94D71BFB225B328300B9BA58 /* ISObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISObject.m; sourceTree = "<group>"; };
@@ -452,15 +448,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		94D41B34223A12D4002CBD54 /* Lua */ = {
-			isa = PBXGroup;
-			children = (
-				94D41B35223A12D4002CBD54 /* UIWebView.lua */,
-				94D41B38223A137E002CBD54 /* a.lua */,
-			);
-			path = Lua;
-			sourceTree = "<group>";
-		};
 		94D71C00225B3B8E00B9BA58 /* ADViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,7 +651,6 @@
 			children = (
 				94D71C00225B3B8E00B9BA58 /* ADViewController */,
 				94D71C0D225B3B8F00B9BA58 /* AppDelegate+PushService */,
-				94D41B34223A12D4002CBD54 /* Lua */,
 				94955A632238B5F000030701 /* UIVIew+Constraint */,
 				66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */,
 				DAFF7E691CE48E21000AB508 /* libTalkingData.a */,
@@ -939,10 +925,11 @@
 				ORGANIZATIONNAME = whitelok.com;
 				TargetAttributes = {
 					FA2F273519D5495F00873763 = {
-						DevelopmentTeam = 3PHL3Y9U2S;
+						DevelopmentTeam = WX2CTL6LW9;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -973,7 +960,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D41B39223A137E002CBD54 /* a.lua in Resources */,
 				FA95A29919F4F70700A94E19 /* btn-search@2x.png in Resources */,
 				94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */,
 				94D71C17225B3B8F00B9BA58 /* ADViewController.xib in Resources */,
@@ -1001,7 +987,6 @@
 				FA95A26F19F4F70700A94E19 /* 37x-Checkmark@2x.png in Resources */,
 				FA2F274419D5495F00873763 /* InfoPlist.strings in Resources */,
 				DAA79FCB1CD5E43800640978 /* bgimg.png in Resources */,
-				94D41B36223A12D4002CBD54 /* UIWebView.lua in Resources */,
 				FA95A29F19F4F70700A94E19 /* placeholder-zt@2x.png in Resources */,
 				FA95A2A519F4F70700A94E19 /* share@2x.png in Resources */,
 				FA95A2A119F4F70700A94E19 /* plugin_icon_message@2x.png in Resources */,
@@ -1243,8 +1228,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = iHealthS/iHealthS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX2CTL6LW9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
@@ -1264,9 +1252,10 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xin.iHS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1279,8 +1268,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = iHealthS/iHealthS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX2CTL6LW9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iHealthKitS/Manual\\ Framework",
@@ -1300,9 +1292,10 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitelok.wmfbjfd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xin.iHS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

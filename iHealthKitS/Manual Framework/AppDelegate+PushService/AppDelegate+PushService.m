@@ -20,8 +20,7 @@
 
 #pragma mark - Push Service
 
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
     [JPUSHService registerDeviceToken:deviceToken];
 }
@@ -62,7 +61,20 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     }
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    if (@available(iOS 10.0, *)) {
+        /*iOS 10.0 以上
+         [UNUserNotificationCenterDelegate willPresentNotification:withCompletionHandler:]方法中调用completionHandler(UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);即可
+         */
+    } else {
+        [JPUSHService showLocalNotificationAtFront:notification identifierKey:nil];
+    }
+}
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler: (void (^)(UIBackgroundFetchResult))completionHandler {
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
 
 
 @end
