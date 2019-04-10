@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseHomeFeatureViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Feature1ViewController : UIViewController
+@interface Feature1ViewController : BaseHomeFeatureViewController
 
 @end
 

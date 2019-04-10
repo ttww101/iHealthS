@@ -8,6 +8,9 @@
 
 #import "Feature1ViewController.h"
 #import "UIView+Constraint.h"
+#import "Test1ViewController.h"
+#import "HomeViewController.h"
+#import "RESideMenu.h"
 
 @interface Feature1ViewController ()
 
@@ -24,7 +27,18 @@
     [view constraintsCenterY:self.view toLayoutAttribute:NSLayoutAttributeCenterY];
     [view constraintsWidthWithConstant:50];
     [view constraintsHeightWithConstant:50];
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pres:)];
+    [self.view addGestureRecognizer:tapGes];
 }
+
+- (void)pres:(id)sender {
+    
+    Test1ViewController *vcTest = [Test1ViewController new];
+    
+    [self featureVCPresentVC:vcTest animated:YES];
+}
+
 
 /*
 #pragma mark - Navigation
