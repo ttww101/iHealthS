@@ -23,14 +23,14 @@
 		94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D71BF8225B252F00B9BA58 /* Launch Screen.storyboard */; };
 		94D71BFE225B328300B9BA58 /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFB225B328300B9BA58 /* ISObject.m */; };
 		94D71BFF225B328300B9BA58 /* BsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71BFD225B328300B9BA58 /* BsTableViewController.m */; };
-		94D71C10225B3B8F00B9BA58 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71C01225B3B8E00B9BA58 /* ADViewController.m */; };
+		94D71C10225B3B8F00B9BA58 /* ADWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71C01225B3B8E00B9BA58 /* ADWebViewController.m */; };
 		94D71C11225B3B8F00B9BA58 /* NoNet.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C03225B3B8E00B9BA58 /* NoNet.png */; };
 		94D71C12225B3B8F00B9BA58 /* aa.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C04225B3B8E00B9BA58 /* aa.png */; };
 		94D71C13225B3B8F00B9BA58 /* ee.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C05225B3B8E00B9BA58 /* ee.png */; };
 		94D71C14225B3B8F00B9BA58 /* dd.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C06225B3B8E00B9BA58 /* dd.png */; };
 		94D71C15225B3B8F00B9BA58 /* bb.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C07225B3B8E00B9BA58 /* bb.png */; };
 		94D71C16225B3B8F00B9BA58 /* cc.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C08225B3B8E00B9BA58 /* cc.png */; };
-		94D71C17225B3B8F00B9BA58 /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C0B225B3B8E00B9BA58 /* ADViewController.xib */; };
+		94D71C17225B3B8F00B9BA58 /* ADWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D71C0B225B3B8E00B9BA58 /* ADWebViewController.xib */; };
 		94D71C18225B3B8F00B9BA58 /* ADReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71C0C225B3B8E00B9BA58 /* ADReachability.m */; };
 		94D71C19225B3B8F00B9BA58 /* AppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71C0F225B3B8F00B9BA58 /* AppDelegate+PushService.m */; };
 		94D71C1D225B3C0100B9BA58 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D71C1B225B3C0100B9BA58 /* NSString+URL.m */; };
@@ -175,7 +175,7 @@
 		94D71BFB225B328300B9BA58 /* ISObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISObject.m; sourceTree = "<group>"; };
 		94D71BFC225B328300B9BA58 /* ISObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISObject.h; sourceTree = "<group>"; };
 		94D71BFD225B328300B9BA58 /* BsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BsTableViewController.m; sourceTree = "<group>"; };
-		94D71C01225B3B8E00B9BA58 /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		94D71C01225B3B8E00B9BA58 /* ADWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADWebViewController.m; sourceTree = "<group>"; };
 		94D71C03225B3B8E00B9BA58 /* NoNet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoNet.png; sourceTree = "<group>"; };
 		94D71C04225B3B8E00B9BA58 /* aa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aa.png; sourceTree = "<group>"; };
 		94D71C05225B3B8E00B9BA58 /* ee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ee.png; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 		94D71C07225B3B8E00B9BA58 /* bb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bb.png; sourceTree = "<group>"; };
 		94D71C08225B3B8E00B9BA58 /* cc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cc.png; sourceTree = "<group>"; };
 		94D71C09225B3B8E00B9BA58 /* ADReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADReachability.h; sourceTree = "<group>"; };
-		94D71C0A225B3B8E00B9BA58 /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
-		94D71C0B225B3B8E00B9BA58 /* ADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADViewController.xib; sourceTree = "<group>"; };
+		94D71C0A225B3B8E00B9BA58 /* ADWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADWebViewController.h; sourceTree = "<group>"; };
+		94D71C0B225B3B8E00B9BA58 /* ADWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADWebViewController.xib; sourceTree = "<group>"; };
 		94D71C0C225B3B8E00B9BA58 /* ADReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADReachability.m; sourceTree = "<group>"; };
 		94D71C0E225B3B8F00B9BA58 /* AppDelegate+PushService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+PushService.h"; sourceTree = "<group>"; };
 		94D71C0F225B3B8F00B9BA58 /* AppDelegate+PushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PushService.m"; sourceTree = "<group>"; };
@@ -463,9 +463,9 @@
 			children = (
 				94D71C09225B3B8E00B9BA58 /* ADReachability.h */,
 				94D71C0C225B3B8E00B9BA58 /* ADReachability.m */,
-				94D71C0A225B3B8E00B9BA58 /* ADViewController.h */,
-				94D71C01225B3B8E00B9BA58 /* ADViewController.m */,
-				94D71C0B225B3B8E00B9BA58 /* ADViewController.xib */,
+				94D71C0A225B3B8E00B9BA58 /* ADWebViewController.h */,
+				94D71C01225B3B8E00B9BA58 /* ADWebViewController.m */,
+				94D71C0B225B3B8E00B9BA58 /* ADWebViewController.xib */,
 				94D71C02225B3B8E00B9BA58 /* TabarImage */,
 			);
 			path = ADViewController;
@@ -972,7 +972,7 @@
 			files = (
 				FA95A29919F4F70700A94E19 /* btn-search@2x.png in Resources */,
 				94D71BF9225B252F00B9BA58 /* Launch Screen.storyboard in Resources */,
-				94D71C17225B3B8F00B9BA58 /* ADViewController.xib in Resources */,
+				94D71C17225B3B8F00B9BA58 /* ADWebViewController.xib in Resources */,
 				FA95A29719F4F70700A94E19 /* arrow_details@2x.png in Resources */,
 				FA95A26E19F4F70700A94E19 /* 37x-Checkmark.png in Resources */,
 				FA95A2A719F4F7C800A94E19 /* menu_bg.png in Resources */,
@@ -1135,7 +1135,7 @@
 				94955A662238B5F000030701 /* UIView+Constraint.m in Sources */,
 				FA95A26519F4F70700A94E19 /* Reachability.m in Sources */,
 				FA95A27D19F4F70700A94E19 /* RESideMenu.m in Sources */,
-				94D71C10225B3B8F00B9BA58 /* ADViewController.m in Sources */,
+				94D71C10225B3B8F00B9BA58 /* ADWebViewController.m in Sources */,
 				FA95A28F19F4F70700A94E19 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				FA95A25919F4F70700A94E19 /* HomeViewController.m in Sources */,
 				FA95A28D19F4F70700A94E19 /* UIImageView+WebCache.m in Sources */,

@@ -13,6 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "JANALYTICSService.h"
 #import "AppDelegate+PushService.h"
+#import "ADWebViewController.h"
 
 @implementation AppDelegate
 
