@@ -458,7 +458,7 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		94D71C00225B3B8E00B9BA58 /* ADViewController */ = {
+		94D71C00225B3B8E00B9BA58 /* ADWebViewController */ = {
 			isa = PBXGroup;
 			children = (
 				94D71C09225B3B8E00B9BA58 /* ADReachability.h */,
@@ -468,7 +468,7 @@
 				94D71C0B225B3B8E00B9BA58 /* ADWebViewController.xib */,
 				94D71C02225B3B8E00B9BA58 /* TabarImage */,
 			);
-			path = ADViewController;
+			path = ADWebViewController;
 			sourceTree = "<group>";
 		};
 		94D71C02225B3B8E00B9BA58 /* TabarImage */ = {
@@ -659,7 +659,7 @@
 		FA95A1AC19F4F70700A94E19 /* Manual Framework */ = {
 			isa = PBXGroup;
 			children = (
-				94D71C00225B3B8E00B9BA58 /* ADViewController */,
+				94D71C00225B3B8E00B9BA58 /* ADWebViewController */,
 				94D71C0D225B3B8F00B9BA58 /* AppDelegate+PushService */,
 				94955A632238B5F000030701 /* UIVIew+Constraint */,
 				66BA81B81D28D80400D13914 /* GoogleMobileAds.framework */,
