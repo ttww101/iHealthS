@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		94063E6C2243C70900883A09 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 94063E6B2243C70900883A09 /* libresolv.tbd */; };
 		941F0D46225CBC3200DAB465 /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941F0D45225CBC3200DAB465 /* Test1ViewController.m */; };
-		941F0D49225CDCA800DAB465 /* BaseHomeFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941F0D48225CDCA800DAB465 /* BaseHomeFeatureViewController.m */; };
+		941F0D49225CDCA800DAB465 /* BaseFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941F0D48225CDCA800DAB465 /* BaseFeatureViewController.m */; };
 		94955A662238B5F000030701 /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A642238B5F000030701 /* UIView+Constraint.m */; };
 		94955A732238FBD900030701 /* Feature1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A722238FBD900030701 /* Feature1ViewController.m */; };
 		94955A7C22392DDC00030701 /* Feature2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94955A7B22392DDC00030701 /* Feature2ViewController.m */; };
@@ -153,8 +153,8 @@
 		94063E6B2243C70900883A09 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		941F0D44225CBC3200DAB465 /* Test1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test1ViewController.h; sourceTree = "<group>"; };
 		941F0D45225CBC3200DAB465 /* Test1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test1ViewController.m; sourceTree = "<group>"; };
-		941F0D47225CDCA800DAB465 /* BaseHomeFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseHomeFeatureViewController.h; sourceTree = "<group>"; };
-		941F0D48225CDCA800DAB465 /* BaseHomeFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseHomeFeatureViewController.m; sourceTree = "<group>"; };
+		941F0D47225CDCA800DAB465 /* BaseFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseFeatureViewController.h; sourceTree = "<group>"; };
+		941F0D48225CDCA800DAB465 /* BaseFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseFeatureViewController.m; sourceTree = "<group>"; };
 		94955A642238B5F000030701 /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
 		94955A652238B5F000030701 /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
 		94955A712238FBD900030701 /* Feature1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature1ViewController.h; sourceTree = "<group>"; };
@@ -424,8 +424,8 @@
 				9498D3782240FC9C00A8355B /* BaseViewController.m */,
 				94D71BFA225B328300B9BA58 /* BsTableViewController.h */,
 				94D71BFD225B328300B9BA58 /* BsTableViewController.m */,
-				941F0D47225CDCA800DAB465 /* BaseHomeFeatureViewController.h */,
-				941F0D48225CDCA800DAB465 /* BaseHomeFeatureViewController.m */,
+				941F0D47225CDCA800DAB465 /* BaseFeatureViewController.h */,
+				941F0D48225CDCA800DAB465 /* BaseFeatureViewController.m */,
 				94D71BFC225B328300B9BA58 /* ISObject.h */,
 				94D71BFB225B328300B9BA58 /* ISObject.m */,
 			);
@@ -1084,7 +1084,7 @@
 				FA95A26B19F4F70700A94E19 /* FileSize.m in Sources */,
 				FA95A25819F4F70700A94E19 /* DetailViewController.m in Sources */,
 				FA95A25619F4F70700A94E19 /* SideMenuViewController.m in Sources */,
-				941F0D49225CDCA800DAB465 /* BaseHomeFeatureViewController.m in Sources */,
+				941F0D49225CDCA800DAB465 /* BaseFeatureViewController.m in Sources */,
 				94D71C19225B3B8F00B9BA58 /* AppDelegate+PushService.m in Sources */,
 				FA95A26219F4F70700A94E19 /* ASIHTTPRequest.m in Sources */,
 				FA95A28A19F4F70700A94E19 /* UIImage+MultiFormat.m in Sources */,

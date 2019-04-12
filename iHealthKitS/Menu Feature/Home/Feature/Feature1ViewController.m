@@ -36,7 +36,7 @@
     
     Test1ViewController *vcTest = [Test1ViewController new];
     
-    [self featureVCPresentVC:vcTest animated:YES];
+    [self featureVCPushVC:vcTest animated:YES];
 }
 
 

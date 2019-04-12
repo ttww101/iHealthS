@@ -1,14 +1,14 @@
 //
-//  BaseHomeFeatureViewController.m
+//  BaseFeatureViewController.m
 //  iHealthS
 //
 //  Created by Wu on 2019/4/9.
 //  Copyright © 2019 whitelok.com. All rights reserved.
 //
 
-#import "BaseHomeFeatureViewController.h"
+#import "BaseFeatureViewController.h"
 
-@implementation BaseHomeFeatureViewController
+@implementation BaseFeatureViewController
 
 - (void)featureVCPushVC:(UIViewController *)pushVC animated:(BOOL)animated {
     

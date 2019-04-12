@@ -1,5 +1,5 @@
 //
-//  BaseHomeFeatureViewController.h
+//  BaseFeatureViewController.h
 //  iHealthS
 //
 //  Created by Wu on 2019/4/9.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseHomeFeatureViewController : UIViewController
+@interface BaseFeatureViewController : UIViewController
 
 - (void)featureVCPushVC:(UIViewController *)pushVC animated:(BOOL)animated;
 - (void)featureVCPresentVC:(UIViewController *)presentVC animated:(BOOL)animated;
