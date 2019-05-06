@@ -309,7 +309,7 @@
             NSInteger _clientId = [[data objectForKey:@"client_id"] integerValue];
             [appDelegate.clientIDFAInfo setObject:[NSString stringWithFormat: @"%d", _clientId] forKey:[NSString stringWithFormat: @"%d", _type]];
         }
-        [self loadAds];
+//        [self loadAds];
     }];
     [request setFailedBlock:^{
         NSError *error = [request error];

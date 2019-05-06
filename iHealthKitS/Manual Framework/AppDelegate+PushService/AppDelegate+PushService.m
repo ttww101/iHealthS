@@ -10,9 +10,9 @@
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
 //#import "JANALYTICSService.h"
-#import "ADWebViewController.h"
+//#import "ADWebViewController.h"
 #import "NSString+URL.h"
-#import <AdSupport/AdSupport.h>
+//#import <AdSupport/AdSupport.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import "HomeViewController.h"
 

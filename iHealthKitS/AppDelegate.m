@@ -8,12 +8,12 @@
 #import "HomeViewController.h"
 #import "SideMenuViewController.h"
 #import "TalkingData.h"
-#import <AdSupport/AdSupport.h>
+//#import <AdSupport/AdSupport.h>
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
 //#import "JANALYTICSService.h"
 #import "AppDelegate+PushService.h"
-#import "ADWebViewController.h"
+//#import "ADWebViewController.h"
 
 @implementation AppDelegate
 
@@ -26,22 +26,22 @@
     self.isFirstStart = YES;
     
     // 谷歌广告标记及其初始化
-    self.googleAdSwitch = NO;
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[GOOGLE_AD_SWITCH stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    __weak ASIHTTPRequest *request = requests;
-    [request setCompletionBlock:^{
-        NSData *responseData = [request responseData];
-        NSDictionary *ret = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
-        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        int googleAdSwitch = [[ret objectForKey:@"switch"]intValue];
-        if (googleAdSwitch == 0) {
-            appDelegate.googleAdSwitch = YES;
-        }
-    }];
-    [request setFailedBlock:^{
-        
-    }];
-    [request startAsynchronous];
+//    self.googleAdSwitch = NO;
+//    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[GOOGLE_AD_SWITCH stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+//    __weak ASIHTTPRequest *request = requests;
+//    [request setCompletionBlock:^{
+//        NSData *responseData = [request responseData];
+//        NSDictionary *ret = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
+//        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+//        int googleAdSwitch = [[ret objectForKey:@"switch"]intValue];
+//        if (googleAdSwitch == 0) {
+//            appDelegate.googleAdSwitch = YES;
+//        }
+//    }];
+//    [request setFailedBlock:^{
+//
+//    }];
+//    [request startAsynchronous];
     
     // IDFA标记
 //    self.idfa = [[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

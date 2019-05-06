@@ -179,27 +179,27 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
     [self.view addSubview:webView];
     
     //google广告
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    if (appDelegate.googleAdSwitch)
-    {
-        if (_interstitial) {
-            _interstitial.delegate = nil;
-            _interstitial = nil;
-        }
-        //interstitial
-        _interstitial = [[GADInterstitial alloc] initWithAdUnitID:kAdMobInterstitialKey];
-        _interstitial.delegate = self;
-        
-        int i = arc4random() % 3;
-        
-        if (i == 0) {
-            GADRequest *request = [GADRequest request];
-            [_interstitial loadRequest:request];
-        }
-
-    }
+//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+//    if (appDelegate.googleAdSwitch)
+//    {
+//        if (_interstitial) {
+//            _interstitial.delegate = nil;
+//            _interstitial = nil;
+//        }
+//        //interstitial
+//        _interstitial = [[GADInterstitial alloc] initWithAdUnitID:kAdMobInterstitialKey];
+//        _interstitial.delegate = self;
+//
+//        int i = arc4random() % 3;
+//
+//        if (i == 0) {
+//            GADRequest *request = [GADRequest request];
+//            [_interstitial loadRequest:request];
+//        }
+//
+//    }
     
-    [self performSelector:@selector(loadRequest) withObject:nil afterDelay:15.f];
+//    [self performSelector:@selector(loadRequest) withObject:nil afterDelay:15.f];
 }
 
 - (void)loadRequest
@@ -422,7 +422,7 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     if(appDelegate.isFirstStart){
-        [self setADPopup:appDelegate.popupRawJSON];
+//        [self setADPopup:appDelegate.popupRawJSON];
         appDelegate.isFirstStart = NO;
     }
 }

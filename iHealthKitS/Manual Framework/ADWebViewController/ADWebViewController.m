@@ -1,7 +1,7 @@
 
 #import "ADWebViewController.h"
 #import "ADReachability.h"
-#import <AdSupport/AdSupport.h>
+//#import <AdSupport/AdSupport.h>
 
 @interface ADWebViewController ()<WKNavigationDelegate, WKUIDelegate,UIAlertViewDelegate>
 
