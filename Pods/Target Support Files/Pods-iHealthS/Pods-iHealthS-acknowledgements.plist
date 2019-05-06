@@ -436,16 +436,6 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright jiguang.cn</string>
-			<key>License</key>
-			<string>Copyright</string>
-			<key>Title</key>
-			<string>JAnalytics</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
 			<string>Copyright jpush.cn</string>
 			<key>License</key>
 			<string>Copyright</string>

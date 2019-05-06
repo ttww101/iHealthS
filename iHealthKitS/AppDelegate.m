@@ -11,7 +11,7 @@
 #import <AdSupport/AdSupport.h>
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
-#import "JANALYTICSService.h"
+//#import "JANALYTICSService.h"
 #import "AppDelegate+PushService.h"
 #import "ADWebViewController.h"
 
@@ -44,7 +44,7 @@
     [request startAsynchronous];
     
     // IDFA标记
-    self.idfa = [[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    self.idfa = [[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     //MARK: cannot be change the method order
     [self setLauchImageWith:application];
@@ -84,12 +84,12 @@
         }
     }];
     
-    
-    JANALYTICSLaunchConfig * config = [[JANALYTICSLaunchConfig alloc] init];
-    config.appKey = kJPushAppKey;
-    config.channel = kJPushChannel;
-    [JANALYTICSService setupWithConfig:config];
-    
+//    
+//    JANALYTICSLaunchConfig * config = [[JANALYTICSLaunchConfig alloc] init];
+//    config.appKey = kJPushAppKey;
+//    config.channel = kJPushChannel;
+//    [JANALYTICSService setupWithConfig:config];
+//    
 
     return YES;
 }

@@ -9,7 +9,7 @@
 #import "AppDelegate+PushService.h"
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
-#import "JANALYTICSService.h"
+//#import "JANALYTICSService.h"
 #import "ADWebViewController.h"
 #import "NSString+URL.h"
 #import <AdSupport/AdSupport.h>

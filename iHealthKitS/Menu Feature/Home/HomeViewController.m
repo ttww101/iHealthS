@@ -553,24 +553,24 @@
 
 
 -(void)btnPressed:(id)sender {
-    UIButton *Btn = (UIButton *)sender;
-    NSInteger index = Btn.tag;
-    NSDictionary *data = [adsArray objectAtIndex:index];
-    NSString *gotoUrl = [data objectForKey:@"goto"];
-    
-    // 统计数据
-    [TalkingData trackEvent:@"Topbar_AD_Touch" label:gotoUrl];
-    [self uploadIDFAData:gotoUrl];
-    
-    if([gotoUrl hasPrefix:@"https://itunes"]){
-        // 跳转到itunes
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[gotoUrl stringByReplacingOccurrencesOfString:@"https" withString:@"itms-apps"]]];
-    }
-    else{
-        // 跳转到网页
-        TOWebViewController *dd = [[TOWebViewController alloc] initWithURLString:gotoUrl];
-        [self.navigationController pushViewController:dd animated:YES];
-    }
+//    UIButton *Btn = (UIButton *)sender;
+//    NSInteger index = Btn.tag;
+//    NSDictionary *data = [adsArray objectAtIndex:index];
+//    NSString *gotoUrl = [data objectForKey:@"goto"];
+//
+//    // 统计数据
+//    [TalkingData trackEvent:@"Topbar_AD_Touch" label:gotoUrl];
+//    [self uploadIDFAData:gotoUrl];
+//
+//    if([gotoUrl hasPrefix:@"https://itunes"]){
+//        // 跳转到itunes
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[gotoUrl stringByReplacingOccurrencesOfString:@"https" withString:@"itms-apps"]]];
+//    }
+//    else{
+//        // 跳转到网页
+//        TOWebViewController *dd = [[TOWebViewController alloc] initWithURLString:gotoUrl];
+//        [self.navigationController pushViewController:dd animated:YES];
+//    }
 }
 
 
@@ -736,24 +736,24 @@
 
 -(void) uploadIDFAData:(NSString*)gotoUrl {
     
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    NSString *_gotoUrl = [gotoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *_client_id = [appDelegate.clientIDFAInfo objectForKey:@"1"];
-    
-    NSString *rawData = [NSString stringWithFormat:@"%@%@G%@G%@G%@", STAT_INFO_URL, @"1", _client_id, appDelegate.idfa, _gotoUrl];
-    
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[rawData stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    __weak ASIHTTPRequest *request = requests;
-    [request setCompletionBlock:^{
-        
-    }];
-    [request setFailedBlock:^{
-        NSError *error = [request error];
-        if (error) {
-            NSLog(@"上传统计数据错误:%@", [error localizedDescription]);
-        }
-    }];
-    [request startAsynchronous];
+//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+//    NSString *_gotoUrl = [gotoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *_client_id = [appDelegate.clientIDFAInfo objectForKey:@"1"];
+//
+//    NSString *rawData = [NSString stringWithFormat:@"%@%@G%@G%@G%@", STAT_INFO_URL, @"1", _client_id, appDelegate.idfa, _gotoUrl];
+//
+//    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[rawData stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+//    __weak ASIHTTPRequest *request = requests;
+//    [request setCompletionBlock:^{
+//
+//    }];
+//    [request setFailedBlock:^{
+//        NSError *error = [request error];
+//        if (error) {
+//            NSLog(@"上传统计数据错误:%@", [error localizedDescription]);
+//        }
+//    }];
+//    [request startAsynchronous];
 }
 
 

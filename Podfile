@@ -8,7 +8,6 @@ target 'iHealthS' do
 pod 'AVOSCloud'
 pod 'AVOSCloudIM'
 pod 'JPush'
-pod 'JAnalytics'
 
   # Pods for iHealthS
 

@@ -58,42 +58,42 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType) {
 
 -(void) uploadIDFAData:(NSString*)gotoUrl {
     
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-    NSString *_gotoUrl = [gotoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *_client_id = [appDelegate.clientIDFAInfo objectForKey:@"1"];
-    
-    NSString *rawData = [NSString stringWithFormat:@"%@%@G%@G%@G%@", STAT_INFO_URL, @"2", _client_id, appDelegate.idfa, _gotoUrl];
-    
-    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[rawData stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    __weak ASIHTTPRequest *request = requests;
-    [request setCompletionBlock:^{
-        
-    }];
-    [request setFailedBlock:^{
-        NSError *error = [request error];
-        if (error) {
-            NSLog(@"上传统计数据错误:%@", [error localizedDescription]);
-        }
-    }];
-    [request startAsynchronous];
+//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+//    NSString *_gotoUrl = [gotoUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *_client_id = [appDelegate.clientIDFAInfo objectForKey:@"1"];
+//
+//    NSString *rawData = [NSString stringWithFormat:@"%@%@G%@G%@G%@", STAT_INFO_URL, @"2", _client_id, appDelegate.idfa, _gotoUrl];
+//
+//    __block ASIHTTPRequest *requests = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[rawData stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+//    __weak ASIHTTPRequest *request = requests;
+//    [request setCompletionBlock:^{
+//
+//    }];
+//    [request setFailedBlock:^{
+//        NSError *error = [request error];
+//        if (error) {
+//            NSLog(@"上传统计数据错误:%@", [error localizedDescription]);
+//        }
+//    }];
+//    [request startAsynchronous];
 }
 
 
 - (void)gotoAdView:(id)sender {
-    [popupAd dismissPresentingPopup];
-    
-    // 统计数据
-    [TalkingData trackEvent:@"Popup_AD_Touch" label:gotoUrl];
-    [self uploadIDFAData:gotoUrl];
-    
-    if([gotoUrl hasPrefix:@"https://ituns"]){
-        // 跳转到itunes
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[gotoUrl stringByReplacingOccurrencesOfString:@"https" withString:@"itms-apps"]]];
-    }else{
-        // 跳转到网页
-        TOWebViewController *dd = [[TOWebViewController alloc] initWithURLString:gotoUrl];
-        [self.navigationController pushViewController:dd animated:YES];
-    }
+//    [popupAd dismissPresentingPopup];
+//
+//    // 统计数据
+//    [TalkingData trackEvent:@"Popup_AD_Touch" label:gotoUrl];
+//    [self uploadIDFAData:gotoUrl];
+//
+//    if([gotoUrl hasPrefix:@"https://ituns"]){
+//        // 跳转到itunes
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[gotoUrl stringByReplacingOccurrencesOfString:@"https" withString:@"itms-apps"]]];
+//    }else{
+//        // 跳转到网页
+//        TOWebViewController *dd = [[TOWebViewController alloc] initWithURLString:gotoUrl];
+//        [self.navigationController pushViewController:dd animated:YES];
+//    }
 }
 
 
